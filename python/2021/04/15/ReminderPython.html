@@ -110,16 +110,12 @@ window.onload = wrap_img;
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Types-of-data">Types of data<a class="anchor-link" href="#Types-of-data"> </a></h2><table>
 <thead><tr>
-<th></th>
-<th></th>
-<th></th>
-<th></th>
-<th></th>
-<th></th>
-<th></th>
-<th></th>
-<th></th>
-<th></th>
+<th>Type</th>
+<th>Short</th>
+<th>Immutable?</th>
+<th>Singleton?</th>
+<th>Accuracy</th>
+<th>Example</th>
 </tr>
 </thead>
 <tbody>
@@ -130,10 +126,6 @@ window.onload = wrap_img;
 <td>singleton possible</td>
 <td>no loss of accuracy</td>
 <td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
 </tr>
 <tr>
 <td><strong>Boolean</strong></td>
@@ -142,10 +134,6 @@ window.onload = wrap_img;
 <td>singleton possible</td>
 <td>no loss of accuracy</td>
 <td>True ou False</td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
 </tr>
 <tr>
 <td><strong>Float</strong></td>
@@ -154,10 +142,6 @@ window.onload = wrap_img;
 <td>singleton possible</td>
 <td>possible loss of accuracy</td>
 <td>1.2</td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
 </tr>
 <tr>
 <td><strong>Complex</strong></td>
@@ -166,10 +150,6 @@ window.onload = wrap_img;
 <td>singleton possible</td>
 <td>possible loss of accuracy</td>
 <td>1+2j</td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
 </tr>
 <tr>
 <td><strong>String</strong></td>
@@ -178,10 +158,6 @@ window.onload = wrap_img;
 <td>singleton possible</td>
 <td></td>
 <td>surrounded by " " or ' '</td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
 </tr>
 <tr>
 <td><strong>Tuple</strong></td>
@@ -189,17 +165,9 @@ window.onload = wrap_img;
 <td>immuable</td>
 <td>singleton possible</td>
 <td></td>
-<td><strong>( ,)</strong></td>
-<td><strong>( , ,)</strong></td>
-<td>,</td>
-<td></td>
-<td></td>
+<td><strong>( ,)</strong> or <strong>( , ,)</strong> or ,</td>
 </tr>
 <tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
 <td></td>
 <td></td>
 <td></td>
@@ -214,10 +182,6 @@ window.onload = wrap_img;
 <td></td>
 <td>stores only the references</td>
 <td><strong>[  ,  ]</strong></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
 </tr>
 <tr>
 <td><strong>dictionary</strong></td>
@@ -226,10 +190,6 @@ window.onload = wrap_img;
 <td></td>
 <td>unordered and unchangeable keys / values</td>
 <td><strong>{ : ,  : }</strong></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
 </tr>
 <tr>
 <td><strong>Set</strong></td>
@@ -238,25 +198,9 @@ window.onload = wrap_img;
 <td></td>
 <td>unordered and unique immutable keys</td>
 <td><strong>{ ,  }</strong></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
 </tr>
 </tbody>
 </table>
-<p>Small immutable objects are sometimes stored as singletons (only one possible occurrence)</p>
 
 </div>
 </div>
