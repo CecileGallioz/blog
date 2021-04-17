@@ -80,7 +80,7 @@ window.onload = wrap_img;
        • <span class="read-time" title="Estimated read time">
     
     
-      10 min read
+      11 min read
     
 </span></p>
 
@@ -122,6 +122,7 @@ window.onload = wrap_img;
 </li>
 <li class="toc-entry toc-h2"><a href="#Lambda-functions">Lambda functions </a></li>
 <li class="toc-entry toc-h2"><a href="#List-comprehensions-=-For-on-lists">List comprehensions = For on lists </a></li>
+<li class="toc-entry toc-h2"><a href="#Generative-expression">Generative expression </a></li>
 <li class="toc-entry toc-h2"><a href="#Funny-cases">Funny cases </a>
 <ul>
 <li class="toc-entry toc-h3"><a href="#Mistrust-on-the-floats">Mistrust on the floats </a></li>
@@ -2706,6 +2707,179 @@ a = 1 b = 5
 <pre>['Alice', 'Eve', 'Sonia', 'Bob']
 </pre>
 </div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Generative-expression">
+<a class="anchor" href="#Generative-expression" aria-hidden="true"><span class="octicon octicon-link"></span></a>Generative expression<a class="anchor-link" href="#Generative-expression"> </a>
+</h2>
+<pre><code>iterableI = (function(x) for x in list)
+</code></pre>
+<p>Simple and compact object that allows to browse an iterable object.
+The iterable object contains the data, the iterator object contains the mechanism to traverse it.
+They can be browsed only once. We recognize an iterator because it is its own iterator : i is iter(i) =&gt; True
+They have two methods:</p>
+
+<pre><code>* __iter()__
+* __next()__</code></pre>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>203 µs ± 12.3 µs per loop (mean ± std. dev. of 7 runs, 1000 loops each)
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">square</span> <span class="o">=</span> <span class="p">[</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1_000</span><span class="p">)]</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">square</span><span class="p">))</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>&lt;class 'list'&gt;
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>487 ns ± 51.6 ns per loop (mean ± std. dev. of 7 runs, 1000000 loops each)
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">square2</span> <span class="o">=</span> <span class="p">(</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1_000</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">square2</span><span class="p">))</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>&lt;class 'generator'&gt;
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">palindrome</span> <span class="o">=</span> <span class="p">(</span><span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">square2</span> <span class="k">if</span> <span class="nb">str</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">==</span> <span class="nb">str</span><span class="p">(</span><span class="n">x</span><span class="p">)[::</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+<span class="nb">list</span><span class="p">(</span><span class="n">palindrome</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>[0,
+ 1,
+ 4,
+ 9,
+ 121,
+ 484,
+ 676,
+ 10201,
+ 12321,
+ 14641,
+ 40804,
+ 44944,
+ 69696,
+ 94249,
+ 698896]</pre>
+</div>
+
 </div>
 
 </div>
