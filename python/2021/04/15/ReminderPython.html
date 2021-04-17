@@ -80,7 +80,7 @@ window.onload = wrap_img;
        • <span class="read-time" title="Estimated read time">
     
     
-      8 min read
+      9 min read
     
 </span></p>
 
@@ -113,7 +113,13 @@ window.onload = wrap_img;
 <li class="toc-entry toc-h2"><a href="#Range(n)">Range(n) </a></li>
 <li class="toc-entry toc-h2"><a href="#For">For </a></li>
 <li class="toc-entry toc-h2"><a href="#While">While </a></li>
-<li class="toc-entry toc-h2"><a href="#Functions">Functions </a></li>
+<li class="toc-entry toc-h2"><a href="#Functions">Functions </a>
+<ul>
+<li class="toc-entry toc-h3"><a href="#Tuple-or-dictionaries-in-arguments">Tuple or dictionaries in arguments </a></li>
+<li class="toc-entry toc-h3"><a href="#Named-arguments">Named arguments </a></li>
+<li class="toc-entry toc-h3"><a href="#Order-of-consumption--of-arguments">Order of consumption  of arguments </a></li>
+</ul>
+</li>
 <li class="toc-entry toc-h2"><a href="#Funny-cases">Funny cases </a>
 <ul>
 <li class="toc-entry toc-h3"><a href="#Mistrust-on-the-floats">Mistrust on the floats </a></li>
@@ -1897,14 +1903,14 @@ while True:       # infinite loop
 <h2 id="Functions">
 <a class="anchor" href="#Functions" aria-hidden="true"><span class="octicon octicon-link"></span></a>Functions<a class="anchor-link" href="#Functions"> </a>
 </h2>
-<pre><code>def functionName(*arguments):
+<pre><code>def functionName(arguments):
     """
     documentation on several lines
     """
     instructions (with or without return or just pass)
 </code></pre>
 <p>Document well if the function modifies the parameter passed to it</p>
-<p>You can also put an optional argument (not a mutable object!):</p>
+<p>You can also put an optional argument (not a mutable object!)</p>
 
 <pre><code>def functionName(argument1, argument2, argument3=defaultvalue3):
     instructions</code></pre>
@@ -1954,6 +1960,9 @@ while True:       # infinite loop
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Tuple-or-dictionaries-in-arguments">
+<a class="anchor" href="#Tuple-or-dictionaries-in-arguments" aria-hidden="true"><span class="octicon octicon-link"></span></a>Tuple or dictionaries in arguments<a class="anchor-link" href="#Tuple-or-dictionaries-in-arguments"> </a>
+</h3>
 <p>To not have to specify the number of elements sent to the function:</p>
 
 <pre><code>#Tuple
@@ -2075,15 +2084,61 @@ def f(**d):
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>When you call the function, you can pass the arguments in the order you want if you name them:</p>
+<h3 id="Named-arguments">
+<a class="anchor" href="#Named-arguments" aria-hidden="true"><span class="octicon octicon-link"></span></a>Named arguments<a class="anchor-link" href="#Named-arguments"> </a>
+</h3>
+<p>When you call the function, you can pass the arguments in the order you want, <strong>if you name them</strong>:</p>
 
-<pre><code>nameFunction(nonArgument2=valueArgument2, nameArgument1=valueArgument1)
-</code></pre>
-<p>The 4 forms of arguments will be summarized in this order:</p>
+<pre><code>functionName(nonArgument2=valueArgument2, nameArgument1=valueArgument1)</code></pre>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"a ="</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span><span class="s2">"b ="</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
+    
+<span class="n">f</span><span class="p">(</span><span class="n">b</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">a</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>a = 4 b = 3
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Order-of-consumption--of-arguments">
+<a class="anchor" href="#Order-of-consumption--of-arguments" aria-hidden="true"><span class="octicon octicon-link"></span></a>Order of consumption  of arguments<a class="anchor-link" href="#Order-of-consumption--of-arguments"> </a>
+</h3>
+<p>The 4 forms of arguments will be summarized, depending on how the arguments of the function have been written :</p>
 <ol>
-<li>"normal" arguments, called positional</li>
+<li>all "normal" arguments, called positional</li>
 <li>form <code>*args</code> which catches in a tuple the rest of the positional arguments</li>
-<li>named arguments, like <code>name=&lt;value&gt;</code>
+<li>named arguments <code>name=&lt;value&gt;</code>
 </li>
 <li>form <code>**dargs</code> which catches in a dictionary the remainder of the named arguments</li>
 </ol>
@@ -2098,9 +2153,8 @@ def f(**d):
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># types de paramètres</span>
-<span class="k">def</span> <span class="nf">foo</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwds</span><span class="p">):</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"a=</span><span class="si">{</span><span class="n">a</span><span class="si">}</span><span class="s2">, b=</span><span class="si">{</span><span class="n">b</span><span class="si">}</span><span class="s2">, args=</span><span class="si">{</span><span class="n">args</span><span class="si">}</span><span class="s2">, kwds=</span><span class="si">{</span><span class="n">kwds</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">foo</span><span class="p">(</span><span class="n">positionalArg1</span><span class="p">,</span> <span class="n">namedArg2</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="o">*</span><span class="n">tuplePositionalArg</span><span class="p">,</span> <span class="o">**</span><span class="n">dictNamedArg</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"positionalArg1=</span><span class="si">{</span><span class="n">positionalArg1</span><span class="si">}</span><span class="s2">, namedArg2=</span><span class="si">{</span><span class="n">namedArg2</span><span class="si">}</span><span class="s2">, *tuplePositionalArg=</span><span class="si">{</span><span class="n">tuplePositionalArg</span><span class="si">}</span><span class="s2">, **dictNamedArg=</span><span class="si">{</span><span class="n">dictNamedArg</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -2130,7 +2184,7 @@ def f(**d):
 <div class="output_area">
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>a=1, b=100, args=(), kwds={}
+<pre>positionalArg1=1, namedArg2=100, *tuplePositionalArg=(), **dictNamedArg={}
 </pre>
 </div>
 </div>
@@ -2161,7 +2215,7 @@ def f(**d):
 <div class="output_area">
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>a=1, b=2, args=(), kwds={}
+<pre>positionalArg1=1, namedArg2=2, *tuplePositionalArg=(), **dictNamedArg={}
 </pre>
 </div>
 </div>
@@ -2192,7 +2246,7 @@ def f(**d):
 <div class="output_area">
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>a=1, b=2, args=(3,), kwds={}
+<pre>positionalArg1=1, namedArg2=2, *tuplePositionalArg=(3,), **dictNamedArg={}
 </pre>
 </div>
 </div>
@@ -2210,7 +2264,7 @@ def f(**d):
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">foo</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="n">bar</span><span class="o">=</span><span class="mi">1000</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">foo</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="n">arg5</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">arg6</span><span class="o">=</span><span class="mi">6</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -2223,7 +2277,149 @@ def f(**d):
 <div class="output_area">
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>a=1, b=2, args=(3,), kwds={'bar': 1000}
+<pre>positionalArg1=1, namedArg2=2, *tuplePositionalArg=(3, 4), **dictNamedArg={'arg5': 5, 'arg6': 6}
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">bar</span><span class="p">(</span><span class="n">positionalArg1</span><span class="p">,</span> <span class="o">*</span><span class="n">tuplePositionalArg</span><span class="p">,</span> <span class="n">namedArg2</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="o">**</span><span class="n">dictNamedArg</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"positionalArg1=</span><span class="si">{</span><span class="n">positionalArg1</span><span class="si">}</span><span class="s2">, namedArg2=</span><span class="si">{</span><span class="n">namedArg2</span><span class="si">}</span><span class="s2">, *tuplePositionalArg=</span><span class="si">{</span><span class="n">tuplePositionalArg</span><span class="si">}</span><span class="s2">, **dictNamedArg=</span><span class="si">{</span><span class="n">dictNamedArg</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">bar</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>positionalArg1=1, namedArg2=100, *tuplePositionalArg=(), **dictNamedArg={}
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">bar</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>positionalArg1=1, namedArg2=100, *tuplePositionalArg=(2,), **dictNamedArg={}
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">bar</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">namedArg2</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>positionalArg1=1, namedArg2=3, *tuplePositionalArg=(2,), **dictNamedArg={}
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">bar</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="n">namedArg2</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">namedArg5</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>positionalArg1=1, namedArg2=4, *tuplePositionalArg=(2, 3), **dictNamedArg={'namedArg5': 5}
 </pre>
 </div>
 </div>
