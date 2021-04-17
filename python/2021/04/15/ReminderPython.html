@@ -99,6 +99,7 @@ window.onload = wrap_img;
   <div class="post-content e-content" itemprop="articleBody">
     <ul class="section-nav">
 <li class="toc-entry toc-h2"><a href="#Useful-information">Useful information </a></li>
+<li class="toc-entry toc-h2"><a href="#Useful-functions">Useful functions </a></li>
 <li class="toc-entry toc-h2"><a href="#Types-of-data">Types of data </a></li>
 <li class="toc-entry toc-h2"><a href="#Operators">Operators </a></li>
 <li class="toc-entry toc-h2"><a href="#Strings-(immutable)">Strings (immutable) </a></li>
@@ -137,6 +138,68 @@ window.onload = wrap_img;
 <ul>
 <li>Small immutable objects are sometimes stored as singletons (only one possible occurrence)</li>
 </ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Useful-functions">
+<a class="anchor" href="#Useful-functions" aria-hidden="true"><span class="octicon octicon-link"></span></a>Useful functions<a class="anchor-link" href="#Useful-functions"> </a>
+</h2>
+<table>
+<thead>
+<tr>
+<th>Function</th>
+<th>Description</th>
+<th>Type argument(s)</th>
+<th>Output</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>help()</td>
+<td>Help on a function</td>
+<td>Function name</td>
+<td>String</td>
+</tr>
+<tr>
+<td>type()</td>
+<td>Type of a variable</td>
+<td>All</td>
+<td>Type</td>
+</tr>
+<tr>
+<td>len()</td>
+<td>Length</td>
+<td>All</td>
+<td>Int</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>print()</td>
+<td>Print to screen</td>
+<td>All</td>
+<td>Exit screen</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>input("Question Text")</td>
+<td>Retrieves value entered by user</td>
+<td>String</td>
+<td>All</td>
+</tr>
+</tbody>
+</table>
 
 </div>
 </div>
@@ -333,6 +396,13 @@ window.onload = wrap_img;
 <td></td>
 </tr>
 <tr>
+<td><strong>abs()</strong></td>
+<td>Absolute value</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
 <td></td>
 <td></td>
 <td></td>
@@ -370,6 +440,20 @@ window.onload = wrap_img;
 <tr>
 <td>+=</td>
 <td>Simultaneous addition and affection</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
 <td></td>
 <td></td>
 <td></td>
@@ -998,6 +1082,42 @@ b = 3
 y = 9
 </pre>
 </div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span>
+<span class="n">b</span> <span class="o">=</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span>
+<span class="n">z</span> <span class="o">=</span> <span class="nb">zip</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">)</span>
+<span class="p">[</span><span class="n">i</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">z</span><span class="p">]</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>[(1, 3), (2, 4)]</pre>
+</div>
+
 </div>
 
 </div>
