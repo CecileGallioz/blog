@@ -899,6 +899,186 @@ y = 9
 </div>
 </div>
 </div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">age</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;eve&quot;</span><span class="p">:</span><span class="mi">30</span><span class="p">,</span> <span class="s2">&quot;ana&quot;</span><span class="p">:</span><span class="mi">25</span><span class="p">,</span> <span class="s2">&quot;bob&quot;</span><span class="p">:</span><span class="mi">35</span><span class="p">}</span>
+
+<span class="n">listeTupleAge</span> <span class="o">=</span> <span class="p">[(</span><span class="s2">&quot;hel&quot;</span><span class="p">,</span><span class="mi">21</span><span class="p">),</span> <span class="p">(</span><span class="s2">&quot;jon&quot;</span><span class="p">,</span><span class="mi">41</span><span class="p">)]</span>
+<span class="n">dicoAge</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">listeTupleAge</span><span class="p">)</span>
+
+<span class="n">age</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">dicoAge</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>{&#39;eve&#39;: 30, &#39;ana&#39;: 25, &#39;bob&#39;: 35, &#39;hel&#39;: 21, &#39;jon&#39;: 41}</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">age</span><span class="p">[</span><span class="s1">&#39;eve&#39;</span><span class="p">]</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>30</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">age</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span>    <span class="c1"># the result is a view</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>dict_keys([&#39;eve&#39;, &#39;ana&#39;, &#39;bob&#39;, &#39;hel&#39;, &#39;jon&#39;])</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">age</span><span class="o">.</span><span class="n">values</span><span class="p">()</span>  <span class="c1"># the result is a view</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>dict_values([30, 25, 35, 21, 41])</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">for</span> <span class="n">name</span><span class="p">,</span><span class="n">year</span> <span class="ow">in</span> <span class="n">age</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">name</span><span class="o">.</span><span class="n">capitalize</span><span class="p">()</span><span class="si">}</span><span class="s2"> is </span><span class="si">{</span><span class="n">year</span><span class="si">}</span><span class="s2"> years old&quot;</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Eve is 30 years old
+Ana is 25 years old
+Bob is 35 years old
+Hel is 21 years old
+Jon is 41 years old
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
 </div>
 
 
