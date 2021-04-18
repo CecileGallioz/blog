@@ -2724,10 +2724,13 @@ a = 1 b = 5
 </h2>
 <pre><code>iterableI = (function(x) for x in list)
 </code></pre>
-<p>Simple and compact object that allows to browse an iterable object.
-The iterable object contains the data, the iterator object contains the mechanism to traverse it.
-They can be browsed only once. We recognize an iterator because it is its own iterator : i is iter(i) =&gt; True
-They have two methods:</p>
+<p>Simple and compact object that allows to browse an iterable object.</p>
+<p>The iterable object contains the data, the iterator object contains the mechanism to traverse it.</p>
+<p>They can be browsed only once. We recognize an iterator because it is its own iterator :</p>
+
+<pre><code>i is iter(i) =&gt; True
+</code></pre>
+<p>They have two methods:</p>
 
 <pre><code>* __iter()__
 * __next()__</code></pre>
