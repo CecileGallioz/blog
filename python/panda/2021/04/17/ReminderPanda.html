@@ -1,0 +1,4648 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="twitter:card" content="summary_large_image" /><!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>My reminder on Panda (from Kaggle) | My blog on Deep Learning, fastai and Python</title>
+<meta name="generator" content="Jekyll v4.1.1" />
+<meta property="og:title" content="My reminder on Panda (from Kaggle)" />
+<meta name="author" content="Cécile Gallioz" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="A list of definitions and memory aids for data and functions" />
+<meta property="og:description" content="A list of definitions and memory aids for data and functions" />
+<link rel="canonical" href="https://cecilegallioz.github.io/blog/python/panda/2021/04/17/ReminderPanda.html" />
+<meta property="og:url" content="https://cecilegallioz.github.io/blog/python/panda/2021/04/17/ReminderPanda.html" />
+<meta property="og:site_name" content="My blog on Deep Learning, fastai and Python" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2021-04-17T00:00:00-05:00" />
+<script type="application/ld+json">
+{"url":"https://cecilegallioz.github.io/blog/python/panda/2021/04/17/ReminderPanda.html","@type":"BlogPosting","headline":"My reminder on Panda (from Kaggle)","dateModified":"2021-04-17T00:00:00-05:00","datePublished":"2021-04-17T00:00:00-05:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://cecilegallioz.github.io/blog/python/panda/2021/04/17/ReminderPanda.html"},"author":{"@type":"Person","name":"Cécile Gallioz"},"description":"A list of definitions and memory aids for data and functions","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/blog/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://cecilegallioz.github.io/blog/feed.xml" title="My blog on Deep Learning, fastai and Python" /><link rel="shortcut icon" type="image/x-icon" href="/blog/images/favicon.ico"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Primer/15.2.0/primer.css" integrity="sha512-xTz2ys4coGAOz8vuV1NcQBkgVmKhsSEtjbqyMJbBHRplFuvKIUo6xhLHpAyPt9mfR6twHJgn9OgVLuqOvjeBhg==" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
+
+<script>
+function wrap_img(fn) {
+    if (document.attachEvent ? document.readyState === "complete" : document.readyState !== "loading") {
+        var elements = document.querySelectorAll(".post img");
+        Array.prototype.forEach.call(elements, function(el, i) {
+            if (el.getAttribute("title") && (el.className != "emoji")) {
+                const caption = document.createElement('figcaption');
+                var node = document.createTextNode(el.getAttribute("title"));
+                caption.appendChild(node);
+                const wrapper = document.createElement('figure');
+                wrapper.className = 'image';
+                el.parentNode.insertBefore(wrapper, el);
+                el.parentNode.removeChild(el);
+                wrapper.appendChild(el);
+                wrapper.appendChild(caption);
+            }
+        });
+    } else { document.addEventListener('DOMContentLoaded', fn); }
+}
+window.onload = wrap_img;
+</script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function(){
+    // add link icon to anchor tags
+    var elem = document.querySelectorAll(".anchor-link")
+    elem.forEach(e => (e.innerHTML = '<i class="fas fa-link fa-xs"></i>'));
+    });
+</script>
+</head>
+<body><header class="site-header">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/blog/">My blog on Deep Learning, fastai and Python</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/blog/about/">About Me</a><a class="page-link" href="/blog/search/">Search</a><a class="page-link" href="/blog/categories/">Tags</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">My reminder on Panda (from Kaggle)</h1><p class="page-description">A list of definitions and memory aids for data and functions</p><p class="post-meta post-meta-title"><time class="dt-published" datetime="2021-04-17T00:00:00-05:00" itemprop="datePublished">
+        Apr 17, 2021
+      </time>• 
+          <span itemprop="author" itemscope itemtype="http://schema.org/Person">
+            <span class="p-author h-card" itemprop="name">Cécile Gallioz</span></span>
+       • <span class="read-time" title="Estimated read time">
+    
+    
+      24 min read
+    
+</span></p>
+
+    
+      <p class="category-tags"><i class="fas fa-tags category-tags-icon"></i></i> 
+      
+        <a class="category-tags-link" href="/blog/categories/#Python">Python</a>
+        &nbsp;
+      
+        <a class="category-tags-link" href="/blog/categories/#Panda">Panda</a>
+        
+      
+      </p>
+    
+
+    
+      </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <ul class="section-nav">
+<li class="toc-entry toc-h2"><a href="#DataFrame">DataFrame </a></li>
+<li class="toc-entry toc-h2"><a href="#Series">Series </a></li>
+<li class="toc-entry toc-h2"><a href="#Reading">Reading </a></li>
+<li class="toc-entry toc-h2"><a href="#Index-with-iloc-(numerical-position)">Index with iloc (numerical position) </a></li>
+<li class="toc-entry toc-h2"><a href="#Index-with-loc-(label_based-position)">Index with loc (label_based position) </a></li>
+<li class="toc-entry toc-h2"><a href="#Summary-functions">Summary functions </a></li>
+<li class="toc-entry toc-h2"><a href="#Maps">Maps </a></li>
+<li class="toc-entry toc-h2"><a href="#GroupBy">GroupBy </a></li>
+</ul><!--
+#################################################
+### THIS FILE WAS AUTOGENERATED! DO NOT EDIT! ###
+#################################################
+# file to edit: _notebooks/2021-04-17-ReminderPanda.ipynb
+-->
+
+<div class="container" id="notebook-container">
+        
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="n">pd</span><span class="o">.</span><span class="n">set_option</span><span class="p">(</span><span class="s2">"display.max_rows"</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="DataFrame">
+<a class="anchor" href="#DataFrame" aria-hidden="true"><span class="octicon octicon-link"></span></a>DataFrame<a class="anchor-link" href="#DataFrame"> </a>
+</h2>
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s2">"Apples"</span><span class="p">:</span> <span class="p">[</span><span class="mi">35</span><span class="p">,</span> <span class="mi">41</span><span class="p">],</span> 
+              <span class="s2">"Bananas"</span><span class="p">:</span> <span class="p">[</span><span class="mi">21</span><span class="p">,</span> <span class="mi">34</span><span class="p">]},</span>
+             <span class="n">index</span><span class="o">=</span><span class="p">[</span><span class="s2">"2017 Sales"</span><span class="p">,</span> <span class="s2">"2018 Sales"</span><span class="p">])</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Apples</th>
+      <th>Bananas</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>2017 Sales</th>
+      <td>35</td>
+      <td>21</td>
+    </tr>
+    <tr>
+      <th>2018 Sales</th>
+      <td>41</td>
+      <td>34</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">animals</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">'Cows'</span><span class="p">:</span> <span class="p">[</span><span class="mi">12</span><span class="p">,</span> <span class="mi">20</span><span class="p">],</span> 
+                        <span class="s1">'Goats'</span><span class="p">:</span> <span class="p">[</span><span class="mi">22</span><span class="p">,</span> <span class="mi">19</span><span class="p">]},</span> 
+                       <span class="n">index</span><span class="o">=</span><span class="p">[</span><span class="s1">'Year 1'</span><span class="p">,</span> <span class="s1">'Year 2'</span><span class="p">])</span>
+
+<span class="c1">#animals.to_csv("../output/cows_and_goats.csv")</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Series">
+<a class="anchor" href="#Series" aria-hidden="true"><span class="octicon octicon-link"></span></a>Series<a class="anchor-link" href="#Series"> </a>
+</h2>
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">([</span><span class="s2">"4 cups"</span><span class="p">,</span> <span class="s2">"1 cup"</span><span class="p">,</span> <span class="s2">"2 large"</span><span class="p">,</span> <span class="s2">"1 can"</span><span class="p">],</span>
+          <span class="n">index</span><span class="o">=</span><span class="p">[</span><span class="s2">"Flour"</span><span class="p">,</span> <span class="s2">"Milk"</span><span class="p">,</span> <span class="s2">"Eggs"</span><span class="p">,</span> <span class="s2">"Spam"</span><span class="p">],</span>
+          <span class="n">name</span><span class="o">=</span><span class="s2">"Dinner"</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>Flour     4 cups
+Milk       1 cup
+Eggs     2 large
+Spam       1 can
+Name: Dinner, dtype: object</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Reading">
+<a class="anchor" href="#Reading" aria-hidden="true"><span class="octicon octicon-link"></span></a>Reading<a class="anchor-link" href="#Reading"> </a>
+</h2>
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">wines</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">"./src/winemag-data-130k-v2.csv"</span><span class="p">,</span> <span class="n">index_col</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">wines</span><span class="o">.</span><span class="n">shape</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>(129971, 13)</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">wines</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>country</th>
+      <th>description</th>
+      <th>designation</th>
+      <th>points</th>
+      <th>price</th>
+      <th>province</th>
+      <th>region_1</th>
+      <th>region_2</th>
+      <th>taster_name</th>
+      <th>taster_twitter_handle</th>
+      <th>title</th>
+      <th>variety</th>
+      <th>winery</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Italy</td>
+      <td>Aromas include tropical fruit, broom, brimston...</td>
+      <td>Vulkà Bianco</td>
+      <td>87</td>
+      <td>NaN</td>
+      <td>Sicily &amp; Sardinia</td>
+      <td>Etna</td>
+      <td>NaN</td>
+      <td>Kerin O’Keefe</td>
+      <td>@kerinokeefe</td>
+      <td>Nicosia 2013 Vulkà Bianco  (Etna)</td>
+      <td>White Blend</td>
+      <td>Nicosia</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Portugal</td>
+      <td>This is ripe and fruity, a wine that is smooth...</td>
+      <td>Avidagos</td>
+      <td>87</td>
+      <td>15.0</td>
+      <td>Douro</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>Roger Voss</td>
+      <td>@vossroger</td>
+      <td>Quinta dos Avidagos 2011 Avidagos Red (Douro)</td>
+      <td>Portuguese Red</td>
+      <td>Quinta dos Avidagos</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>US</td>
+      <td>Tart and snappy, the flavors of lime flesh and...</td>
+      <td>NaN</td>
+      <td>87</td>
+      <td>14.0</td>
+      <td>Oregon</td>
+      <td>Willamette Valley</td>
+      <td>Willamette Valley</td>
+      <td>Paul Gregutt</td>
+      <td>@paulgwine</td>
+      <td>Rainstorm 2013 Pinot Gris (Willamette Valley)</td>
+      <td>Pinot Gris</td>
+      <td>Rainstorm</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>US</td>
+      <td>Pineapple rind, lemon pith and orange blossom ...</td>
+      <td>Reserve Late Harvest</td>
+      <td>87</td>
+      <td>13.0</td>
+      <td>Michigan</td>
+      <td>Lake Michigan Shore</td>
+      <td>NaN</td>
+      <td>Alexander Peartree</td>
+      <td>NaN</td>
+      <td>St. Julian 2013 Reserve Late Harvest Riesling ...</td>
+      <td>Riesling</td>
+      <td>St. Julian</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>US</td>
+      <td>Much like the regular bottling from 2012, this...</td>
+      <td>Vintner's Reserve Wild Child Block</td>
+      <td>87</td>
+      <td>65.0</td>
+      <td>Oregon</td>
+      <td>Willamette Valley</td>
+      <td>Willamette Valley</td>
+      <td>Paul Gregutt</td>
+      <td>@paulgwine</td>
+      <td>Sweet Cheeks 2012 Vintner's Reserve Wild Child...</td>
+      <td>Pinot Noir</td>
+      <td>Sweet Cheeks</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Index-with-iloc-(numerical-position)">
+<a class="anchor" href="#Index-with-iloc-(numerical-position)" aria-hidden="true"><span class="octicon octicon-link"></span></a>Index with iloc (numerical position)<a class="anchor-link" href="#Index-with-iloc-(numerical-position)"> </a>
+</h2>
+<p>data.iloc[row, column]</p>
+<p>: minds everithing</p>
+<p>iloc uses the Python stdlib indexing scheme, where the first element of the range is included and the last one excluded. 
+So 0:10 will select entries 0,...,9.</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">wines</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>country                                                              Italy
+description              Aromas include tropical fruit, broom, brimston...
+designation                                                   Vulkà Bianco
+points                                                                  87
+price                                                                  NaN
+                                               ...                        
+taster_name                                                  Kerin O’Keefe
+taster_twitter_handle                                         @kerinokeefe
+title                                    Nicosia 2013 Vulkà Bianco  (Etna)
+variety                                                        White Blend
+winery                                                             Nicosia
+Name: 0, Length: 13, dtype: object</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">wines</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">]</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>0            Italy
+1         Portugal
+2               US
+3               US
+4               US
+            ...   
+129966     Germany
+129967          US
+129968      France
+129969      France
+129970      France
+Name: country, Length: 129971, dtype: object</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">wines</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:</span><span class="mi">3</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>0       Italy
+1    Portugal
+2          US
+Name: country, dtype: object</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">wines</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="mi">3</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>1    Portugal
+2          US
+Name: country, dtype: object</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">wines</span><span class="o">.</span><span class="n">iloc</span><span class="p">[[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="mi">0</span><span class="p">]</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>0       Italy
+1    Portugal
+2          US
+Name: country, dtype: object</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">wines</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="o">-</span><span class="mi">5</span><span class="p">:]</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>country</th>
+      <th>description</th>
+      <th>designation</th>
+      <th>points</th>
+      <th>price</th>
+      <th>province</th>
+      <th>region_1</th>
+      <th>region_2</th>
+      <th>taster_name</th>
+      <th>taster_twitter_handle</th>
+      <th>title</th>
+      <th>variety</th>
+      <th>winery</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>129966</th>
+      <td>Germany</td>
+      <td>Notes of honeysuckle and cantaloupe sweeten th...</td>
+      <td>Brauneberger Juffer-Sonnenuhr Spätlese</td>
+      <td>90</td>
+      <td>28.0</td>
+      <td>Mosel</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>Anna Lee C. Iijima</td>
+      <td>NaN</td>
+      <td>Dr. H. Thanisch (Erben Müller-Burggraef) 2013 ...</td>
+      <td>Riesling</td>
+      <td>Dr. H. Thanisch (Erben Müller-Burggraef)</td>
+    </tr>
+    <tr>
+      <th>129967</th>
+      <td>US</td>
+      <td>Citation is given as much as a decade of bottl...</td>
+      <td>NaN</td>
+      <td>90</td>
+      <td>75.0</td>
+      <td>Oregon</td>
+      <td>Oregon</td>
+      <td>Oregon Other</td>
+      <td>Paul Gregutt</td>
+      <td>@paulgwine</td>
+      <td>Citation 2004 Pinot Noir (Oregon)</td>
+      <td>Pinot Noir</td>
+      <td>Citation</td>
+    </tr>
+    <tr>
+      <th>129968</th>
+      <td>France</td>
+      <td>Well-drained gravel soil gives this wine its c...</td>
+      <td>Kritt</td>
+      <td>90</td>
+      <td>30.0</td>
+      <td>Alsace</td>
+      <td>Alsace</td>
+      <td>NaN</td>
+      <td>Roger Voss</td>
+      <td>@vossroger</td>
+      <td>Domaine Gresser 2013 Kritt Gewurztraminer (Als...</td>
+      <td>Gewürztraminer</td>
+      <td>Domaine Gresser</td>
+    </tr>
+    <tr>
+      <th>129969</th>
+      <td>France</td>
+      <td>A dry style of Pinot Gris, this is crisp with ...</td>
+      <td>NaN</td>
+      <td>90</td>
+      <td>32.0</td>
+      <td>Alsace</td>
+      <td>Alsace</td>
+      <td>NaN</td>
+      <td>Roger Voss</td>
+      <td>@vossroger</td>
+      <td>Domaine Marcel Deiss 2012 Pinot Gris (Alsace)</td>
+      <td>Pinot Gris</td>
+      <td>Domaine Marcel Deiss</td>
+    </tr>
+    <tr>
+      <th>129970</th>
+      <td>France</td>
+      <td>Big, rich and off-dry, this is powered by inte...</td>
+      <td>Lieu-dit Harth Cuvée Caroline</td>
+      <td>90</td>
+      <td>21.0</td>
+      <td>Alsace</td>
+      <td>Alsace</td>
+      <td>NaN</td>
+      <td>Roger Voss</td>
+      <td>@vossroger</td>
+      <td>Domaine Schoffit 2012 Lieu-dit Harth Cuvée Car...</td>
+      <td>Gewürztraminer</td>
+      <td>Domaine Schoffit</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Index-with-loc-(label_based-position)">
+<a class="anchor" href="#Index-with-loc-(label_based-position)" aria-hidden="true"><span class="octicon octicon-link"></span></a>Index with loc (label_based position)<a class="anchor-link" href="#Index-with-loc-(label_based-position)"> </a>
+</h2>
+<p>data.loc[row, column]</p>
+<p>loc indexes inclusively. So 0:10 will select entries 0,...,10.</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">wines</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="s2">"points"</span><span class="p">]</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>0         87
+1         87
+2         87
+3         87
+4         87
+          ..
+129966    90
+129967    90
+129968    90
+129969    90
+129970    90
+Name: points, Length: 129971, dtype: int64</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">wines</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">9</span><span class="p">,[</span><span class="s2">"country"</span><span class="p">,</span> <span class="s2">"variety"</span><span class="p">]]</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>country</th>
+      <th>variety</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Italy</td>
+      <td>White Blend</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Portugal</td>
+      <td>Portuguese Red</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>US</td>
+      <td>Pinot Gris</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>US</td>
+      <td>Riesling</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>US</td>
+      <td>Pinot Noir</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>Spain</td>
+      <td>Tempranillo-Merlot</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>Italy</td>
+      <td>Frappato</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>France</td>
+      <td>Gewürztraminer</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>Germany</td>
+      <td>Gewürztraminer</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>France</td>
+      <td>Pinot Gris</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">wines</span><span class="o">.</span><span class="n">loc</span><span class="p">[(</span><span class="n">wines</span><span class="o">.</span><span class="n">country</span> <span class="o">==</span> <span class="s1">'Italy'</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">wines</span><span class="o">.</span><span class="n">points</span> <span class="o">&gt;=</span> <span class="mi">90</span><span class="p">)]</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>country</th>
+      <th>description</th>
+      <th>designation</th>
+      <th>points</th>
+      <th>price</th>
+      <th>province</th>
+      <th>region_1</th>
+      <th>region_2</th>
+      <th>taster_name</th>
+      <th>taster_twitter_handle</th>
+      <th>title</th>
+      <th>variety</th>
+      <th>winery</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>120</th>
+      <td>Italy</td>
+      <td>Slightly backward, particularly given the vint...</td>
+      <td>Bricco Rocche Prapó</td>
+      <td>92</td>
+      <td>70.0</td>
+      <td>Piedmont</td>
+      <td>Barolo</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>Ceretto 2003 Bricco Rocche Prapó  (Barolo)</td>
+      <td>Nebbiolo</td>
+      <td>Ceretto</td>
+    </tr>
+    <tr>
+      <th>130</th>
+      <td>Italy</td>
+      <td>At the first it was quite muted and subdued, b...</td>
+      <td>Bricco Rocche Brunate</td>
+      <td>91</td>
+      <td>70.0</td>
+      <td>Piedmont</td>
+      <td>Barolo</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>Ceretto 2003 Bricco Rocche Brunate  (Barolo)</td>
+      <td>Nebbiolo</td>
+      <td>Ceretto</td>
+    </tr>
+    <tr>
+      <th>133</th>
+      <td>Italy</td>
+      <td>Einaudi's wines have been improving lately, an...</td>
+      <td>NaN</td>
+      <td>91</td>
+      <td>68.0</td>
+      <td>Piedmont</td>
+      <td>Barolo</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>Poderi Luigi Einaudi 2003  Barolo</td>
+      <td>Nebbiolo</td>
+      <td>Poderi Luigi Einaudi</td>
+    </tr>
+    <tr>
+      <th>135</th>
+      <td>Italy</td>
+      <td>The color is just beginning to show signs of b...</td>
+      <td>Sorano</td>
+      <td>91</td>
+      <td>60.0</td>
+      <td>Piedmont</td>
+      <td>Barolo</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>Giacomo Ascheri 2001 Sorano  (Barolo)</td>
+      <td>Nebbiolo</td>
+      <td>Giacomo Ascheri</td>
+    </tr>
+    <tr>
+      <th>140</th>
+      <td>Italy</td>
+      <td>A big, fat, luscious wine with plenty of toast...</td>
+      <td>Costa Bruna</td>
+      <td>90</td>
+      <td>26.0</td>
+      <td>Piedmont</td>
+      <td>Barbera d'Alba</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>Poderi Colla 2005 Costa Bruna  (Barbera d'Alba)</td>
+      <td>Barbera</td>
+      <td>Poderi Colla</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>129929</th>
+      <td>Italy</td>
+      <td>This luminous sparkler has a sweet, fruit-forw...</td>
+      <td>NaN</td>
+      <td>91</td>
+      <td>38.0</td>
+      <td>Veneto</td>
+      <td>Prosecco Superiore di Cartizze</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>Col Vetoraz Spumanti NV  Prosecco Superiore di...</td>
+      <td>Prosecco</td>
+      <td>Col Vetoraz Spumanti</td>
+    </tr>
+    <tr>
+      <th>129943</th>
+      <td>Italy</td>
+      <td>A blend of Nero d'Avola and Syrah, this convey...</td>
+      <td>Adènzia</td>
+      <td>90</td>
+      <td>29.0</td>
+      <td>Sicily &amp; Sardinia</td>
+      <td>Sicilia</td>
+      <td>NaN</td>
+      <td>Kerin O’Keefe</td>
+      <td>@kerinokeefe</td>
+      <td>Baglio del Cristo di Campobello 2012 Adènzia R...</td>
+      <td>Red Blend</td>
+      <td>Baglio del Cristo di Campobello</td>
+    </tr>
+    <tr>
+      <th>129947</th>
+      <td>Italy</td>
+      <td>A blend of 65% Cabernet Sauvignon, 30% Merlot ...</td>
+      <td>Symposio</td>
+      <td>90</td>
+      <td>20.0</td>
+      <td>Sicily &amp; Sardinia</td>
+      <td>Terre Siciliane</td>
+      <td>NaN</td>
+      <td>Kerin O’Keefe</td>
+      <td>@kerinokeefe</td>
+      <td>Feudo Principi di Butera 2012 Symposio Red (Te...</td>
+      <td>Red Blend</td>
+      <td>Feudo Principi di Butera</td>
+    </tr>
+    <tr>
+      <th>129961</th>
+      <td>Italy</td>
+      <td>Intense aromas of wild cherry, baking spice, t...</td>
+      <td>NaN</td>
+      <td>90</td>
+      <td>30.0</td>
+      <td>Sicily &amp; Sardinia</td>
+      <td>Sicilia</td>
+      <td>NaN</td>
+      <td>Kerin O’Keefe</td>
+      <td>@kerinokeefe</td>
+      <td>COS 2013 Frappato (Sicilia)</td>
+      <td>Frappato</td>
+      <td>COS</td>
+    </tr>
+    <tr>
+      <th>129962</th>
+      <td>Italy</td>
+      <td>Blackberry, cassis, grilled herb and toasted a...</td>
+      <td>Sàgana Tenuta San Giacomo</td>
+      <td>90</td>
+      <td>40.0</td>
+      <td>Sicily &amp; Sardinia</td>
+      <td>Sicilia</td>
+      <td>NaN</td>
+      <td>Kerin O’Keefe</td>
+      <td>@kerinokeefe</td>
+      <td>Cusumano 2012 Sàgana Tenuta San Giacomo Nero d...</td>
+      <td>Nero d'Avola</td>
+      <td>Cusumano</td>
+    </tr>
+  </tbody>
+</table>
+<p>6648 rows × 13 columns</p>
+</div>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">wines</span><span class="o">.</span><span class="n">loc</span><span class="p">[(</span><span class="n">wines</span><span class="o">.</span><span class="n">country</span> <span class="o">==</span> <span class="s1">'Italy'</span><span class="p">)</span> <span class="o">|</span> <span class="p">(</span><span class="n">wines</span><span class="o">.</span><span class="n">points</span> <span class="o">&gt;=</span> <span class="mi">90</span><span class="p">)]</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>country</th>
+      <th>description</th>
+      <th>designation</th>
+      <th>points</th>
+      <th>price</th>
+      <th>province</th>
+      <th>region_1</th>
+      <th>region_2</th>
+      <th>taster_name</th>
+      <th>taster_twitter_handle</th>
+      <th>title</th>
+      <th>variety</th>
+      <th>winery</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Italy</td>
+      <td>Aromas include tropical fruit, broom, brimston...</td>
+      <td>Vulkà Bianco</td>
+      <td>87</td>
+      <td>NaN</td>
+      <td>Sicily &amp; Sardinia</td>
+      <td>Etna</td>
+      <td>NaN</td>
+      <td>Kerin O’Keefe</td>
+      <td>@kerinokeefe</td>
+      <td>Nicosia 2013 Vulkà Bianco  (Etna)</td>
+      <td>White Blend</td>
+      <td>Nicosia</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>Italy</td>
+      <td>Here's a bright, informal red that opens with ...</td>
+      <td>Belsito</td>
+      <td>87</td>
+      <td>16.0</td>
+      <td>Sicily &amp; Sardinia</td>
+      <td>Vittoria</td>
+      <td>NaN</td>
+      <td>Kerin O’Keefe</td>
+      <td>@kerinokeefe</td>
+      <td>Terre di Giurfo 2013 Belsito Frappato (Vittoria)</td>
+      <td>Frappato</td>
+      <td>Terre di Giurfo</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>Italy</td>
+      <td>This is dominated by oak and oak-driven aromas...</td>
+      <td>Rosso</td>
+      <td>87</td>
+      <td>NaN</td>
+      <td>Sicily &amp; Sardinia</td>
+      <td>Etna</td>
+      <td>NaN</td>
+      <td>Kerin O’Keefe</td>
+      <td>@kerinokeefe</td>
+      <td>Masseria Setteporte 2012 Rosso  (Etna)</td>
+      <td>Nerello Mascalese</td>
+      <td>Masseria Setteporte</td>
+    </tr>
+    <tr>
+      <th>22</th>
+      <td>Italy</td>
+      <td>Delicate aromas recall white flower and citrus...</td>
+      <td>Ficiligno</td>
+      <td>87</td>
+      <td>19.0</td>
+      <td>Sicily &amp; Sardinia</td>
+      <td>Sicilia</td>
+      <td>NaN</td>
+      <td>Kerin O’Keefe</td>
+      <td>@kerinokeefe</td>
+      <td>Baglio di Pianetto 2007 Ficiligno White (Sicilia)</td>
+      <td>White Blend</td>
+      <td>Baglio di Pianetto</td>
+    </tr>
+    <tr>
+      <th>24</th>
+      <td>Italy</td>
+      <td>Aromas of prune, blackcurrant, toast and oak c...</td>
+      <td>Aynat</td>
+      <td>87</td>
+      <td>35.0</td>
+      <td>Sicily &amp; Sardinia</td>
+      <td>Sicilia</td>
+      <td>NaN</td>
+      <td>Kerin O’Keefe</td>
+      <td>@kerinokeefe</td>
+      <td>Canicattì 2009 Aynat Nero d'Avola (Sicilia)</td>
+      <td>Nero d'Avola</td>
+      <td>Canicattì</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>129966</th>
+      <td>Germany</td>
+      <td>Notes of honeysuckle and cantaloupe sweeten th...</td>
+      <td>Brauneberger Juffer-Sonnenuhr Spätlese</td>
+      <td>90</td>
+      <td>28.0</td>
+      <td>Mosel</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>Anna Lee C. Iijima</td>
+      <td>NaN</td>
+      <td>Dr. H. Thanisch (Erben Müller-Burggraef) 2013 ...</td>
+      <td>Riesling</td>
+      <td>Dr. H. Thanisch (Erben Müller-Burggraef)</td>
+    </tr>
+    <tr>
+      <th>129967</th>
+      <td>US</td>
+      <td>Citation is given as much as a decade of bottl...</td>
+      <td>NaN</td>
+      <td>90</td>
+      <td>75.0</td>
+      <td>Oregon</td>
+      <td>Oregon</td>
+      <td>Oregon Other</td>
+      <td>Paul Gregutt</td>
+      <td>@paulgwine</td>
+      <td>Citation 2004 Pinot Noir (Oregon)</td>
+      <td>Pinot Noir</td>
+      <td>Citation</td>
+    </tr>
+    <tr>
+      <th>129968</th>
+      <td>France</td>
+      <td>Well-drained gravel soil gives this wine its c...</td>
+      <td>Kritt</td>
+      <td>90</td>
+      <td>30.0</td>
+      <td>Alsace</td>
+      <td>Alsace</td>
+      <td>NaN</td>
+      <td>Roger Voss</td>
+      <td>@vossroger</td>
+      <td>Domaine Gresser 2013 Kritt Gewurztraminer (Als...</td>
+      <td>Gewürztraminer</td>
+      <td>Domaine Gresser</td>
+    </tr>
+    <tr>
+      <th>129969</th>
+      <td>France</td>
+      <td>A dry style of Pinot Gris, this is crisp with ...</td>
+      <td>NaN</td>
+      <td>90</td>
+      <td>32.0</td>
+      <td>Alsace</td>
+      <td>Alsace</td>
+      <td>NaN</td>
+      <td>Roger Voss</td>
+      <td>@vossroger</td>
+      <td>Domaine Marcel Deiss 2012 Pinot Gris (Alsace)</td>
+      <td>Pinot Gris</td>
+      <td>Domaine Marcel Deiss</td>
+    </tr>
+    <tr>
+      <th>129970</th>
+      <td>France</td>
+      <td>Big, rich and off-dry, this is powered by inte...</td>
+      <td>Lieu-dit Harth Cuvée Caroline</td>
+      <td>90</td>
+      <td>21.0</td>
+      <td>Alsace</td>
+      <td>Alsace</td>
+      <td>NaN</td>
+      <td>Roger Voss</td>
+      <td>@vossroger</td>
+      <td>Domaine Schoffit 2012 Lieu-dit Harth Cuvée Car...</td>
+      <td>Gewürztraminer</td>
+      <td>Domaine Schoffit</td>
+    </tr>
+  </tbody>
+</table>
+<p>61937 rows × 13 columns</p>
+</div>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">wines</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">wines</span><span class="o">.</span><span class="n">country</span><span class="o">.</span><span class="n">isin</span><span class="p">([</span><span class="s1">'Italy'</span><span class="p">,</span> <span class="s1">'France'</span><span class="p">])]</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>country</th>
+      <th>description</th>
+      <th>designation</th>
+      <th>points</th>
+      <th>price</th>
+      <th>province</th>
+      <th>region_1</th>
+      <th>region_2</th>
+      <th>taster_name</th>
+      <th>taster_twitter_handle</th>
+      <th>title</th>
+      <th>variety</th>
+      <th>winery</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Italy</td>
+      <td>Aromas include tropical fruit, broom, brimston...</td>
+      <td>Vulkà Bianco</td>
+      <td>87</td>
+      <td>NaN</td>
+      <td>Sicily &amp; Sardinia</td>
+      <td>Etna</td>
+      <td>NaN</td>
+      <td>Kerin O’Keefe</td>
+      <td>@kerinokeefe</td>
+      <td>Nicosia 2013 Vulkà Bianco  (Etna)</td>
+      <td>White Blend</td>
+      <td>Nicosia</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>Italy</td>
+      <td>Here's a bright, informal red that opens with ...</td>
+      <td>Belsito</td>
+      <td>87</td>
+      <td>16.0</td>
+      <td>Sicily &amp; Sardinia</td>
+      <td>Vittoria</td>
+      <td>NaN</td>
+      <td>Kerin O’Keefe</td>
+      <td>@kerinokeefe</td>
+      <td>Terre di Giurfo 2013 Belsito Frappato (Vittoria)</td>
+      <td>Frappato</td>
+      <td>Terre di Giurfo</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>France</td>
+      <td>This dry and restrained wine offers spice in p...</td>
+      <td>NaN</td>
+      <td>87</td>
+      <td>24.0</td>
+      <td>Alsace</td>
+      <td>Alsace</td>
+      <td>NaN</td>
+      <td>Roger Voss</td>
+      <td>@vossroger</td>
+      <td>Trimbach 2012 Gewurztraminer (Alsace)</td>
+      <td>Gewürztraminer</td>
+      <td>Trimbach</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>France</td>
+      <td>This has great depth of flavor with its fresh ...</td>
+      <td>Les Natures</td>
+      <td>87</td>
+      <td>27.0</td>
+      <td>Alsace</td>
+      <td>Alsace</td>
+      <td>NaN</td>
+      <td>Roger Voss</td>
+      <td>@vossroger</td>
+      <td>Jean-Baptiste Adam 2012 Les Natures Pinot Gris...</td>
+      <td>Pinot Gris</td>
+      <td>Jean-Baptiste Adam</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>France</td>
+      <td>This is a dry wine, very spicy, with a tight, ...</td>
+      <td>NaN</td>
+      <td>87</td>
+      <td>30.0</td>
+      <td>Alsace</td>
+      <td>Alsace</td>
+      <td>NaN</td>
+      <td>Roger Voss</td>
+      <td>@vossroger</td>
+      <td>Leon Beyer 2012 Gewurztraminer (Alsace)</td>
+      <td>Gewürztraminer</td>
+      <td>Leon Beyer</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>129964</th>
+      <td>France</td>
+      <td>Initially quite muted, this wine slowly develo...</td>
+      <td>Domaine Saint-Rémy Herrenweg</td>
+      <td>90</td>
+      <td>NaN</td>
+      <td>Alsace</td>
+      <td>Alsace</td>
+      <td>NaN</td>
+      <td>Roger Voss</td>
+      <td>@vossroger</td>
+      <td>Domaine Ehrhart 2013 Domaine Saint-Rémy Herren...</td>
+      <td>Gewürztraminer</td>
+      <td>Domaine Ehrhart</td>
+    </tr>
+    <tr>
+      <th>129965</th>
+      <td>France</td>
+      <td>While it's rich, this beautiful dry wine also ...</td>
+      <td>Seppi Landmann Vallée Noble</td>
+      <td>90</td>
+      <td>28.0</td>
+      <td>Alsace</td>
+      <td>Alsace</td>
+      <td>NaN</td>
+      <td>Roger Voss</td>
+      <td>@vossroger</td>
+      <td>Domaine Rieflé-Landmann 2013 Seppi Landmann Va...</td>
+      <td>Pinot Gris</td>
+      <td>Domaine Rieflé-Landmann</td>
+    </tr>
+    <tr>
+      <th>129968</th>
+      <td>France</td>
+      <td>Well-drained gravel soil gives this wine its c...</td>
+      <td>Kritt</td>
+      <td>90</td>
+      <td>30.0</td>
+      <td>Alsace</td>
+      <td>Alsace</td>
+      <td>NaN</td>
+      <td>Roger Voss</td>
+      <td>@vossroger</td>
+      <td>Domaine Gresser 2013 Kritt Gewurztraminer (Als...</td>
+      <td>Gewürztraminer</td>
+      <td>Domaine Gresser</td>
+    </tr>
+    <tr>
+      <th>129969</th>
+      <td>France</td>
+      <td>A dry style of Pinot Gris, this is crisp with ...</td>
+      <td>NaN</td>
+      <td>90</td>
+      <td>32.0</td>
+      <td>Alsace</td>
+      <td>Alsace</td>
+      <td>NaN</td>
+      <td>Roger Voss</td>
+      <td>@vossroger</td>
+      <td>Domaine Marcel Deiss 2012 Pinot Gris (Alsace)</td>
+      <td>Pinot Gris</td>
+      <td>Domaine Marcel Deiss</td>
+    </tr>
+    <tr>
+      <th>129970</th>
+      <td>France</td>
+      <td>Big, rich and off-dry, this is powered by inte...</td>
+      <td>Lieu-dit Harth Cuvée Caroline</td>
+      <td>90</td>
+      <td>21.0</td>
+      <td>Alsace</td>
+      <td>Alsace</td>
+      <td>NaN</td>
+      <td>Roger Voss</td>
+      <td>@vossroger</td>
+      <td>Domaine Schoffit 2012 Lieu-dit Harth Cuvée Car...</td>
+      <td>Gewürztraminer</td>
+      <td>Domaine Schoffit</td>
+    </tr>
+  </tbody>
+</table>
+<p>41633 rows × 13 columns</p>
+</div>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">wines</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">wines</span><span class="o">.</span><span class="n">price</span><span class="o">.</span><span class="n">notnull</span><span class="p">()]</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>country</th>
+      <th>description</th>
+      <th>designation</th>
+      <th>points</th>
+      <th>price</th>
+      <th>province</th>
+      <th>region_1</th>
+      <th>region_2</th>
+      <th>taster_name</th>
+      <th>taster_twitter_handle</th>
+      <th>title</th>
+      <th>variety</th>
+      <th>winery</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>1</th>
+      <td>Portugal</td>
+      <td>This is ripe and fruity, a wine that is smooth...</td>
+      <td>Avidagos</td>
+      <td>87</td>
+      <td>15.0</td>
+      <td>Douro</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>Roger Voss</td>
+      <td>@vossroger</td>
+      <td>Quinta dos Avidagos 2011 Avidagos Red (Douro)</td>
+      <td>Portuguese Red</td>
+      <td>Quinta dos Avidagos</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>US</td>
+      <td>Tart and snappy, the flavors of lime flesh and...</td>
+      <td>NaN</td>
+      <td>87</td>
+      <td>14.0</td>
+      <td>Oregon</td>
+      <td>Willamette Valley</td>
+      <td>Willamette Valley</td>
+      <td>Paul Gregutt</td>
+      <td>@paulgwine</td>
+      <td>Rainstorm 2013 Pinot Gris (Willamette Valley)</td>
+      <td>Pinot Gris</td>
+      <td>Rainstorm</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>US</td>
+      <td>Pineapple rind, lemon pith and orange blossom ...</td>
+      <td>Reserve Late Harvest</td>
+      <td>87</td>
+      <td>13.0</td>
+      <td>Michigan</td>
+      <td>Lake Michigan Shore</td>
+      <td>NaN</td>
+      <td>Alexander Peartree</td>
+      <td>NaN</td>
+      <td>St. Julian 2013 Reserve Late Harvest Riesling ...</td>
+      <td>Riesling</td>
+      <td>St. Julian</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>US</td>
+      <td>Much like the regular bottling from 2012, this...</td>
+      <td>Vintner's Reserve Wild Child Block</td>
+      <td>87</td>
+      <td>65.0</td>
+      <td>Oregon</td>
+      <td>Willamette Valley</td>
+      <td>Willamette Valley</td>
+      <td>Paul Gregutt</td>
+      <td>@paulgwine</td>
+      <td>Sweet Cheeks 2012 Vintner's Reserve Wild Child...</td>
+      <td>Pinot Noir</td>
+      <td>Sweet Cheeks</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>Spain</td>
+      <td>Blackberry and raspberry aromas show a typical...</td>
+      <td>Ars In Vitro</td>
+      <td>87</td>
+      <td>15.0</td>
+      <td>Northern Spain</td>
+      <td>Navarra</td>
+      <td>NaN</td>
+      <td>Michael Schachner</td>
+      <td>@wineschach</td>
+      <td>Tandem 2011 Ars In Vitro Tempranillo-Merlot (N...</td>
+      <td>Tempranillo-Merlot</td>
+      <td>Tandem</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>129966</th>
+      <td>Germany</td>
+      <td>Notes of honeysuckle and cantaloupe sweeten th...</td>
+      <td>Brauneberger Juffer-Sonnenuhr Spätlese</td>
+      <td>90</td>
+      <td>28.0</td>
+      <td>Mosel</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>Anna Lee C. Iijima</td>
+      <td>NaN</td>
+      <td>Dr. H. Thanisch (Erben Müller-Burggraef) 2013 ...</td>
+      <td>Riesling</td>
+      <td>Dr. H. Thanisch (Erben Müller-Burggraef)</td>
+    </tr>
+    <tr>
+      <th>129967</th>
+      <td>US</td>
+      <td>Citation is given as much as a decade of bottl...</td>
+      <td>NaN</td>
+      <td>90</td>
+      <td>75.0</td>
+      <td>Oregon</td>
+      <td>Oregon</td>
+      <td>Oregon Other</td>
+      <td>Paul Gregutt</td>
+      <td>@paulgwine</td>
+      <td>Citation 2004 Pinot Noir (Oregon)</td>
+      <td>Pinot Noir</td>
+      <td>Citation</td>
+    </tr>
+    <tr>
+      <th>129968</th>
+      <td>France</td>
+      <td>Well-drained gravel soil gives this wine its c...</td>
+      <td>Kritt</td>
+      <td>90</td>
+      <td>30.0</td>
+      <td>Alsace</td>
+      <td>Alsace</td>
+      <td>NaN</td>
+      <td>Roger Voss</td>
+      <td>@vossroger</td>
+      <td>Domaine Gresser 2013 Kritt Gewurztraminer (Als...</td>
+      <td>Gewürztraminer</td>
+      <td>Domaine Gresser</td>
+    </tr>
+    <tr>
+      <th>129969</th>
+      <td>France</td>
+      <td>A dry style of Pinot Gris, this is crisp with ...</td>
+      <td>NaN</td>
+      <td>90</td>
+      <td>32.0</td>
+      <td>Alsace</td>
+      <td>Alsace</td>
+      <td>NaN</td>
+      <td>Roger Voss</td>
+      <td>@vossroger</td>
+      <td>Domaine Marcel Deiss 2012 Pinot Gris (Alsace)</td>
+      <td>Pinot Gris</td>
+      <td>Domaine Marcel Deiss</td>
+    </tr>
+    <tr>
+      <th>129970</th>
+      <td>France</td>
+      <td>Big, rich and off-dry, this is powered by inte...</td>
+      <td>Lieu-dit Harth Cuvée Caroline</td>
+      <td>90</td>
+      <td>21.0</td>
+      <td>Alsace</td>
+      <td>Alsace</td>
+      <td>NaN</td>
+      <td>Roger Voss</td>
+      <td>@vossroger</td>
+      <td>Domaine Schoffit 2012 Lieu-dit Harth Cuvée Car...</td>
+      <td>Gewürztraminer</td>
+      <td>Domaine Schoffit</td>
+    </tr>
+  </tbody>
+</table>
+<p>120975 rows × 13 columns</p>
+</div>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">wines</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">wines</span><span class="o">.</span><span class="n">price</span><span class="o">.</span><span class="n">isnull</span><span class="p">()]</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>country</th>
+      <th>description</th>
+      <th>designation</th>
+      <th>points</th>
+      <th>price</th>
+      <th>province</th>
+      <th>region_1</th>
+      <th>region_2</th>
+      <th>taster_name</th>
+      <th>taster_twitter_handle</th>
+      <th>title</th>
+      <th>variety</th>
+      <th>winery</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Italy</td>
+      <td>Aromas include tropical fruit, broom, brimston...</td>
+      <td>Vulkà Bianco</td>
+      <td>87</td>
+      <td>NaN</td>
+      <td>Sicily &amp; Sardinia</td>
+      <td>Etna</td>
+      <td>NaN</td>
+      <td>Kerin O’Keefe</td>
+      <td>@kerinokeefe</td>
+      <td>Nicosia 2013 Vulkà Bianco  (Etna)</td>
+      <td>White Blend</td>
+      <td>Nicosia</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>Italy</td>
+      <td>This is dominated by oak and oak-driven aromas...</td>
+      <td>Rosso</td>
+      <td>87</td>
+      <td>NaN</td>
+      <td>Sicily &amp; Sardinia</td>
+      <td>Etna</td>
+      <td>NaN</td>
+      <td>Kerin O’Keefe</td>
+      <td>@kerinokeefe</td>
+      <td>Masseria Setteporte 2012 Rosso  (Etna)</td>
+      <td>Nerello Mascalese</td>
+      <td>Masseria Setteporte</td>
+    </tr>
+    <tr>
+      <th>30</th>
+      <td>France</td>
+      <td>Red cherry fruit comes laced with light tannin...</td>
+      <td>Nouveau</td>
+      <td>86</td>
+      <td>NaN</td>
+      <td>Beaujolais</td>
+      <td>Beaujolais-Villages</td>
+      <td>NaN</td>
+      <td>Roger Voss</td>
+      <td>@vossroger</td>
+      <td>Domaine de la Madone 2012 Nouveau  (Beaujolais...</td>
+      <td>Gamay</td>
+      <td>Domaine de la Madone</td>
+    </tr>
+    <tr>
+      <th>31</th>
+      <td>Italy</td>
+      <td>Merlot and Nero d'Avola form the base for this...</td>
+      <td>Calanìca Nero d'Avola-Merlot</td>
+      <td>86</td>
+      <td>NaN</td>
+      <td>Sicily &amp; Sardinia</td>
+      <td>Sicilia</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>Duca di Salaparuta 2010 Calanìca Nero d'Avola-...</td>
+      <td>Red Blend</td>
+      <td>Duca di Salaparuta</td>
+    </tr>
+    <tr>
+      <th>32</th>
+      <td>Italy</td>
+      <td>Part of the extended Calanìca series, this Gri...</td>
+      <td>Calanìca Grillo-Viognier</td>
+      <td>86</td>
+      <td>NaN</td>
+      <td>Sicily &amp; Sardinia</td>
+      <td>Sicilia</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>Duca di Salaparuta 2011 Calanìca Grillo-Viogni...</td>
+      <td>White Blend</td>
+      <td>Duca di Salaparuta</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>129844</th>
+      <td>Italy</td>
+      <td>Doga delle Clavule is a neutral, mineral-drive...</td>
+      <td>Doga delle Clavule</td>
+      <td>86</td>
+      <td>NaN</td>
+      <td>Tuscany</td>
+      <td>Morellino di Scansano</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>Caparzo 2006 Doga delle Clavule  (Morellino di...</td>
+      <td>Sangiovese</td>
+      <td>Caparzo</td>
+    </tr>
+    <tr>
+      <th>129860</th>
+      <td>Portugal</td>
+      <td>This rich wine has a firm structure as well as...</td>
+      <td>Pacheca Superior</td>
+      <td>90</td>
+      <td>NaN</td>
+      <td>Douro</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>Roger Voss</td>
+      <td>@vossroger</td>
+      <td>Quinta da Pacheca 2013 Pacheca Superior Red (D...</td>
+      <td>Portuguese Red</td>
+      <td>Quinta da Pacheca</td>
+    </tr>
+    <tr>
+      <th>129863</th>
+      <td>Portugal</td>
+      <td>This mature wine that has 50% Touriga Nacional...</td>
+      <td>Reserva</td>
+      <td>90</td>
+      <td>NaN</td>
+      <td>Dão</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>Roger Voss</td>
+      <td>@vossroger</td>
+      <td>Seacampo 2011 Reserva Red (Dão)</td>
+      <td>Portuguese Red</td>
+      <td>Seacampo</td>
+    </tr>
+    <tr>
+      <th>129893</th>
+      <td>Italy</td>
+      <td>Aromas of passion fruit, hay and a vegetal not...</td>
+      <td>Corte Menini</td>
+      <td>91</td>
+      <td>NaN</td>
+      <td>Veneto</td>
+      <td>Soave Classico</td>
+      <td>NaN</td>
+      <td>Kerin O’Keefe</td>
+      <td>@kerinokeefe</td>
+      <td>Le Mandolare 2015 Corte Menini  (Soave Classico)</td>
+      <td>Garganega</td>
+      <td>Le Mandolare</td>
+    </tr>
+    <tr>
+      <th>129964</th>
+      <td>France</td>
+      <td>Initially quite muted, this wine slowly develo...</td>
+      <td>Domaine Saint-Rémy Herrenweg</td>
+      <td>90</td>
+      <td>NaN</td>
+      <td>Alsace</td>
+      <td>Alsace</td>
+      <td>NaN</td>
+      <td>Roger Voss</td>
+      <td>@vossroger</td>
+      <td>Domaine Ehrhart 2013 Domaine Saint-Rémy Herren...</td>
+      <td>Gewürztraminer</td>
+      <td>Domaine Ehrhart</td>
+    </tr>
+  </tbody>
+</table>
+<p>8996 rows × 13 columns</p>
+</div>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Summary-functions">
+<a class="anchor" href="#Summary-functions" aria-hidden="true"><span class="octicon octicon-link"></span></a>Summary functions<a class="anchor-link" href="#Summary-functions"> </a>
+</h2>
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">wines</span><span class="o">.</span><span class="n">points</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>count    129971.000000
+mean         88.447138
+std           3.039730
+min          80.000000
+25%          86.000000
+50%          88.000000
+75%          91.000000
+max         100.000000
+Name: points, dtype: float64</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">wines</span><span class="o">.</span><span class="n">taster_name</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>count         103727
+unique            19
+top       Roger Voss
+freq           25514
+Name: taster_name, dtype: object</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">wines</span><span class="o">.</span><span class="n">points</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>88.44713820775404</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">wines</span><span class="o">.</span><span class="n">points</span><span class="o">.</span><span class="n">median</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>88.0</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">wines</span><span class="o">.</span><span class="n">taster_name</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>array(['Kerin O’Keefe', 'Roger Voss', 'Paul Gregutt',
+       'Alexander Peartree', 'Michael Schachner', 'Anna Lee C. Iijima',
+       'Virginie Boone', 'Matt Kettmann', nan, 'Sean P. Sullivan',
+       'Jim Gordon', 'Joe Czerwinski', 'Anne Krebiehl\xa0MW',
+       'Lauren Buzzeo', 'Mike DeSimone', 'Jeff Jenssen',
+       'Susan Kostrzewa', 'Carrie Dykes', 'Fiona Adams',
+       'Christina Pickard'], dtype=object)</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">wines</span><span class="o">.</span><span class="n">taster_name</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>Roger Voss            25514
+Michael Schachner     15134
+Kerin O’Keefe         10776
+Virginie Boone         9537
+Paul Gregutt           9532
+                      ...  
+Jeff Jenssen            491
+Alexander Peartree      415
+Carrie Dykes            139
+Fiona Adams              27
+Christina Pickard         6
+Name: taster_name, Length: 19, dtype: int64</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Maps">
+<a class="anchor" href="#Maps" aria-hidden="true"><span class="octicon octicon-link"></span></a>Maps<a class="anchor-link" href="#Maps"> </a>
+</h2>
+<p>Note that map() and apply() return new, transformed Series and DataFrames, respectively. They don't modify the original data they're called on.</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">review_points_mean</span> <span class="o">=</span> <span class="n">wines</span><span class="o">.</span><span class="n">points</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+<span class="n">wines</span><span class="o">.</span><span class="n">points</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">p</span><span class="p">:</span> <span class="n">p</span> <span class="o">-</span> <span class="n">review_points_mean</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>0        -1.447138
+1        -1.447138
+2        -1.447138
+3        -1.447138
+4        -1.447138
+            ...   
+129966    1.552862
+129967    1.552862
+129968    1.552862
+129969    1.552862
+129970    1.552862
+Name: points, Length: 129971, dtype: float64</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">review_points_mean</span> <span class="o">=</span> <span class="n">wines</span><span class="o">.</span><span class="n">points</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+<span class="n">wines</span><span class="o">.</span><span class="n">points</span> <span class="o">-</span> <span class="n">review_points_mean</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>0        -1.447138
+1        -1.447138
+2        -1.447138
+3        -1.447138
+4        -1.447138
+            ...   
+129966    1.552862
+129967    1.552862
+129968    1.552862
+129969    1.552862
+129970    1.552862
+Name: points, Length: 129971, dtype: float64</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">remean_points</span><span class="p">(</span><span class="n">row</span><span class="p">):</span>
+    <span class="n">row</span><span class="o">.</span><span class="n">points</span> <span class="o">=</span> <span class="n">row</span><span class="o">.</span><span class="n">points</span> <span class="o">-</span> <span class="n">review_points_mean</span>
+    <span class="k">return</span> <span class="n">row</span>
+
+<span class="n">wines</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">remean_points</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="s1">'columns'</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>country</th>
+      <th>description</th>
+      <th>designation</th>
+      <th>points</th>
+      <th>price</th>
+      <th>province</th>
+      <th>region_1</th>
+      <th>region_2</th>
+      <th>taster_name</th>
+      <th>taster_twitter_handle</th>
+      <th>title</th>
+      <th>variety</th>
+      <th>winery</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Italy</td>
+      <td>Aromas include tropical fruit, broom, brimston...</td>
+      <td>Vulkà Bianco</td>
+      <td>-1.447138</td>
+      <td>NaN</td>
+      <td>Sicily &amp; Sardinia</td>
+      <td>Etna</td>
+      <td>NaN</td>
+      <td>Kerin O’Keefe</td>
+      <td>@kerinokeefe</td>
+      <td>Nicosia 2013 Vulkà Bianco  (Etna)</td>
+      <td>White Blend</td>
+      <td>Nicosia</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Portugal</td>
+      <td>This is ripe and fruity, a wine that is smooth...</td>
+      <td>Avidagos</td>
+      <td>-1.447138</td>
+      <td>15.0</td>
+      <td>Douro</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>Roger Voss</td>
+      <td>@vossroger</td>
+      <td>Quinta dos Avidagos 2011 Avidagos Red (Douro)</td>
+      <td>Portuguese Red</td>
+      <td>Quinta dos Avidagos</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>US</td>
+      <td>Tart and snappy, the flavors of lime flesh and...</td>
+      <td>NaN</td>
+      <td>-1.447138</td>
+      <td>14.0</td>
+      <td>Oregon</td>
+      <td>Willamette Valley</td>
+      <td>Willamette Valley</td>
+      <td>Paul Gregutt</td>
+      <td>@paulgwine</td>
+      <td>Rainstorm 2013 Pinot Gris (Willamette Valley)</td>
+      <td>Pinot Gris</td>
+      <td>Rainstorm</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>US</td>
+      <td>Pineapple rind, lemon pith and orange blossom ...</td>
+      <td>Reserve Late Harvest</td>
+      <td>-1.447138</td>
+      <td>13.0</td>
+      <td>Michigan</td>
+      <td>Lake Michigan Shore</td>
+      <td>NaN</td>
+      <td>Alexander Peartree</td>
+      <td>NaN</td>
+      <td>St. Julian 2013 Reserve Late Harvest Riesling ...</td>
+      <td>Riesling</td>
+      <td>St. Julian</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>US</td>
+      <td>Much like the regular bottling from 2012, this...</td>
+      <td>Vintner's Reserve Wild Child Block</td>
+      <td>-1.447138</td>
+      <td>65.0</td>
+      <td>Oregon</td>
+      <td>Willamette Valley</td>
+      <td>Willamette Valley</td>
+      <td>Paul Gregutt</td>
+      <td>@paulgwine</td>
+      <td>Sweet Cheeks 2012 Vintner's Reserve Wild Child...</td>
+      <td>Pinot Noir</td>
+      <td>Sweet Cheeks</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>129966</th>
+      <td>Germany</td>
+      <td>Notes of honeysuckle and cantaloupe sweeten th...</td>
+      <td>Brauneberger Juffer-Sonnenuhr Spätlese</td>
+      <td>1.552862</td>
+      <td>28.0</td>
+      <td>Mosel</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>Anna Lee C. Iijima</td>
+      <td>NaN</td>
+      <td>Dr. H. Thanisch (Erben Müller-Burggraef) 2013 ...</td>
+      <td>Riesling</td>
+      <td>Dr. H. Thanisch (Erben Müller-Burggraef)</td>
+    </tr>
+    <tr>
+      <th>129967</th>
+      <td>US</td>
+      <td>Citation is given as much as a decade of bottl...</td>
+      <td>NaN</td>
+      <td>1.552862</td>
+      <td>75.0</td>
+      <td>Oregon</td>
+      <td>Oregon</td>
+      <td>Oregon Other</td>
+      <td>Paul Gregutt</td>
+      <td>@paulgwine</td>
+      <td>Citation 2004 Pinot Noir (Oregon)</td>
+      <td>Pinot Noir</td>
+      <td>Citation</td>
+    </tr>
+    <tr>
+      <th>129968</th>
+      <td>France</td>
+      <td>Well-drained gravel soil gives this wine its c...</td>
+      <td>Kritt</td>
+      <td>1.552862</td>
+      <td>30.0</td>
+      <td>Alsace</td>
+      <td>Alsace</td>
+      <td>NaN</td>
+      <td>Roger Voss</td>
+      <td>@vossroger</td>
+      <td>Domaine Gresser 2013 Kritt Gewurztraminer (Als...</td>
+      <td>Gewürztraminer</td>
+      <td>Domaine Gresser</td>
+    </tr>
+    <tr>
+      <th>129969</th>
+      <td>France</td>
+      <td>A dry style of Pinot Gris, this is crisp with ...</td>
+      <td>NaN</td>
+      <td>1.552862</td>
+      <td>32.0</td>
+      <td>Alsace</td>
+      <td>Alsace</td>
+      <td>NaN</td>
+      <td>Roger Voss</td>
+      <td>@vossroger</td>
+      <td>Domaine Marcel Deiss 2012 Pinot Gris (Alsace)</td>
+      <td>Pinot Gris</td>
+      <td>Domaine Marcel Deiss</td>
+    </tr>
+    <tr>
+      <th>129970</th>
+      <td>France</td>
+      <td>Big, rich and off-dry, this is powered by inte...</td>
+      <td>Lieu-dit Harth Cuvée Caroline</td>
+      <td>1.552862</td>
+      <td>21.0</td>
+      <td>Alsace</td>
+      <td>Alsace</td>
+      <td>NaN</td>
+      <td>Roger Voss</td>
+      <td>@vossroger</td>
+      <td>Domaine Schoffit 2012 Lieu-dit Harth Cuvée Car...</td>
+      <td>Gewürztraminer</td>
+      <td>Domaine Schoffit</td>
+    </tr>
+  </tbody>
+</table>
+<p>129971 rows × 13 columns</p>
+</div>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">wines</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>country</th>
+      <th>description</th>
+      <th>designation</th>
+      <th>points</th>
+      <th>price</th>
+      <th>province</th>
+      <th>region_1</th>
+      <th>region_2</th>
+      <th>taster_name</th>
+      <th>taster_twitter_handle</th>
+      <th>title</th>
+      <th>variety</th>
+      <th>winery</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Italy</td>
+      <td>Aromas include tropical fruit, broom, brimston...</td>
+      <td>Vulkà Bianco</td>
+      <td>87</td>
+      <td>NaN</td>
+      <td>Sicily &amp; Sardinia</td>
+      <td>Etna</td>
+      <td>NaN</td>
+      <td>Kerin O’Keefe</td>
+      <td>@kerinokeefe</td>
+      <td>Nicosia 2013 Vulkà Bianco  (Etna)</td>
+      <td>White Blend</td>
+      <td>Nicosia</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Portugal</td>
+      <td>This is ripe and fruity, a wine that is smooth...</td>
+      <td>Avidagos</td>
+      <td>87</td>
+      <td>15.0</td>
+      <td>Douro</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>Roger Voss</td>
+      <td>@vossroger</td>
+      <td>Quinta dos Avidagos 2011 Avidagos Red (Douro)</td>
+      <td>Portuguese Red</td>
+      <td>Quinta dos Avidagos</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>US</td>
+      <td>Tart and snappy, the flavors of lime flesh and...</td>
+      <td>NaN</td>
+      <td>87</td>
+      <td>14.0</td>
+      <td>Oregon</td>
+      <td>Willamette Valley</td>
+      <td>Willamette Valley</td>
+      <td>Paul Gregutt</td>
+      <td>@paulgwine</td>
+      <td>Rainstorm 2013 Pinot Gris (Willamette Valley)</td>
+      <td>Pinot Gris</td>
+      <td>Rainstorm</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>US</td>
+      <td>Pineapple rind, lemon pith and orange blossom ...</td>
+      <td>Reserve Late Harvest</td>
+      <td>87</td>
+      <td>13.0</td>
+      <td>Michigan</td>
+      <td>Lake Michigan Shore</td>
+      <td>NaN</td>
+      <td>Alexander Peartree</td>
+      <td>NaN</td>
+      <td>St. Julian 2013 Reserve Late Harvest Riesling ...</td>
+      <td>Riesling</td>
+      <td>St. Julian</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>US</td>
+      <td>Much like the regular bottling from 2012, this...</td>
+      <td>Vintner's Reserve Wild Child Block</td>
+      <td>87</td>
+      <td>65.0</td>
+      <td>Oregon</td>
+      <td>Willamette Valley</td>
+      <td>Willamette Valley</td>
+      <td>Paul Gregutt</td>
+      <td>@paulgwine</td>
+      <td>Sweet Cheeks 2012 Vintner's Reserve Wild Child...</td>
+      <td>Pinot Noir</td>
+      <td>Sweet Cheeks</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>129966</th>
+      <td>Germany</td>
+      <td>Notes of honeysuckle and cantaloupe sweeten th...</td>
+      <td>Brauneberger Juffer-Sonnenuhr Spätlese</td>
+      <td>90</td>
+      <td>28.0</td>
+      <td>Mosel</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>Anna Lee C. Iijima</td>
+      <td>NaN</td>
+      <td>Dr. H. Thanisch (Erben Müller-Burggraef) 2013 ...</td>
+      <td>Riesling</td>
+      <td>Dr. H. Thanisch (Erben Müller-Burggraef)</td>
+    </tr>
+    <tr>
+      <th>129967</th>
+      <td>US</td>
+      <td>Citation is given as much as a decade of bottl...</td>
+      <td>NaN</td>
+      <td>90</td>
+      <td>75.0</td>
+      <td>Oregon</td>
+      <td>Oregon</td>
+      <td>Oregon Other</td>
+      <td>Paul Gregutt</td>
+      <td>@paulgwine</td>
+      <td>Citation 2004 Pinot Noir (Oregon)</td>
+      <td>Pinot Noir</td>
+      <td>Citation</td>
+    </tr>
+    <tr>
+      <th>129968</th>
+      <td>France</td>
+      <td>Well-drained gravel soil gives this wine its c...</td>
+      <td>Kritt</td>
+      <td>90</td>
+      <td>30.0</td>
+      <td>Alsace</td>
+      <td>Alsace</td>
+      <td>NaN</td>
+      <td>Roger Voss</td>
+      <td>@vossroger</td>
+      <td>Domaine Gresser 2013 Kritt Gewurztraminer (Als...</td>
+      <td>Gewürztraminer</td>
+      <td>Domaine Gresser</td>
+    </tr>
+    <tr>
+      <th>129969</th>
+      <td>France</td>
+      <td>A dry style of Pinot Gris, this is crisp with ...</td>
+      <td>NaN</td>
+      <td>90</td>
+      <td>32.0</td>
+      <td>Alsace</td>
+      <td>Alsace</td>
+      <td>NaN</td>
+      <td>Roger Voss</td>
+      <td>@vossroger</td>
+      <td>Domaine Marcel Deiss 2012 Pinot Gris (Alsace)</td>
+      <td>Pinot Gris</td>
+      <td>Domaine Marcel Deiss</td>
+    </tr>
+    <tr>
+      <th>129970</th>
+      <td>France</td>
+      <td>Big, rich and off-dry, this is powered by inte...</td>
+      <td>Lieu-dit Harth Cuvée Caroline</td>
+      <td>90</td>
+      <td>21.0</td>
+      <td>Alsace</td>
+      <td>Alsace</td>
+      <td>NaN</td>
+      <td>Roger Voss</td>
+      <td>@vossroger</td>
+      <td>Domaine Schoffit 2012 Lieu-dit Harth Cuvée Car...</td>
+      <td>Gewürztraminer</td>
+      <td>Domaine Schoffit</td>
+    </tr>
+  </tbody>
+</table>
+<p>129971 rows × 13 columns</p>
+</div>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># index of the bet bargain</span>
+<span class="n">bidx</span> <span class="o">=</span> <span class="p">(</span><span class="n">wines</span><span class="o">.</span><span class="n">points</span> <span class="o">/</span> <span class="n">wines</span><span class="o">.</span><span class="n">price</span><span class="p">)</span><span class="o">.</span><span class="n">idxmax</span><span class="p">()</span>
+<span class="n">bargain_wine</span> <span class="o">=</span> <span class="n">wines</span><span class="o">.</span><span class="n">title</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">bidx</span><span class="p">]</span>
+<span class="n">bargain_wine</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>'Bandit NV Merlot (California)'</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">nb_stars</span><span class="p">(</span><span class="n">row</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">row</span><span class="o">.</span><span class="n">country</span> <span class="o">==</span> <span class="s2">"Canada"</span><span class="p">:</span>
+        <span class="k">return</span> <span class="mi">3</span>
+    <span class="k">elif</span> <span class="n">row</span><span class="o">.</span><span class="n">points</span> <span class="o">&gt;=</span> <span class="mi">95</span><span class="p">:</span>
+        <span class="k">return</span> <span class="mi">3</span>
+    <span class="k">elif</span> <span class="n">row</span><span class="o">.</span><span class="n">points</span> <span class="o">&gt;=</span> <span class="mi">85</span><span class="p">:</span>
+        <span class="k">return</span> <span class="mi">2</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="mi">1</span>
+        
+<span class="n">star_ratings</span> <span class="o">=</span> <span class="n">wines</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">nb_stars</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="s2">"columns"</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">star_ratings</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>0         2
+1         2
+2         2
+3         2
+4         2
+         ..
+129966    2
+129967    2
+129968    2
+129969    2
+129970    2
+Length: 129971, dtype: int64
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">nb_tropical</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">wines</span><span class="o">.</span><span class="n">description</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">p</span><span class="p">:</span> <span class="s2">"tropical"</span> <span class="ow">in</span> <span class="n">p</span><span class="p">))</span>
+
+<span class="n">nb_fruity</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">wines</span><span class="o">.</span><span class="n">description</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">p</span><span class="p">:</span> <span class="s2">"fruity"</span> <span class="ow">in</span> <span class="n">p</span><span class="p">))</span>
+
+<span class="n">descriptor_counts</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">([</span><span class="n">nb_tropical</span><span class="p">,</span> 
+                               <span class="n">nb_fruity</span><span class="p">],</span> 
+                              <span class="n">index</span><span class="o">=</span><span class="p">[</span><span class="s1">'tropical'</span><span class="p">,</span> <span class="s1">'fruity'</span><span class="p">])</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">descriptor_counts</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>tropical    3607
+fruity      9090
+dtype: int64
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="GroupBy">
+<a class="anchor" href="#GroupBy" aria-hidden="true"><span class="octicon octicon-link"></span></a>GroupBy<a class="anchor-link" href="#GroupBy"> </a>
+</h2>
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">wines</span><span class="o">.</span><span class="n">points</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>88     17207
+87     16933
+90     15410
+86     12600
+89     12226
+       ...  
+80       397
+97       229
+98        77
+99        33
+100       19
+Name: points, Length: 21, dtype: int64</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">wines</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">'points'</span><span class="p">)</span><span class="o">.</span><span class="n">points</span><span class="o">.</span><span class="n">count</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>points
+80      397
+81      692
+82     1836
+83     3025
+84     6480
+       ... 
+96      523
+97      229
+98       77
+99       33
+100      19
+Name: points, Length: 21, dtype: int64</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">wines</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">'points'</span><span class="p">)</span><span class="o">.</span><span class="n">price</span><span class="o">.</span><span class="n">min</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>points
+80      5.0
+81      5.0
+82      4.0
+83      4.0
+84      4.0
+       ... 
+96     20.0
+97     35.0
+98     50.0
+99     44.0
+100    80.0
+Name: price, Length: 21, dtype: float64</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">wines</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">'points'</span><span class="p">)</span><span class="o">.</span><span class="n">price</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>points
+80      16.4
+81      17.2
+82      18.9
+83      18.2
+84      19.3
+       ...  
+96     159.3
+97     207.2
+98     245.5
+99     284.2
+100    485.9
+Name: price, Length: 21, dtype: float64</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">wines</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">'winery'</span><span class="p">)</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">df</span><span class="p">:</span> <span class="n">df</span><span class="o">.</span><span class="n">title</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>winery
+1+1=3                                     1+1=3 NV Rosé Sparkling (Cava)
+10 Knots                            10 Knots 2010 Viognier (Paso Robles)
+100 Percent Wine              100 Percent Wine 2015 Moscato (California)
+1000 Stories           1000 Stories 2013 Bourbon Barrel Aged Zinfande...
+1070 Green                  1070 Green 2011 Sauvignon Blanc (Rutherford)
+                                             ...                        
+Órale                       Órale 2011 Cabronita Red (Santa Ynez Valley)
+Öko                    Öko 2013 Made With Organically Grown Grapes Ma...
+Ökonomierat Rebholz    Ökonomierat Rebholz 2007 Von Rotliegenden Spät...
+àMaurice               àMaurice 2013 Fred Estate Syrah (Walla Walla V...
+Štoka                                    Štoka 2009 Izbrani Teran (Kras)
+Length: 16757, dtype: object</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">wines</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">'country'</span><span class="p">,</span> <span class="s1">'province'</span><span class="p">])</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">df</span><span class="p">:</span> <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">df</span><span class="o">.</span><span class="n">points</span><span class="o">.</span><span class="n">idxmax</span><span class="p">()])</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th></th>
+      <th>country</th>
+      <th>description</th>
+      <th>designation</th>
+      <th>points</th>
+      <th>price</th>
+      <th>province</th>
+      <th>region_1</th>
+      <th>region_2</th>
+      <th>taster_name</th>
+      <th>taster_twitter_handle</th>
+      <th>title</th>
+      <th>variety</th>
+      <th>winery</th>
+    </tr>
+    <tr>
+      <th>country</th>
+      <th>province</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th rowspan="2" valign="top">Argentina</th>
+      <th>Mendoza Province</th>
+      <td>Argentina</td>
+      <td>If the color doesn't tell the full story, the ...</td>
+      <td>Nicasia Vineyard</td>
+      <td>97</td>
+      <td>120.0</td>
+      <td>Mendoza Province</td>
+      <td>Mendoza</td>
+      <td>NaN</td>
+      <td>Michael Schachner</td>
+      <td>@wineschach</td>
+      <td>Bodega Catena Zapata 2006 Nicasia Vineyard Mal...</td>
+      <td>Malbec</td>
+      <td>Bodega Catena Zapata</td>
+    </tr>
+    <tr>
+      <th>Other</th>
+      <td>Argentina</td>
+      <td>Take note, this could be the best wine Colomé ...</td>
+      <td>Reserva</td>
+      <td>95</td>
+      <td>90.0</td>
+      <td>Other</td>
+      <td>Salta</td>
+      <td>NaN</td>
+      <td>Michael Schachner</td>
+      <td>@wineschach</td>
+      <td>Colomé 2010 Reserva Malbec (Salta)</td>
+      <td>Malbec</td>
+      <td>Colomé</td>
+    </tr>
+    <tr>
+      <th>Armenia</th>
+      <th>Armenia</th>
+      <td>Armenia</td>
+      <td>Deep salmon in color, this wine offers a bouqu...</td>
+      <td>Estate Bottled</td>
+      <td>88</td>
+      <td>15.0</td>
+      <td>Armenia</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>Mike DeSimone</td>
+      <td>@worldwineguys</td>
+      <td>Van Ardi 2015 Estate Bottled Rosé (Armenia)</td>
+      <td>Rosé</td>
+      <td>Van Ardi</td>
+    </tr>
+    <tr>
+      <th rowspan="2" valign="top">Australia</th>
+      <th>Australia Other</th>
+      <td>Australia</td>
+      <td>Writes the book on how to make a wine filled w...</td>
+      <td>Sarah's Blend</td>
+      <td>93</td>
+      <td>15.0</td>
+      <td>Australia Other</td>
+      <td>South Eastern Australia</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>Marquis Philips 2000 Sarah's Blend Red (South ...</td>
+      <td>Red Blend</td>
+      <td>Marquis Philips</td>
+    </tr>
+    <tr>
+      <th>New South Wales</th>
+      <td>Australia</td>
+      <td>De Bortoli's Noble One is as good as ever in 2...</td>
+      <td>Noble One Bortytis</td>
+      <td>94</td>
+      <td>32.0</td>
+      <td>New South Wales</td>
+      <td>New South Wales</td>
+      <td>NaN</td>
+      <td>Joe Czerwinski</td>
+      <td>@JoeCz</td>
+      <td>De Bortoli 2007 Noble One Bortytis Semillon (N...</td>
+      <td>Sémillon</td>
+      <td>De Bortoli</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th rowspan="5" valign="top">Uruguay</th>
+      <th>Juanico</th>
+      <td>Uruguay</td>
+      <td>This mature Bordeaux-style blend is earthy on ...</td>
+      <td>Preludio Barrel Select Lote N 77</td>
+      <td>90</td>
+      <td>45.0</td>
+      <td>Juanico</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>Michael Schachner</td>
+      <td>@wineschach</td>
+      <td>Familia Deicas 2004 Preludio Barrel Select Lot...</td>
+      <td>Red Blend</td>
+      <td>Familia Deicas</td>
+    </tr>
+    <tr>
+      <th>Montevideo</th>
+      <td>Uruguay</td>
+      <td>A rich, heady bouquet offers aromas of blackbe...</td>
+      <td>Monte Vide Eu Tannat-Merlot-Tempranillo</td>
+      <td>91</td>
+      <td>60.0</td>
+      <td>Montevideo</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>Michael Schachner</td>
+      <td>@wineschach</td>
+      <td>Bouza 2015 Monte Vide Eu Tannat-Merlot-Tempran...</td>
+      <td>Red Blend</td>
+      <td>Bouza</td>
+    </tr>
+    <tr>
+      <th>Progreso</th>
+      <td>Uruguay</td>
+      <td>Rusty in color but deep and complex in nature,...</td>
+      <td>Etxe Oneko Fortified Sweet Red</td>
+      <td>90</td>
+      <td>46.0</td>
+      <td>Progreso</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>Michael Schachner</td>
+      <td>@wineschach</td>
+      <td>Pisano 2007 Etxe Oneko Fortified Sweet Red Tan...</td>
+      <td>Tannat</td>
+      <td>Pisano</td>
+    </tr>
+    <tr>
+      <th>San Jose</th>
+      <td>Uruguay</td>
+      <td>Baked, sweet, heavy aromas turn earthy with ti...</td>
+      <td>El Preciado Gran Reserva</td>
+      <td>87</td>
+      <td>50.0</td>
+      <td>San Jose</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>Michael Schachner</td>
+      <td>@wineschach</td>
+      <td>Castillo Viejo 2005 El Preciado Gran Reserva R...</td>
+      <td>Red Blend</td>
+      <td>Castillo Viejo</td>
+    </tr>
+    <tr>
+      <th>Uruguay</th>
+      <td>Uruguay</td>
+      <td>Cherry and berry aromas are ripe, healthy and ...</td>
+      <td>Blend 002 Limited Edition</td>
+      <td>91</td>
+      <td>22.0</td>
+      <td>Uruguay</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>Michael Schachner</td>
+      <td>@wineschach</td>
+      <td>Narbona NV Blend 002 Limited Edition Tannat-Ca...</td>
+      <td>Tannat-Cabernet Franc</td>
+      <td>Narbona</td>
+    </tr>
+  </tbody>
+</table>
+<p>425 rows × 13 columns</p>
+</div>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">wines</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">'country'</span><span class="p">])</span><span class="o">.</span><span class="n">price</span><span class="o">.</span><span class="n">agg</span><span class="p">([</span><span class="nb">len</span><span class="p">,</span> <span class="nb">min</span><span class="p">,</span> <span class="nb">max</span><span class="p">])</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>len</th>
+      <th>min</th>
+      <th>max</th>
+    </tr>
+    <tr>
+      <th>country</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Argentina</th>
+      <td>3800.0</td>
+      <td>4.0</td>
+      <td>230.0</td>
+    </tr>
+    <tr>
+      <th>Armenia</th>
+      <td>2.0</td>
+      <td>14.0</td>
+      <td>15.0</td>
+    </tr>
+    <tr>
+      <th>Australia</th>
+      <td>2329.0</td>
+      <td>5.0</td>
+      <td>850.0</td>
+    </tr>
+    <tr>
+      <th>Austria</th>
+      <td>3345.0</td>
+      <td>7.0</td>
+      <td>1100.0</td>
+    </tr>
+    <tr>
+      <th>Bosnia and Herzegovina</th>
+      <td>2.0</td>
+      <td>12.0</td>
+      <td>13.0</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>Switzerland</th>
+      <td>7.0</td>
+      <td>21.0</td>
+      <td>160.0</td>
+    </tr>
+    <tr>
+      <th>Turkey</th>
+      <td>90.0</td>
+      <td>14.0</td>
+      <td>120.0</td>
+    </tr>
+    <tr>
+      <th>US</th>
+      <td>54504.0</td>
+      <td>4.0</td>
+      <td>2013.0</td>
+    </tr>
+    <tr>
+      <th>Ukraine</th>
+      <td>14.0</td>
+      <td>6.0</td>
+      <td>13.0</td>
+    </tr>
+    <tr>
+      <th>Uruguay</th>
+      <td>109.0</td>
+      <td>10.0</td>
+      <td>130.0</td>
+    </tr>
+  </tbody>
+</table>
+<p>43 rows × 3 columns</p>
+</div>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">countries_reviewed</span> <span class="o">=</span> <span class="n">wines</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">'country'</span><span class="p">,</span> <span class="s1">'province'</span><span class="p">])</span><span class="o">.</span><span class="n">description</span><span class="o">.</span><span class="n">agg</span><span class="p">([</span><span class="nb">len</span><span class="p">])</span>
+<span class="n">countries_reviewed</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th></th>
+      <th>len</th>
+    </tr>
+    <tr>
+      <th>country</th>
+      <th>province</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th rowspan="2" valign="top">Argentina</th>
+      <th>Mendoza Province</th>
+      <td>3264</td>
+    </tr>
+    <tr>
+      <th>Other</th>
+      <td>536</td>
+    </tr>
+    <tr>
+      <th>Armenia</th>
+      <th>Armenia</th>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th rowspan="2" valign="top">Australia</th>
+      <th>Australia Other</th>
+      <td>245</td>
+    </tr>
+    <tr>
+      <th>New South Wales</th>
+      <td>85</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <th>...</th>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th rowspan="5" valign="top">Uruguay</th>
+      <th>Juanico</th>
+      <td>12</td>
+    </tr>
+    <tr>
+      <th>Montevideo</th>
+      <td>11</td>
+    </tr>
+    <tr>
+      <th>Progreso</th>
+      <td>11</td>
+    </tr>
+    <tr>
+      <th>San Jose</th>
+      <td>3</td>
+    </tr>
+    <tr>
+      <th>Uruguay</th>
+      <td>24</td>
+    </tr>
+  </tbody>
+</table>
+<p>425 rows × 1 columns</p>
+</div>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">mi</span> <span class="o">=</span> <span class="n">countries_reviewed</span><span class="o">.</span><span class="n">index</span>
+<span class="nb">type</span><span class="p">(</span><span class="n">mi</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>pandas.core.indexes.multi.MultiIndex</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">countries_reviewed</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>country</th>
+      <th>province</th>
+      <th>len</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Argentina</td>
+      <td>Mendoza Province</td>
+      <td>3264</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Argentina</td>
+      <td>Other</td>
+      <td>536</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Armenia</td>
+      <td>Armenia</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Australia</td>
+      <td>Australia Other</td>
+      <td>245</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Australia</td>
+      <td>New South Wales</td>
+      <td>85</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>420</th>
+      <td>Uruguay</td>
+      <td>Juanico</td>
+      <td>12</td>
+    </tr>
+    <tr>
+      <th>421</th>
+      <td>Uruguay</td>
+      <td>Montevideo</td>
+      <td>11</td>
+    </tr>
+    <tr>
+      <th>422</th>
+      <td>Uruguay</td>
+      <td>Progreso</td>
+      <td>11</td>
+    </tr>
+    <tr>
+      <th>423</th>
+      <td>Uruguay</td>
+      <td>San Jose</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <th>424</th>
+      <td>Uruguay</td>
+      <td>Uruguay</td>
+      <td>24</td>
+    </tr>
+  </tbody>
+</table>
+<p>425 rows × 3 columns</p>
+</div>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">countries_reviewed</span> <span class="o">=</span> <span class="n">countries_reviewed</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
+<span class="n">countries_reviewed</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="s1">'len'</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>country</th>
+      <th>province</th>
+      <th>len</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>179</th>
+      <td>Greece</td>
+      <td>Muscat of Kefallonian</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>192</th>
+      <td>Greece</td>
+      <td>Sterea Ellada</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>194</th>
+      <td>Greece</td>
+      <td>Thraki</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>354</th>
+      <td>South Africa</td>
+      <td>Paardeberg</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>40</th>
+      <td>Brazil</td>
+      <td>Serra do Sudeste</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>409</th>
+      <td>US</td>
+      <td>Oregon</td>
+      <td>5373</td>
+    </tr>
+    <tr>
+      <th>227</th>
+      <td>Italy</td>
+      <td>Tuscany</td>
+      <td>5897</td>
+    </tr>
+    <tr>
+      <th>118</th>
+      <td>France</td>
+      <td>Bordeaux</td>
+      <td>5941</td>
+    </tr>
+    <tr>
+      <th>415</th>
+      <td>US</td>
+      <td>Washington</td>
+      <td>8639</td>
+    </tr>
+    <tr>
+      <th>392</th>
+      <td>US</td>
+      <td>California</td>
+      <td>36247</td>
+    </tr>
+  </tbody>
+</table>
+<p>425 rows × 3 columns</p>
+</div>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">countries_reviewed</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="s1">'len'</span><span class="p">,</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>country</th>
+      <th>province</th>
+      <th>len</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>392</th>
+      <td>US</td>
+      <td>California</td>
+      <td>36247</td>
+    </tr>
+    <tr>
+      <th>415</th>
+      <td>US</td>
+      <td>Washington</td>
+      <td>8639</td>
+    </tr>
+    <tr>
+      <th>118</th>
+      <td>France</td>
+      <td>Bordeaux</td>
+      <td>5941</td>
+    </tr>
+    <tr>
+      <th>227</th>
+      <td>Italy</td>
+      <td>Tuscany</td>
+      <td>5897</td>
+    </tr>
+    <tr>
+      <th>409</th>
+      <td>US</td>
+      <td>Oregon</td>
+      <td>5373</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>101</th>
+      <td>Croatia</td>
+      <td>Krk</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>247</th>
+      <td>New Zealand</td>
+      <td>Gladstone</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>357</th>
+      <td>South Africa</td>
+      <td>Piekenierskloof</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>63</th>
+      <td>Chile</td>
+      <td>Coelemu</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>149</th>
+      <td>Greece</td>
+      <td>Beotia</td>
+      <td>1</td>
+    </tr>
+  </tbody>
+</table>
+<p>425 rows × 3 columns</p>
+</div>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">countries_reviewed</span><span class="o">.</span><span class="n">sort_index</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>country</th>
+      <th>province</th>
+      <th>len</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Argentina</td>
+      <td>Mendoza Province</td>
+      <td>3264</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Argentina</td>
+      <td>Other</td>
+      <td>536</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Armenia</td>
+      <td>Armenia</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Australia</td>
+      <td>Australia Other</td>
+      <td>245</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Australia</td>
+      <td>New South Wales</td>
+      <td>85</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>420</th>
+      <td>Uruguay</td>
+      <td>Juanico</td>
+      <td>12</td>
+    </tr>
+    <tr>
+      <th>421</th>
+      <td>Uruguay</td>
+      <td>Montevideo</td>
+      <td>11</td>
+    </tr>
+    <tr>
+      <th>422</th>
+      <td>Uruguay</td>
+      <td>Progreso</td>
+      <td>11</td>
+    </tr>
+    <tr>
+      <th>423</th>
+      <td>Uruguay</td>
+      <td>San Jose</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <th>424</th>
+      <td>Uruguay</td>
+      <td>Uruguay</td>
+      <td>24</td>
+    </tr>
+  </tbody>
+</table>
+<p>425 rows × 3 columns</p>
+</div>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">countries_reviewed</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="p">[</span><span class="s1">'country'</span><span class="p">,</span> <span class="s1">'len'</span><span class="p">])</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>country</th>
+      <th>province</th>
+      <th>len</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>1</th>
+      <td>Argentina</td>
+      <td>Other</td>
+      <td>536</td>
+    </tr>
+    <tr>
+      <th>0</th>
+      <td>Argentina</td>
+      <td>Mendoza Province</td>
+      <td>3264</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Armenia</td>
+      <td>Armenia</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>Australia</td>
+      <td>Tasmania</td>
+      <td>42</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Australia</td>
+      <td>New South Wales</td>
+      <td>85</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>421</th>
+      <td>Uruguay</td>
+      <td>Montevideo</td>
+      <td>11</td>
+    </tr>
+    <tr>
+      <th>422</th>
+      <td>Uruguay</td>
+      <td>Progreso</td>
+      <td>11</td>
+    </tr>
+    <tr>
+      <th>420</th>
+      <td>Uruguay</td>
+      <td>Juanico</td>
+      <td>12</td>
+    </tr>
+    <tr>
+      <th>424</th>
+      <td>Uruguay</td>
+      <td>Uruguay</td>
+      <td>24</td>
+    </tr>
+    <tr>
+      <th>419</th>
+      <td>Uruguay</td>
+      <td>Canelones</td>
+      <td>43</td>
+    </tr>
+  </tbody>
+</table>
+<p>425 rows × 3 columns</p>
+</div>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+</div>
+
+
+
+  </div><!-- from https://github.com/utterance/utterances -->
+<script src="https://utteranc.es/client.js"
+        repo="CecileGallioz/blog"
+        issue-term="title"
+        label="blogpost-comment"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+</script><a class="u-url" href="/blog/python/panda/2021/04/17/ReminderPanda.html" hidden></a>
+</article>
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/blog/"></data>
+
+  <div class="wrapper">
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col">
+        <p class="feed-subscribe">
+          <a href="/blog/feed.xml">
+            <svg class="svg-icon orange">
+              <use xlink:href="/blog/assets/minima-social-icons.svg#rss"></use>
+            </svg><span>Subscribe</span>
+          </a>
+        </p>
+      </div>
+      <div class="footer-col">
+        <p>Let&#39;s play with data science!</p>
+      </div>
+    </div>
+
+    <div class="social-links"><ul class="social-media-list"></ul>
+</div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>
