@@ -80,7 +80,7 @@ window.onload = wrap_img;
        • <span class="read-time" title="Estimated read time">
     
     
-      24 min read
+      17 min read
     
 </span></p>
 
@@ -126,7 +126,7 @@ window.onload = wrap_img;
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-<span class="n">pd</span><span class="o">.</span><span class="n">set_option</span><span class="p">(</span><span class="s2">"display.max_rows"</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+<span class="n">pd</span><span class="o">.</span><span class="n">set_option</span><span class="p">(</span><span class="s2">"display.max_rows"</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -526,17 +526,13 @@ So 0:10 will select entries 0,...,9.</p>
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>country                                                              Italy
-description              Aromas include tropical fruit, broom, brimston...
-designation                                                   Vulkà Bianco
-points                                                                  87
-price                                                                  NaN
-                                               ...                        
-taster_name                                                  Kerin O’Keefe
-taster_twitter_handle                                         @kerinokeefe
-title                                    Nicosia 2013 Vulkà Bianco  (Etna)
-variety                                                        White Blend
-winery                                                             Nicosia
+<pre>country                                                    Italy
+description    Aromas include tropical fruit, broom, brimston...
+designation                                         Vulkà Bianco
+                                     ...                        
+title                          Nicosia 2013 Vulkà Bianco  (Etna)
+variety                                              White Blend
+winery                                                   Nicosia
 Name: 0, Length: 13, dtype: object</pre>
 </div>
 
@@ -573,11 +569,7 @@ Name: 0, Length: 13, dtype: object</pre>
 <pre>0            Italy
 1         Portugal
 2               US
-3               US
-4               US
             ...   
-129966     Germany
-129967          US
 129968      France
 129969      France
 129970      France
@@ -884,11 +876,7 @@ Name: country, dtype: object</pre>
 <pre>0         87
 1         87
 2         87
-3         87
-4         87
           ..
-129966    90
-129967    90
 129968    90
 129969    90
 129970    90
@@ -963,24 +951,9 @@ Name: points, Length: 129971, dtype: int64</pre>
       <td>Pinot Gris</td>
     </tr>
     <tr>
-      <th>3</th>
-      <td>US</td>
-      <td>Riesling</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>US</td>
-      <td>Pinot Noir</td>
-    </tr>
-    <tr>
-      <th>5</th>
-      <td>Spain</td>
-      <td>Tempranillo-Merlot</td>
-    </tr>
-    <tr>
-      <th>6</th>
-      <td>Italy</td>
-      <td>Frappato</td>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
     </tr>
     <tr>
       <th>7</th>
@@ -999,6 +972,7 @@ Name: points, Length: 129971, dtype: int64</pre>
     </tr>
   </tbody>
 </table>
+<p>10 rows × 2 columns</p>
 </div>
 </div>
 
@@ -1114,38 +1088,6 @@ Name: points, Length: 129971, dtype: int64</pre>
       <td>Poderi Luigi Einaudi</td>
     </tr>
     <tr>
-      <th>135</th>
-      <td>Italy</td>
-      <td>The color is just beginning to show signs of b...</td>
-      <td>Sorano</td>
-      <td>91</td>
-      <td>60.0</td>
-      <td>Piedmont</td>
-      <td>Barolo</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>Giacomo Ascheri 2001 Sorano  (Barolo)</td>
-      <td>Nebbiolo</td>
-      <td>Giacomo Ascheri</td>
-    </tr>
-    <tr>
-      <th>140</th>
-      <td>Italy</td>
-      <td>A big, fat, luscious wine with plenty of toast...</td>
-      <td>Costa Bruna</td>
-      <td>90</td>
-      <td>26.0</td>
-      <td>Piedmont</td>
-      <td>Barbera d'Alba</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>Poderi Colla 2005 Costa Bruna  (Barbera d'Alba)</td>
-      <td>Barbera</td>
-      <td>Poderi Colla</td>
-    </tr>
-    <tr>
       <th>...</th>
       <td>...</td>
       <td>...</td>
@@ -1160,38 +1102,6 @@ Name: points, Length: 129971, dtype: int64</pre>
       <td>...</td>
       <td>...</td>
       <td>...</td>
-    </tr>
-    <tr>
-      <th>129929</th>
-      <td>Italy</td>
-      <td>This luminous sparkler has a sweet, fruit-forw...</td>
-      <td>NaN</td>
-      <td>91</td>
-      <td>38.0</td>
-      <td>Veneto</td>
-      <td>Prosecco Superiore di Cartizze</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>Col Vetoraz Spumanti NV  Prosecco Superiore di...</td>
-      <td>Prosecco</td>
-      <td>Col Vetoraz Spumanti</td>
-    </tr>
-    <tr>
-      <th>129943</th>
-      <td>Italy</td>
-      <td>A blend of Nero d'Avola and Syrah, this convey...</td>
-      <td>Adènzia</td>
-      <td>90</td>
-      <td>29.0</td>
-      <td>Sicily &amp; Sardinia</td>
-      <td>Sicilia</td>
-      <td>NaN</td>
-      <td>Kerin O’Keefe</td>
-      <td>@kerinokeefe</td>
-      <td>Baglio del Cristo di Campobello 2012 Adènzia R...</td>
-      <td>Red Blend</td>
-      <td>Baglio del Cristo di Campobello</td>
     </tr>
     <tr>
       <th>129947</th>
@@ -1359,38 +1269,6 @@ Name: points, Length: 129971, dtype: int64</pre>
       <td>Masseria Setteporte</td>
     </tr>
     <tr>
-      <th>22</th>
-      <td>Italy</td>
-      <td>Delicate aromas recall white flower and citrus...</td>
-      <td>Ficiligno</td>
-      <td>87</td>
-      <td>19.0</td>
-      <td>Sicily &amp; Sardinia</td>
-      <td>Sicilia</td>
-      <td>NaN</td>
-      <td>Kerin O’Keefe</td>
-      <td>@kerinokeefe</td>
-      <td>Baglio di Pianetto 2007 Ficiligno White (Sicilia)</td>
-      <td>White Blend</td>
-      <td>Baglio di Pianetto</td>
-    </tr>
-    <tr>
-      <th>24</th>
-      <td>Italy</td>
-      <td>Aromas of prune, blackcurrant, toast and oak c...</td>
-      <td>Aynat</td>
-      <td>87</td>
-      <td>35.0</td>
-      <td>Sicily &amp; Sardinia</td>
-      <td>Sicilia</td>
-      <td>NaN</td>
-      <td>Kerin O’Keefe</td>
-      <td>@kerinokeefe</td>
-      <td>Canicattì 2009 Aynat Nero d'Avola (Sicilia)</td>
-      <td>Nero d'Avola</td>
-      <td>Canicattì</td>
-    </tr>
-    <tr>
       <th>...</th>
       <td>...</td>
       <td>...</td>
@@ -1405,38 +1283,6 @@ Name: points, Length: 129971, dtype: int64</pre>
       <td>...</td>
       <td>...</td>
       <td>...</td>
-    </tr>
-    <tr>
-      <th>129966</th>
-      <td>Germany</td>
-      <td>Notes of honeysuckle and cantaloupe sweeten th...</td>
-      <td>Brauneberger Juffer-Sonnenuhr Spätlese</td>
-      <td>90</td>
-      <td>28.0</td>
-      <td>Mosel</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>Anna Lee C. Iijima</td>
-      <td>NaN</td>
-      <td>Dr. H. Thanisch (Erben Müller-Burggraef) 2013 ...</td>
-      <td>Riesling</td>
-      <td>Dr. H. Thanisch (Erben Müller-Burggraef)</td>
-    </tr>
-    <tr>
-      <th>129967</th>
-      <td>US</td>
-      <td>Citation is given as much as a decade of bottl...</td>
-      <td>NaN</td>
-      <td>90</td>
-      <td>75.0</td>
-      <td>Oregon</td>
-      <td>Oregon</td>
-      <td>Oregon Other</td>
-      <td>Paul Gregutt</td>
-      <td>@paulgwine</td>
-      <td>Citation 2004 Pinot Noir (Oregon)</td>
-      <td>Pinot Noir</td>
-      <td>Citation</td>
     </tr>
     <tr>
       <th>129968</th>
@@ -1604,38 +1450,6 @@ Name: points, Length: 129971, dtype: int64</pre>
       <td>Trimbach</td>
     </tr>
     <tr>
-      <th>9</th>
-      <td>France</td>
-      <td>This has great depth of flavor with its fresh ...</td>
-      <td>Les Natures</td>
-      <td>87</td>
-      <td>27.0</td>
-      <td>Alsace</td>
-      <td>Alsace</td>
-      <td>NaN</td>
-      <td>Roger Voss</td>
-      <td>@vossroger</td>
-      <td>Jean-Baptiste Adam 2012 Les Natures Pinot Gris...</td>
-      <td>Pinot Gris</td>
-      <td>Jean-Baptiste Adam</td>
-    </tr>
-    <tr>
-      <th>11</th>
-      <td>France</td>
-      <td>This is a dry wine, very spicy, with a tight, ...</td>
-      <td>NaN</td>
-      <td>87</td>
-      <td>30.0</td>
-      <td>Alsace</td>
-      <td>Alsace</td>
-      <td>NaN</td>
-      <td>Roger Voss</td>
-      <td>@vossroger</td>
-      <td>Leon Beyer 2012 Gewurztraminer (Alsace)</td>
-      <td>Gewürztraminer</td>
-      <td>Leon Beyer</td>
-    </tr>
-    <tr>
       <th>...</th>
       <td>...</td>
       <td>...</td>
@@ -1650,38 +1464,6 @@ Name: points, Length: 129971, dtype: int64</pre>
       <td>...</td>
       <td>...</td>
       <td>...</td>
-    </tr>
-    <tr>
-      <th>129964</th>
-      <td>France</td>
-      <td>Initially quite muted, this wine slowly develo...</td>
-      <td>Domaine Saint-Rémy Herrenweg</td>
-      <td>90</td>
-      <td>NaN</td>
-      <td>Alsace</td>
-      <td>Alsace</td>
-      <td>NaN</td>
-      <td>Roger Voss</td>
-      <td>@vossroger</td>
-      <td>Domaine Ehrhart 2013 Domaine Saint-Rémy Herren...</td>
-      <td>Gewürztraminer</td>
-      <td>Domaine Ehrhart</td>
-    </tr>
-    <tr>
-      <th>129965</th>
-      <td>France</td>
-      <td>While it's rich, this beautiful dry wine also ...</td>
-      <td>Seppi Landmann Vallée Noble</td>
-      <td>90</td>
-      <td>28.0</td>
-      <td>Alsace</td>
-      <td>Alsace</td>
-      <td>NaN</td>
-      <td>Roger Voss</td>
-      <td>@vossroger</td>
-      <td>Domaine Rieflé-Landmann 2013 Seppi Landmann Va...</td>
-      <td>Pinot Gris</td>
-      <td>Domaine Rieflé-Landmann</td>
     </tr>
     <tr>
       <th>129968</th>
@@ -1849,38 +1631,6 @@ Name: points, Length: 129971, dtype: int64</pre>
       <td>St. Julian</td>
     </tr>
     <tr>
-      <th>4</th>
-      <td>US</td>
-      <td>Much like the regular bottling from 2012, this...</td>
-      <td>Vintner's Reserve Wild Child Block</td>
-      <td>87</td>
-      <td>65.0</td>
-      <td>Oregon</td>
-      <td>Willamette Valley</td>
-      <td>Willamette Valley</td>
-      <td>Paul Gregutt</td>
-      <td>@paulgwine</td>
-      <td>Sweet Cheeks 2012 Vintner's Reserve Wild Child...</td>
-      <td>Pinot Noir</td>
-      <td>Sweet Cheeks</td>
-    </tr>
-    <tr>
-      <th>5</th>
-      <td>Spain</td>
-      <td>Blackberry and raspberry aromas show a typical...</td>
-      <td>Ars In Vitro</td>
-      <td>87</td>
-      <td>15.0</td>
-      <td>Northern Spain</td>
-      <td>Navarra</td>
-      <td>NaN</td>
-      <td>Michael Schachner</td>
-      <td>@wineschach</td>
-      <td>Tandem 2011 Ars In Vitro Tempranillo-Merlot (N...</td>
-      <td>Tempranillo-Merlot</td>
-      <td>Tandem</td>
-    </tr>
-    <tr>
       <th>...</th>
       <td>...</td>
       <td>...</td>
@@ -1895,38 +1645,6 @@ Name: points, Length: 129971, dtype: int64</pre>
       <td>...</td>
       <td>...</td>
       <td>...</td>
-    </tr>
-    <tr>
-      <th>129966</th>
-      <td>Germany</td>
-      <td>Notes of honeysuckle and cantaloupe sweeten th...</td>
-      <td>Brauneberger Juffer-Sonnenuhr Spätlese</td>
-      <td>90</td>
-      <td>28.0</td>
-      <td>Mosel</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>Anna Lee C. Iijima</td>
-      <td>NaN</td>
-      <td>Dr. H. Thanisch (Erben Müller-Burggraef) 2013 ...</td>
-      <td>Riesling</td>
-      <td>Dr. H. Thanisch (Erben Müller-Burggraef)</td>
-    </tr>
-    <tr>
-      <th>129967</th>
-      <td>US</td>
-      <td>Citation is given as much as a decade of bottl...</td>
-      <td>NaN</td>
-      <td>90</td>
-      <td>75.0</td>
-      <td>Oregon</td>
-      <td>Oregon</td>
-      <td>Oregon Other</td>
-      <td>Paul Gregutt</td>
-      <td>@paulgwine</td>
-      <td>Citation 2004 Pinot Noir (Oregon)</td>
-      <td>Pinot Noir</td>
-      <td>Citation</td>
     </tr>
     <tr>
       <th>129968</th>
@@ -2094,38 +1812,6 @@ Name: points, Length: 129971, dtype: int64</pre>
       <td>Domaine de la Madone</td>
     </tr>
     <tr>
-      <th>31</th>
-      <td>Italy</td>
-      <td>Merlot and Nero d'Avola form the base for this...</td>
-      <td>Calanìca Nero d'Avola-Merlot</td>
-      <td>86</td>
-      <td>NaN</td>
-      <td>Sicily &amp; Sardinia</td>
-      <td>Sicilia</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>Duca di Salaparuta 2010 Calanìca Nero d'Avola-...</td>
-      <td>Red Blend</td>
-      <td>Duca di Salaparuta</td>
-    </tr>
-    <tr>
-      <th>32</th>
-      <td>Italy</td>
-      <td>Part of the extended Calanìca series, this Gri...</td>
-      <td>Calanìca Grillo-Viognier</td>
-      <td>86</td>
-      <td>NaN</td>
-      <td>Sicily &amp; Sardinia</td>
-      <td>Sicilia</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>Duca di Salaparuta 2011 Calanìca Grillo-Viogni...</td>
-      <td>White Blend</td>
-      <td>Duca di Salaparuta</td>
-    </tr>
-    <tr>
       <th>...</th>
       <td>...</td>
       <td>...</td>
@@ -2140,38 +1826,6 @@ Name: points, Length: 129971, dtype: int64</pre>
       <td>...</td>
       <td>...</td>
       <td>...</td>
-    </tr>
-    <tr>
-      <th>129844</th>
-      <td>Italy</td>
-      <td>Doga delle Clavule is a neutral, mineral-drive...</td>
-      <td>Doga delle Clavule</td>
-      <td>86</td>
-      <td>NaN</td>
-      <td>Tuscany</td>
-      <td>Morellino di Scansano</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>Caparzo 2006 Doga delle Clavule  (Morellino di...</td>
-      <td>Sangiovese</td>
-      <td>Caparzo</td>
-    </tr>
-    <tr>
-      <th>129860</th>
-      <td>Portugal</td>
-      <td>This rich wine has a firm structure as well as...</td>
-      <td>Pacheca Superior</td>
-      <td>90</td>
-      <td>NaN</td>
-      <td>Douro</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>Roger Voss</td>
-      <td>@vossroger</td>
-      <td>Quinta da Pacheca 2013 Pacheca Superior Red (D...</td>
-      <td>Portuguese Red</td>
-      <td>Quinta da Pacheca</td>
     </tr>
     <tr>
       <th>129863</th>
@@ -2269,12 +1923,11 @@ Name: points, Length: 129971, dtype: int64</pre>
 <pre>count    129971.000000
 mean         88.447138
 std           3.039730
-min          80.000000
-25%          86.000000
+             ...      
 50%          88.000000
 75%          91.000000
 max         100.000000
-Name: points, dtype: float64</pre>
+Name: points, Length: 8, dtype: float64</pre>
 </div>
 
 </div>
@@ -2449,17 +2102,13 @@ Name: taster_name, dtype: object</pre>
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>Roger Voss            25514
-Michael Schachner     15134
-Kerin O’Keefe         10776
-Virginie Boone         9537
-Paul Gregutt           9532
-                      ...  
-Jeff Jenssen            491
-Alexander Peartree      415
-Carrie Dykes            139
-Fiona Adams              27
-Christina Pickard         6
+<pre>Roger Voss           25514
+Michael Schachner    15134
+Kerin O’Keefe        10776
+                     ...  
+Carrie Dykes           139
+Fiona Adams             27
+Christina Pickard        6
 Name: taster_name, Length: 19, dtype: int64</pre>
 </div>
 
@@ -2508,11 +2157,7 @@ Name: taster_name, Length: 19, dtype: int64</pre>
 <pre>0        -1.447138
 1        -1.447138
 2        -1.447138
-3        -1.447138
-4        -1.447138
             ...   
-129966    1.552862
-129967    1.552862
 129968    1.552862
 129969    1.552862
 129970    1.552862
@@ -2553,11 +2198,7 @@ Name: points, Length: 129971, dtype: float64</pre>
 <pre>0        -1.447138
 1        -1.447138
 2        -1.447138
-3        -1.447138
-4        -1.447138
             ...   
-129966    1.552862
-129967    1.552862
 129968    1.552862
 129969    1.552862
 129970    1.552862
@@ -2680,38 +2321,6 @@ Name: points, Length: 129971, dtype: float64</pre>
       <td>Rainstorm</td>
     </tr>
     <tr>
-      <th>3</th>
-      <td>US</td>
-      <td>Pineapple rind, lemon pith and orange blossom ...</td>
-      <td>Reserve Late Harvest</td>
-      <td>-1.447138</td>
-      <td>13.0</td>
-      <td>Michigan</td>
-      <td>Lake Michigan Shore</td>
-      <td>NaN</td>
-      <td>Alexander Peartree</td>
-      <td>NaN</td>
-      <td>St. Julian 2013 Reserve Late Harvest Riesling ...</td>
-      <td>Riesling</td>
-      <td>St. Julian</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>US</td>
-      <td>Much like the regular bottling from 2012, this...</td>
-      <td>Vintner's Reserve Wild Child Block</td>
-      <td>-1.447138</td>
-      <td>65.0</td>
-      <td>Oregon</td>
-      <td>Willamette Valley</td>
-      <td>Willamette Valley</td>
-      <td>Paul Gregutt</td>
-      <td>@paulgwine</td>
-      <td>Sweet Cheeks 2012 Vintner's Reserve Wild Child...</td>
-      <td>Pinot Noir</td>
-      <td>Sweet Cheeks</td>
-    </tr>
-    <tr>
       <th>...</th>
       <td>...</td>
       <td>...</td>
@@ -2726,38 +2335,6 @@ Name: points, Length: 129971, dtype: float64</pre>
       <td>...</td>
       <td>...</td>
       <td>...</td>
-    </tr>
-    <tr>
-      <th>129966</th>
-      <td>Germany</td>
-      <td>Notes of honeysuckle and cantaloupe sweeten th...</td>
-      <td>Brauneberger Juffer-Sonnenuhr Spätlese</td>
-      <td>1.552862</td>
-      <td>28.0</td>
-      <td>Mosel</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>Anna Lee C. Iijima</td>
-      <td>NaN</td>
-      <td>Dr. H. Thanisch (Erben Müller-Burggraef) 2013 ...</td>
-      <td>Riesling</td>
-      <td>Dr. H. Thanisch (Erben Müller-Burggraef)</td>
-    </tr>
-    <tr>
-      <th>129967</th>
-      <td>US</td>
-      <td>Citation is given as much as a decade of bottl...</td>
-      <td>NaN</td>
-      <td>1.552862</td>
-      <td>75.0</td>
-      <td>Oregon</td>
-      <td>Oregon</td>
-      <td>Oregon Other</td>
-      <td>Paul Gregutt</td>
-      <td>@paulgwine</td>
-      <td>Citation 2004 Pinot Noir (Oregon)</td>
-      <td>Pinot Noir</td>
-      <td>Citation</td>
     </tr>
     <tr>
       <th>129968</th>
@@ -2925,38 +2502,6 @@ Name: points, Length: 129971, dtype: float64</pre>
       <td>Rainstorm</td>
     </tr>
     <tr>
-      <th>3</th>
-      <td>US</td>
-      <td>Pineapple rind, lemon pith and orange blossom ...</td>
-      <td>Reserve Late Harvest</td>
-      <td>87</td>
-      <td>13.0</td>
-      <td>Michigan</td>
-      <td>Lake Michigan Shore</td>
-      <td>NaN</td>
-      <td>Alexander Peartree</td>
-      <td>NaN</td>
-      <td>St. Julian 2013 Reserve Late Harvest Riesling ...</td>
-      <td>Riesling</td>
-      <td>St. Julian</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>US</td>
-      <td>Much like the regular bottling from 2012, this...</td>
-      <td>Vintner's Reserve Wild Child Block</td>
-      <td>87</td>
-      <td>65.0</td>
-      <td>Oregon</td>
-      <td>Willamette Valley</td>
-      <td>Willamette Valley</td>
-      <td>Paul Gregutt</td>
-      <td>@paulgwine</td>
-      <td>Sweet Cheeks 2012 Vintner's Reserve Wild Child...</td>
-      <td>Pinot Noir</td>
-      <td>Sweet Cheeks</td>
-    </tr>
-    <tr>
       <th>...</th>
       <td>...</td>
       <td>...</td>
@@ -2971,38 +2516,6 @@ Name: points, Length: 129971, dtype: float64</pre>
       <td>...</td>
       <td>...</td>
       <td>...</td>
-    </tr>
-    <tr>
-      <th>129966</th>
-      <td>Germany</td>
-      <td>Notes of honeysuckle and cantaloupe sweeten th...</td>
-      <td>Brauneberger Juffer-Sonnenuhr Spätlese</td>
-      <td>90</td>
-      <td>28.0</td>
-      <td>Mosel</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>Anna Lee C. Iijima</td>
-      <td>NaN</td>
-      <td>Dr. H. Thanisch (Erben Müller-Burggraef) 2013 ...</td>
-      <td>Riesling</td>
-      <td>Dr. H. Thanisch (Erben Müller-Burggraef)</td>
-    </tr>
-    <tr>
-      <th>129967</th>
-      <td>US</td>
-      <td>Citation is given as much as a decade of bottl...</td>
-      <td>NaN</td>
-      <td>90</td>
-      <td>75.0</td>
-      <td>Oregon</td>
-      <td>Oregon</td>
-      <td>Oregon Other</td>
-      <td>Paul Gregutt</td>
-      <td>@paulgwine</td>
-      <td>Citation 2004 Pinot Noir (Oregon)</td>
-      <td>Pinot Noir</td>
-      <td>Citation</td>
     </tr>
     <tr>
       <th>129968</th>
@@ -3137,11 +2650,7 @@ Name: points, Length: 129971, dtype: float64</pre>
 <pre>0         2
 1         2
 2         2
-3         2
-4         2
          ..
-129966    2
-129967    2
 129968    2
 129969    2
 129970    2
@@ -3231,11 +2740,7 @@ dtype: int64
 <pre>88     17207
 87     16933
 90     15410
-86     12600
-89     12226
        ...  
-80       397
-97       229
 98        77
 99        33
 100       19
@@ -3276,11 +2781,7 @@ Name: points, Length: 21, dtype: int64</pre>
 80      397
 81      692
 82     1836
-83     3025
-84     6480
        ... 
-96      523
-97      229
 98       77
 99       33
 100      19
@@ -3321,11 +2822,7 @@ Name: points, Length: 21, dtype: int64</pre>
 80      5.0
 81      5.0
 82      4.0
-83      4.0
-84      4.0
        ... 
-96     20.0
-97     35.0
 98     50.0
 99     44.0
 100    80.0
@@ -3366,11 +2863,7 @@ Name: price, Length: 21, dtype: float64</pre>
 80      16.4
 81      17.2
 82      18.9
-83      18.2
-84      19.3
        ...  
-96     159.3
-97     207.2
 98     245.5
 99     284.2
 100    485.9
@@ -3411,11 +2904,7 @@ Name: price, Length: 21, dtype: float64</pre>
 1+1=3                                     1+1=3 NV Rosé Sparkling (Cava)
 10 Knots                            10 Knots 2010 Viognier (Paso Robles)
 100 Percent Wine              100 Percent Wine 2015 Moscato (California)
-1000 Stories           1000 Stories 2013 Bourbon Barrel Aged Zinfande...
-1070 Green                  1070 Green 2011 Sauvignon Blanc (Rutherford)
                                              ...                        
-Órale                       Órale 2011 Cabronita Red (Santa Ynez Valley)
-Öko                    Öko 2013 Made With Organically Grown Grapes Ma...
 Ökonomierat Rebholz    Ökonomierat Rebholz 2007 Von Rotliegenden Spät...
 àMaurice               àMaurice 2013 Fred Estate Syrah (Walla Walla V...
 Štoka                                    Štoka 2009 Izbrani Teran (Kras)
@@ -3554,39 +3043,6 @@ Length: 16757, dtype: object</pre>
       <td>Van Ardi</td>
     </tr>
     <tr>
-      <th rowspan="2" valign="top">Australia</th>
-      <th>Australia Other</th>
-      <td>Australia</td>
-      <td>Writes the book on how to make a wine filled w...</td>
-      <td>Sarah's Blend</td>
-      <td>93</td>
-      <td>15.0</td>
-      <td>Australia Other</td>
-      <td>South Eastern Australia</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>Marquis Philips 2000 Sarah's Blend Red (South ...</td>
-      <td>Red Blend</td>
-      <td>Marquis Philips</td>
-    </tr>
-    <tr>
-      <th>New South Wales</th>
-      <td>Australia</td>
-      <td>De Bortoli's Noble One is as good as ever in 2...</td>
-      <td>Noble One Bortytis</td>
-      <td>94</td>
-      <td>32.0</td>
-      <td>New South Wales</td>
-      <td>New South Wales</td>
-      <td>NaN</td>
-      <td>Joe Czerwinski</td>
-      <td>@JoeCz</td>
-      <td>De Bortoli 2007 Noble One Bortytis Semillon (N...</td>
-      <td>Sémillon</td>
-      <td>De Bortoli</td>
-    </tr>
-    <tr>
       <th>...</th>
       <th>...</th>
       <td>...</td>
@@ -3604,39 +3060,7 @@ Length: 16757, dtype: object</pre>
       <td>...</td>
     </tr>
     <tr>
-      <th rowspan="5" valign="top">Uruguay</th>
-      <th>Juanico</th>
-      <td>Uruguay</td>
-      <td>This mature Bordeaux-style blend is earthy on ...</td>
-      <td>Preludio Barrel Select Lote N 77</td>
-      <td>90</td>
-      <td>45.0</td>
-      <td>Juanico</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>Michael Schachner</td>
-      <td>@wineschach</td>
-      <td>Familia Deicas 2004 Preludio Barrel Select Lot...</td>
-      <td>Red Blend</td>
-      <td>Familia Deicas</td>
-    </tr>
-    <tr>
-      <th>Montevideo</th>
-      <td>Uruguay</td>
-      <td>A rich, heady bouquet offers aromas of blackbe...</td>
-      <td>Monte Vide Eu Tannat-Merlot-Tempranillo</td>
-      <td>91</td>
-      <td>60.0</td>
-      <td>Montevideo</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>Michael Schachner</td>
-      <td>@wineschach</td>
-      <td>Bouza 2015 Monte Vide Eu Tannat-Merlot-Tempran...</td>
-      <td>Red Blend</td>
-      <td>Bouza</td>
-    </tr>
-    <tr>
+      <th rowspan="3" valign="top">Uruguay</th>
       <th>Progreso</th>
       <td>Uruguay</td>
       <td>Rusty in color but deep and complex in nature,...</td>
@@ -3768,34 +3192,10 @@ Length: 16757, dtype: object</pre>
       <td>850.0</td>
     </tr>
     <tr>
-      <th>Austria</th>
-      <td>3345.0</td>
-      <td>7.0</td>
-      <td>1100.0</td>
-    </tr>
-    <tr>
-      <th>Bosnia and Herzegovina</th>
-      <td>2.0</td>
-      <td>12.0</td>
-      <td>13.0</td>
-    </tr>
-    <tr>
       <th>...</th>
       <td>...</td>
       <td>...</td>
       <td>...</td>
-    </tr>
-    <tr>
-      <th>Switzerland</th>
-      <td>7.0</td>
-      <td>21.0</td>
-      <td>160.0</td>
-    </tr>
-    <tr>
-      <th>Turkey</th>
-      <td>90.0</td>
-      <td>14.0</td>
-      <td>120.0</td>
     </tr>
     <tr>
       <th>US</th>
@@ -3894,29 +3294,12 @@ Length: 16757, dtype: object</pre>
       <td>2</td>
     </tr>
     <tr>
-      <th rowspan="2" valign="top">Australia</th>
-      <th>Australia Other</th>
-      <td>245</td>
-    </tr>
-    <tr>
-      <th>New South Wales</th>
-      <td>85</td>
-    </tr>
-    <tr>
       <th>...</th>
       <th>...</th>
       <td>...</td>
     </tr>
     <tr>
-      <th rowspan="5" valign="top">Uruguay</th>
-      <th>Juanico</th>
-      <td>12</td>
-    </tr>
-    <tr>
-      <th>Montevideo</th>
-      <td>11</td>
-    </tr>
-    <tr>
+      <th rowspan="3" valign="top">Uruguay</th>
       <th>Progreso</th>
       <td>11</td>
     </tr>
@@ -4040,34 +3423,10 @@ Length: 16757, dtype: object</pre>
       <td>2</td>
     </tr>
     <tr>
-      <th>3</th>
-      <td>Australia</td>
-      <td>Australia Other</td>
-      <td>245</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>Australia</td>
-      <td>New South Wales</td>
-      <td>85</td>
-    </tr>
-    <tr>
       <th>...</th>
       <td>...</td>
       <td>...</td>
       <td>...</td>
-    </tr>
-    <tr>
-      <th>420</th>
-      <td>Uruguay</td>
-      <td>Juanico</td>
-      <td>12</td>
-    </tr>
-    <tr>
-      <th>421</th>
-      <td>Uruguay</td>
-      <td>Montevideo</td>
-      <td>11</td>
     </tr>
     <tr>
       <th>422</th>
@@ -4166,34 +3525,10 @@ Length: 16757, dtype: object</pre>
       <td>1</td>
     </tr>
     <tr>
-      <th>354</th>
-      <td>South Africa</td>
-      <td>Paardeberg</td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <th>40</th>
-      <td>Brazil</td>
-      <td>Serra do Sudeste</td>
-      <td>1</td>
-    </tr>
-    <tr>
       <th>...</th>
       <td>...</td>
       <td>...</td>
       <td>...</td>
-    </tr>
-    <tr>
-      <th>409</th>
-      <td>US</td>
-      <td>Oregon</td>
-      <td>5373</td>
-    </tr>
-    <tr>
-      <th>227</th>
-      <td>Italy</td>
-      <td>Tuscany</td>
-      <td>5897</td>
     </tr>
     <tr>
       <th>118</th>
@@ -4291,34 +3626,10 @@ Length: 16757, dtype: object</pre>
       <td>5941</td>
     </tr>
     <tr>
-      <th>227</th>
-      <td>Italy</td>
-      <td>Tuscany</td>
-      <td>5897</td>
-    </tr>
-    <tr>
-      <th>409</th>
-      <td>US</td>
-      <td>Oregon</td>
-      <td>5373</td>
-    </tr>
-    <tr>
       <th>...</th>
       <td>...</td>
       <td>...</td>
       <td>...</td>
-    </tr>
-    <tr>
-      <th>101</th>
-      <td>Croatia</td>
-      <td>Krk</td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <th>247</th>
-      <td>New Zealand</td>
-      <td>Gladstone</td>
-      <td>1</td>
     </tr>
     <tr>
       <th>357</th>
@@ -4416,34 +3727,10 @@ Length: 16757, dtype: object</pre>
       <td>2</td>
     </tr>
     <tr>
-      <th>3</th>
-      <td>Australia</td>
-      <td>Australia Other</td>
-      <td>245</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>Australia</td>
-      <td>New South Wales</td>
-      <td>85</td>
-    </tr>
-    <tr>
       <th>...</th>
       <td>...</td>
       <td>...</td>
       <td>...</td>
-    </tr>
-    <tr>
-      <th>420</th>
-      <td>Uruguay</td>
-      <td>Juanico</td>
-      <td>12</td>
-    </tr>
-    <tr>
-      <th>421</th>
-      <td>Uruguay</td>
-      <td>Montevideo</td>
-      <td>11</td>
     </tr>
     <tr>
       <th>422</th>
@@ -4541,34 +3828,10 @@ Length: 16757, dtype: object</pre>
       <td>2</td>
     </tr>
     <tr>
-      <th>6</th>
-      <td>Australia</td>
-      <td>Tasmania</td>
-      <td>42</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>Australia</td>
-      <td>New South Wales</td>
-      <td>85</td>
-    </tr>
-    <tr>
       <th>...</th>
       <td>...</td>
       <td>...</td>
       <td>...</td>
-    </tr>
-    <tr>
-      <th>421</th>
-      <td>Uruguay</td>
-      <td>Montevideo</td>
-      <td>11</td>
-    </tr>
-    <tr>
-      <th>422</th>
-      <td>Uruguay</td>
-      <td>Progreso</td>
-      <td>11</td>
     </tr>
     <tr>
       <th>420</th>
