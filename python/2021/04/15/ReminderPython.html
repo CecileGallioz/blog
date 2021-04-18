@@ -112,8 +112,7 @@ window.onload = wrap_img;
 <li class="toc-entry toc-h2"><a href="#If">If </a></li>
 <li class="toc-entry toc-h2"><a href="#Range(n)">Range(n) </a></li>
 <li class="toc-entry toc-h2"><a href="#For">For </a></li>
-<li class="toc-entry toc-h2"><a href="#While">While </a></li>
-<li class="toc-entry toc-h2"><a href="#Functions">Functions </a>
+<li class="toc-entry toc-h2"><a href="#While">While </a>
 <ul>
 <li class="toc-entry toc-h3"><a href="#Tuple-or-dictionaries-in-arguments">Tuple or dictionaries in arguments </a></li>
 <li class="toc-entry toc-h3"><a href="#Named-arguments">Named arguments </a></li>
@@ -122,13 +121,18 @@ window.onload = wrap_img;
 </li>
 <li class="toc-entry toc-h2"><a href="#Lambda-functions">Lambda functions </a></li>
 <li class="toc-entry toc-h2"><a href="#List-comprehensions-=-For-on-lists">List comprehensions = For on lists </a></li>
-<li class="toc-entry toc-h2"><a href="#Generator-expression">Generator expression </a></li>
-<li class="toc-entry toc-h2"><a href="#Generator-function">Generator function </a></li>
+<li class="toc-entry toc-h2"><a href="#Iterator">Iterator </a>
+<ul>
+<li class="toc-entry toc-h3"><a href="#Generator-expression">Generator expression </a></li>
+<li class="toc-entry toc-h3"><a href="#Generator-function">Generator function </a></li>
+</ul>
+</li>
 <li class="toc-entry toc-h2"><a href="#Modules-and-packages">Modules and packages </a>
 <ul>
 <li class="toc-entry toc-h3"><a href="#Package-random">Package random </a></li>
 </ul>
 </li>
+<li class="toc-entry toc-h2"><a href="#Functions">Functions </a></li>
 <li class="toc-entry toc-h2"><a href="#Exceptions">Exceptions </a></li>
 <li class="toc-entry toc-h2"><a href="#Mistrust-on-the-floats">Mistrust on the floats </a></li>
 </ul><!--
@@ -1903,23 +1907,6 @@ while True:       # infinite loop
 </div>
     
 
-<div class="cell border-box-sizing text_cell rendered">
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Functions">
-<a class="anchor" href="#Functions" aria-hidden="true"><span class="octicon octicon-link"></span></a>Functions<a class="anchor-link" href="#Functions"> </a>
-</h2>
-<pre><code>def functionName(arguments):
-    """
-    documentation on several lines
-    """
-    instructions (with or without return or just pass)
-</code></pre>
-<p>Document well if the function modifies the parameter passed to it</p>
-
-</div>
-</div>
-</div>
     
     
 <div class="cell border-box-sizing code_cell rendered">
@@ -2721,9 +2708,18 @@ a = 1 b = 5
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Generator-expression">
-<a class="anchor" href="#Generator-expression" aria-hidden="true"><span class="octicon octicon-link"></span></a>Generator expression<a class="anchor-link" href="#Generator-expression"> </a>
+<h2 id="Iterator">
+<a class="anchor" href="#Iterator" aria-hidden="true"><span class="octicon octicon-link"></span></a>Iterator<a class="anchor-link" href="#Iterator"> </a>
 </h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Generator-expression">
+<a class="anchor" href="#Generator-expression" aria-hidden="true"><span class="octicon octicon-link"></span></a>Generator expression<a class="anchor-link" href="#Generator-expression"> </a>
+</h3>
 <pre><code>iterableI = (function(x) for x in list)
 </code></pre>
 <p>Simple and compact object that allows to browse an iterable object.</p>
@@ -2911,9 +2907,9 @@ a = 1 b = 5
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Generator-function">
+<h3 id="Generator-function">
 <a class="anchor" href="#Generator-function" aria-hidden="true"><span class="octicon octicon-link"></span></a>Generator function<a class="anchor-link" href="#Generator-function"> </a>
-</h2>
+</h3>
 <pre><code>def functionName (arguments):
     instructions
     yield valueReturn
@@ -3111,19 +3107,16 @@ pk.filename.variableName
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Exceptions">
-<a class="anchor" href="#Exceptions" aria-hidden="true"><span class="octicon octicon-link"></span></a>Exceptions<a class="anchor-link" href="#Exceptions"> </a>
+<h2 id="Functions">
+<a class="anchor" href="#Functions" aria-hidden="true"><span class="octicon octicon-link"></span></a>Functions<a class="anchor-link" href="#Functions"> </a>
 </h2>
-<pre><code>try:
-    expression0
-except nomException1:
-    expression1
-except nomException2:
-    expression2
-else:               # on passe si aucune exception est attrapée (on n'y passe pas s'il y a un return avant)
-    expression3
-finally:            # on passe dans le finally même s'il y a un return avant
-    expression4</code></pre>
+<pre><code>def functionName(arguments):
+    """
+    documentation on several lines
+    """
+    instructions (with or without return or just pass)
+</code></pre>
+<p>Document well if the function modifies the parameter passed to it</p>
 
 </div>
 </div>
@@ -3244,6 +3237,26 @@ finally:            # on passe dans le finally même s'il y a un return avant
 </div>
     
 
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Exceptions">
+<a class="anchor" href="#Exceptions" aria-hidden="true"><span class="octicon octicon-link"></span></a>Exceptions<a class="anchor-link" href="#Exceptions"> </a>
+</h2>
+<pre><code>try:
+    expression0
+except nomException1:
+    expression1
+except nomException2:
+    expression2
+else:               # on passe si aucune exception est attrapée (on n'y passe pas s'il y a un return avant)
+    expression3
+finally:            # on passe dans le finally même s'il y a un return avant
+    expression4</code></pre>
+
+</div>
+</div>
+</div>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
