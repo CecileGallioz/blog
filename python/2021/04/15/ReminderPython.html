@@ -80,7 +80,7 @@ window.onload = wrap_img;
        • <span class="read-time" title="Estimated read time">
     
     
-      11 min read
+      12 min read
     
 </span></p>
 
@@ -123,6 +123,7 @@ window.onload = wrap_img;
 <li class="toc-entry toc-h2"><a href="#Lambda-functions">Lambda functions </a></li>
 <li class="toc-entry toc-h2"><a href="#List-comprehensions-=-For-on-lists">List comprehensions = For on lists </a></li>
 <li class="toc-entry toc-h2"><a href="#Generative-expression">Generative expression </a></li>
+<li class="toc-entry toc-h2"><a href="#Generating-functions">Generating functions </a></li>
 <li class="toc-entry toc-h2"><a href="#Funny-cases">Funny cases </a>
 <ul>
 <li class="toc-entry toc-h3"><a href="#Mistrust-on-the-floats">Mistrust on the floats </a></li>
@@ -2135,7 +2136,7 @@ def f(**d):
 </h3>
 <p>When you call the function, you can pass the arguments in the order you want, <strong>if you name them</strong>:</p>
 
-<pre><code>functionName(nonArgument2=valueArgument2, nameArgument1=valueArgument1)</code></pre>
+<pre><code>functionName(nameArgument2=valueArgument2, nameArgument1=valueArgument1)</code></pre>
 
 </div>
 </div>
@@ -2850,6 +2851,110 @@ They have two methods:</p>
  698896]</pre>
 </div>
 
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">generator</span> <span class="o">=</span> <span class="p">(</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="o">**</span><span class="mi">18</span><span class="p">)</span> <span class="k">if</span> <span class="n">x</span><span class="o">%</span><span class="k">17</span>==0) 
+<span class="n">recherche</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
+<span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">generator</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">x</span> <span class="o">&gt;</span> <span class="mi">10</span><span class="o">**</span><span class="mi">10</span><span class="p">:</span>
+        <span class="k">break</span>
+    <span class="k">elif</span> <span class="nb">str</span><span class="p">(</span><span class="n">x</span><span class="p">)[</span><span class="o">-</span><span class="mi">4</span><span class="p">:]</span> <span class="o">==</span> <span class="s1">'1316'</span><span class="p">:</span>   <span class="c1"># with a generator, you only pay for what you use</span>
+        <span class="n">recherche</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>{617721316, 4536561316, 3617541316, 311381316}
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Generating-functions">
+<a class="anchor" href="#Generating-functions" aria-hidden="true"><span class="octicon octicon-link"></span></a>Generating functions<a class="anchor-link" href="#Generating-functions"> </a>
+</h2>
+<pre><code>def functionName (arguments):
+    instructions
+    yield valueReturn
+</code></pre>
+<p>Function that returns an iterable so no memory space is used</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">gen</span><span class="p">(</span><span class="n">it</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">it</span><span class="p">:</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="nb">int</span><span class="p">):</span>
+            <span class="k">yield</span> <span class="n">i</span><span class="o">**</span><span class="mi">2</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">yield</span> <span class="s1">'nan'</span>
+            
+<span class="n">L</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="s1">'18'</span><span class="p">,</span> <span class="s1">'x'</span><span class="p">,</span> <span class="p">[</span><span class="mi">11</span><span class="p">],</span> <span class="mi">25</span><span class="p">]</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>[1, 4, 0, 'nan', 'nan', 'nan', 625]
+</pre>
+</div>
 </div>
 
 </div>
