@@ -60,9 +60,6 @@
   
 
   
-  
-
-  
 
   
   
@@ -73,13 +70,18 @@
   
 
   
+
+  
+  
+
+  
   
 
   
   
 
   
-      ,"page9": {
+      ,"page10": {
           "title": "",
           "content": "Sitemap: {{ “sitemap.xml” | absolute_url }} | .",
           "url": "https://cecilegallioz.github.io/blog/robots.txt",
