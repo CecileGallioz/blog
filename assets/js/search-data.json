@@ -3,7 +3,7 @@
     
         "post0": {
             "title": "Test HTML",
-            "content": "print (&quot;Content-Type: text/html&quot;) # HTML is following print(&quot; &quot;) # blank line, end of headers print (&quot;&lt;html&gt;&lt;head&gt;&lt;/head&gt;&lt;body&gt;&lt;pre&gt;&quot;) age = 45 name = &quot;Paul&quot; gap = 10 print(f&quot;In {gap} year(s), {name} will be {age + gap} year(s) old.&quot;) print (&quot;&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;&quot;) . Content-Type: text/html &lt;html&gt;&lt;head&gt;&lt;/head&gt;&lt;body&gt;&lt;pre&gt; In 10 year(s), Paul will be 55 year(s) old. &lt;/pre&gt;&lt;/body&gt;&lt;/html&gt; .",
+            "content": "Content-Type: text/html . &lt;/p&gt; TEST . age = 45 name = &quot;Paul&quot; gap = 10 print(f&quot;In {gap} year(s), {name} will be {age + gap} year(s) old.&quot;) . .",
             "url": "https://cecilegallioz.github.io/blog/html/2021/04/19/TestHTML.html",
             "relUrl": "/html/2021/04/19/TestHTML.html",
             "date": " • Apr 19, 2021"
