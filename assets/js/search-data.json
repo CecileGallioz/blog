@@ -3,7 +3,7 @@
     
         "post0": {
             "title": "Test HTML",
-            "content": "TEST . age = 45 name = &quot;Paul&quot; gap = 10 print(f&quot;&lt;h3&gt;In {gap} year(s), {name} will be {age + gap} year(s) old.&lt;/h3&gt;&quot;) . &lt;h3&gt;In 10 year(s), Paul will be 55 year(s) old.&lt;/h3&gt; . Test2 . get_ipython().run_cell_magic(u&#39;HTML&#39;, u&#39;&#39;, u&#39;&lt;font color=red&gt;heffffo&lt;/font&gt;&#39;) . heffffo from nbformat import current as nbf .",
+            "content": "TEST . age = 45 name = &quot;Paul&quot; gap = 10 print(f&quot;&lt;h3&gt;In {gap} year(s), {name} will be {age + gap} year(s) old.&lt;/h3&gt;&quot;) . &lt;h3&gt;In 10 year(s), Paul will be 55 year(s) old.&lt;/h3&gt; . Test2 . get_ipython().run_cell_magic(u&#39;HTML&#39;, u&#39;&#39;, u&#39;&lt;h3&gt;heffffo&lt;/h3&gt;&#39;) . heffffo . from nbformat import current as nbf .",
             "url": "https://cecilegallioz.github.io/blog/html/2021/04/19/TestHTML.html",
             "relUrl": "/html/2021/04/19/TestHTML.html",
             "date": " • Apr 19, 2021"
