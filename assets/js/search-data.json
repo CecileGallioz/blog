@@ -3,7 +3,7 @@
     
         "post0": {
             "title": "Image classifier model",
-            "content": "Here we go .",
+            "content": "Here, we are to use a model trained elsewhere (on Google Cloud). . Importing the pre-trained model .",
             "url": "https://cecilegallioz.github.io/blog/fastai/2021/04/19/ModelClassifierPicture.ipyb.html",
             "relUrl": "/fastai/2021/04/19/ModelClassifierPicture.ipyb.html",
             "date": " • Apr 19, 2021"
