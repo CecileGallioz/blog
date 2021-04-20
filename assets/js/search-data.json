@@ -3,7 +3,7 @@
     
         "post0": {
             "title": "Image classifier model",
-            "content": "Here, we are to use a model trained elsewhere (on Google Cloud). . Importing the pre-trained model . path = Path(&#39;./src&#39;) path.ls(file_exts=&#39;.pkl&#39;) . (#1) [Path(&#39;src/exportBear.pkl&#39;)] . learn_inf = load_learner(path/&#39;exportBear.pkl&#39;) . learn_inf.dls.vocab . [&#39;black&#39;, &#39;grizzly&#39;, &#39;teddy&#39;] . Initialization .",
+            "content": "Here, we are to use a model trained elsewhere (on Google Cloud). . Importing the pre-trained model . path = Path(&#39;./src&#39;) path.ls(file_exts=&#39;.pkl&#39;) . (#1) [Path(&#39;src/exportBear.pkl&#39;)] . learn_inf = load_learner(path/&#39;exportBear.pkl&#39;) . learn_inf.dls.vocab . [&#39;black&#39;, &#39;grizzly&#39;, &#39;teddy&#39;] . Initialization . btn_upload = SimpleNamespace(data = [&#39;src/grizzly.jpg&#39;]) . img = PILImage.create(btn_upload.data[-1]) . lbl_pred = widgets.Label() lbl_pred.value = &quot;Your prediction here&quot; . Create the button to add an image to classify .",
             "url": "https://cecilegallioz.github.io/blog/fastai/2021/04/19/ModelClassifierPicture.ipyb.html",
             "relUrl": "/fastai/2021/04/19/ModelClassifierPicture.ipyb.html",
             "date": " • Apr 19, 2021"
