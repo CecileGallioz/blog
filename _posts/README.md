@@ -13,3 +13,21 @@ You must save your notebook with the naming convention `YYYY-MM-DD-*.md`.  Examp
 
 - [Jekyll posts](https://jekyllrb.com/docs/posts/)
 - [Example markdown post](https://github.com/fastai/fastpages/blob/master/_posts/2020-01-14-test-markdown-post.md)
+
+
+# Head of posts
+```
+---
+title: "My Title"
+description: "Awesome description"
+layout: post
+toc: false
+comments: true
+image: images/some_folder/your_image.png
+hide: false
+search_exclude: true
+categories: [fastpages, jupyter]
+metadata_key1: metadata_value1
+metadata_key2: metadata_value2
+---
+```
