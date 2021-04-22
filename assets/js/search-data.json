@@ -3,7 +3,7 @@
     
         "post0": {
             "title": "Part 1 on fastai book done!",
-            "content": "Ok, what do I learn so far : . write a model to classify pictures | save it | fail to publish it (work for later) | say no to non-ethicals demands | be carreful with over fitting | use fastai in the titanic comptetition on Kaggle | create a accompt on google analytics to reference this blog | create a accompte on azure for use Bing on multiple pictures | . On the deployement part, I have some ideas : . Google Cloud | pray for the integration of widget in fastpages | write a site on Django and plug my model myself | look again on he fastai courses if I can use there solutions | . That’s all for now ! .",
+            "content": "Ok, what do I learn so far : . write a model to classify pictures | save it | fail to publish it (work for later) | say no to non-ethicals demands | be carreful with over fitting | use fastai in the titanic comptetition on Kaggle | use Github pages and fastpages for create this blog | create a accompt on google analytics to reference this blog | create a accompte on azure for use Bing on multiple pictures | . On the deployement part, I have some ideas : . Google Cloud | pray for the integration of widget in fastpages | write a site on Django and plug my model myself | look again on he fastai courses if I can use there solutions | . That’s all for now ! .",
             "url": "https://cecilegallioz.github.io/blog/fastai/2021/04/22/Goforpart2.html",
             "relUrl": "/fastai/2021/04/22/Goforpart2.html",
             "date": " • Apr 22, 2021"
