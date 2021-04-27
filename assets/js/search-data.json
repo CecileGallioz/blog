@@ -2,10 +2,10 @@
   
     
         "post0": {
-            "title": "Title",
-            "content": "",
-            "url": "https://cecilegallioz.github.io/blog/2021/04/27/IntegratedLatex.html",
-            "relUrl": "/2021/04/27/IntegratedLatex.html",
+            "title": "I test Latex in Jupyter",
+            "content": "Test . formula: $f(x) = 2 times x$ .",
+            "url": "https://cecilegallioz.github.io/blog/jupyter/2021/04/27/IntegratedLatex.html",
+            "relUrl": "/jupyter/2021/04/27/IntegratedLatex.html",
             "date": " • Apr 27, 2021"
         }
         
