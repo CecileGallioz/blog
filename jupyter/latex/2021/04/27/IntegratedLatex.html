@@ -140,6 +140,10 @@ window.onload = wrap_img;
 <li class="toc-entry toc-h2"><a href="#Cheat-sheet-on-LaTeX">Cheat sheet on LaTeX </a></li>
 <li class="toc-entry toc-h2"><a href="#Insert-text-inside-a-formula-\text">Insert text inside a formula \text </a></li>
 <li class="toc-entry toc-h2"><a href="#Vector-and-other-hats">Vector and other hats </a></li>
+<li class="toc-entry toc-h2"><a href="#Predefined-functions-\cos">Predefined functions \cos </a></li>
+<li class="toc-entry toc-h2"><a href="#Exponent-and-subscript">Exponent and subscript </a></li>
+<li class="toc-entry toc-h2"><a href="#Limit,-sum-and-integral">Limit, sum and integral </a></li>
+<li class="toc-entry toc-h2"><a href="#Parenthesis,-bracket-and-brace">Parenthesis, bracket and brace </a></li>
 </ul>
 </li>
 </ul><!--
@@ -225,12 +229,6 @@ $$f(x) = 2x \text{ with } 0 \le x \leq 5$$
 <h2 id="Vector-and-other-hats">
 <a class="anchor" href="#Vector-and-other-hats" aria-hidden="true"><span class="octicon octicon-link"></span></a>Vector and other hats<a class="anchor-link" href="#Vector-and-other-hats"> </a>
 </h2>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
 <p>
 $$\overrightarrow{AB\ }$$
 </p>
@@ -264,6 +262,129 @@ $$\vec{\imath}$$
 </p>
 
 <pre><code>$$\vec{\imath}$$</code></pre>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Predefined-functions-\cos">
+<a class="anchor" href="#Predefined-functions-%5Ccos" aria-hidden="true"><span class="octicon octicon-link"></span></a>Predefined functions \cos<a class="anchor-link" href="#Predefined-functions-%5Ccos"> </a>
+</h2>
+<p>
+$$\cos{(x+1)}$$
+</p>
+
+<pre><code>$$\cos{(x+1)}$$
+
+</code></pre>
+<p>
+$$\sqrt{(x+1)}$$
+</p>
+
+<pre><code>$$\sqrt{(x+1)}$$
+
+</code></pre>
+<p>
+$$\sqrt[3]{(x+1)}$$
+</p>
+
+<pre><code>$$\sqrt[3]{(x+1)}$$</code></pre>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Exponent-and-subscript">
+<a class="anchor" href="#Exponent-and-subscript" aria-hidden="true"><span class="octicon octicon-link"></span></a>Exponent and subscript<a class="anchor-link" href="#Exponent-and-subscript"> </a>
+</h2>
+<p>
+$$x_i+1=2^x-1$$
+</p>
+
+<pre><code>$$x_i+1=2^x-1$$          [hard to read but works]
+
+</code></pre>
+<p>
+$$x_i + 1 = 2^x - 1$$
+</p>
+
+<pre><code>$$x_i + 1 = 2^x - 1$$    [same result]
+
+</code></pre>
+<p>
+$$x_{i + 1} = 2^{x - 1}$$
+</p>
+
+<pre><code>$$x_{i + 1} = 2^{x - 1}$$</code></pre>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Limit,-sum-and-integral">
+<a class="anchor" href="#Limit,-sum-and-integral" aria-hidden="true"><span class="octicon octicon-link"></span></a>Limit, sum and integral<a class="anchor-link" href="#Limit,-sum-and-integral"> </a>
+</h2>
+<p>
+$$\lim_{x \to \infty} x + 1$$
+</p>
+
+<pre><code>$$\lim_{x \to \infty} x + 1$$
+
+</code></pre>
+<p>
+$$\sum_{i=1}^{10} x_i$$
+</p>
+
+<pre><code>$$\sum_{i=1}^{10} x_i$$
+
+</code></pre>
+<p>
+$$\prod_{i=1}^{10} \sqrt[i]{x_i^2 - 1}$$
+</p>
+
+<pre><code>$$\prod_{i=1}^{10} \sqrt[i]{x_i^2 - 1}$$
+
+</code></pre>
+<p>
+$$\int_{0}^{1} 2x\,dx$$
+</p>
+
+<pre><code>$$\int_{0}^{1} 2x\,dx$$</code></pre>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Parenthesis,-bracket-and-brace">
+<a class="anchor" href="#Parenthesis,-bracket-and-brace" aria-hidden="true"><span class="octicon octicon-link"></span></a>Parenthesis, bracket and brace<a class="anchor-link" href="#Parenthesis,-bracket-and-brace"> </a>
+</h2>
+<p>
+$$\cos{\left(\frac{1}{x}\right)}$$
+</p>
+
+<pre><code>$$\cos{\left(\frac{1}{x}\right)}$$
+
+</code></pre>
+<p>
+$$\left\{\begin{array}{ll} x-1=2\\x+1=4 \end{array} \right.$$
+</p>
+
+<pre><code>$$\left\{\begin{array}{ll} x-1=2\\x+1=4 \end{array} \right.$$
+
+</code></pre>
+<p>
+$$\overbrace{AB^2 + AC^2 = BC^2}^{\text{Pythagor's theorem}}$$
+</p>
+
+<pre><code>$$\overbrace{AB^2 + AC^2 = BC^2}^{\text{Pythagor's theorem}}$$</code></pre>
 
 </div>
 </div>
