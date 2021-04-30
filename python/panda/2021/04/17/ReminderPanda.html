@@ -111,7 +111,7 @@ window.onload = wrap_img;
        • <span class="read-time" title="Estimated read time">
     
     
-      17 min read
+      19 min read
     
 </span></p>
 
@@ -3464,15 +3464,18 @@ Length: 16757, dtype: object</pre>
 <a class="anchor" href="#Sorting" aria-hidden="true"><span class="octicon octicon-link"></span></a>Sorting<a class="anchor-link" href="#Sorting"> </a>
 </h2>
 <pre><code>myDataFrame.sort_values(by="nameColumn")  # ascending=True by default
+</code></pre>
+<hr>
 
+<pre><code>myDataFrame.sort_values(by="nameColumn", ascending=False)
+</code></pre>
+<hr>
 
-myDataFrame.sort_values(by="nameColumn", ascending=False)
+<pre><code>myDataFrame.sort_values(by=["nameColumn1", "nameColumn2"])
+</code></pre>
+<hr>
 
-
-myDataFrame.sort_values(by=["nameColumn1", "nameColumn2"])
-
-
-myDataFrame.sort_index()</code></pre>
+<pre><code>myDataFrame.sort_index()</code></pre>
 
 </div>
 </div>
@@ -3889,15 +3892,18 @@ myDataFrame.sort_index()</code></pre>
 <a class="anchor" href="#Data-Types" aria-hidden="true"><span class="octicon octicon-link"></span></a>Data Types<a class="anchor-link" href="#Data-Types"> </a>
 </h2>
 <pre><code>myDataFrameOrSeries.nameColumn.dtype
+</code></pre>
+<hr>
 
+<pre><code>myDataFrameOrSeries.index.dtype
+</code></pre>
+<hr>
 
-myDataFrameOrSeries.index.dtype
+<pre><code>myDataFrameOrSeries.dtypes
+</code></pre>
+<hr>
 
-
-myDataFrameOrSeries.dtypes
-
-
-myDataFrameOrSeries.nameColumn.astype("nameOfType")</code></pre>
+<pre><code>myDataFrameOrSeries.nameColumn.astype("nameOfType")</code></pre>
 
 </div>
 </div>
@@ -4155,9 +4161,386 @@ myDataFrameOrSeries.nameColumn.astype("nameOfType")</code></pre>
 <h2 id="Missing-Data">
 <a class="anchor" href="#Missing-Data" aria-hidden="true"><span class="octicon octicon-link"></span></a>Missing Data<a class="anchor-link" href="#Missing-Data"> </a>
 </h2>
+<p></p>
+<div class="flash flash-warn">
+    <svg class="octicon octicon-zap" viewbox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M10.561 1.5a.016.016 0 00-.01.004L3.286 8.571A.25.25 0 003.462 9H6.75a.75.75 0 01.694 1.034l-1.713 4.188 6.982-6.793A.25.25 0 0012.538 7H9.25a.75.75 0 01-.683-1.06l2.008-4.418.003-.006a.02.02 0 00-.004-.009.02.02 0 00-.006-.006L10.56 1.5zM9.504.43a1.516 1.516 0 012.437 1.713L10.415 5.5h2.123c1.57 0 2.346 1.909 1.22 3.004l-7.34 7.142a1.25 1.25 0 01-.871.354h-.302a1.25 1.25 0 01-1.157-1.723L5.633 10.5H3.462c-1.57 0-2.346-1.909-1.22-3.004L9.503.429z"></path></svg>
+    <strong>Important: </strong>Entries missing values are given the value NaN, short for "Not a Number". For technical reasons these NaN values are always of the float64 dtype.
+</div>
+
+<pre><code>myDataFrameOrSeries[pd.isnull(myDataFrameOrSeries.nameColumn)]
+</code></pre>
+<hr>
+
+<pre><code>myDataFrameOrSeries[pd.notnull(myDataFrameOrSeries.nameColumn)]
+</code></pre>
+<hr>
+
+<pre><code>myDataFrameOrSeries.nameColumn.fillna(value)</code></pre>
+
 </div>
 </div>
 </div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">wines</span><span class="p">[</span><span class="n">pd</span><span class="o">.</span><span class="n">isnull</span><span class="p">(</span><span class="n">wines</span><span class="o">.</span><span class="n">country</span><span class="p">)]</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>country</th>
+      <th>description</th>
+      <th>designation</th>
+      <th>points</th>
+      <th>price</th>
+      <th>province</th>
+      <th>region_1</th>
+      <th>region_2</th>
+      <th>taster_name</th>
+      <th>taster_twitter_handle</th>
+      <th>title</th>
+      <th>variety</th>
+      <th>winery</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>913</th>
+      <td>NaN</td>
+      <td>Amber in color, this wine has aromas of peach ...</td>
+      <td>Asureti Valley</td>
+      <td>87</td>
+      <td>30.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>Mike DeSimone</td>
+      <td>@worldwineguys</td>
+      <td>Gotsa Family Wines 2014 Asureti Valley Chinuri</td>
+      <td>Chinuri</td>
+      <td>Gotsa Family Wines</td>
+    </tr>
+    <tr>
+      <th>3131</th>
+      <td>NaN</td>
+      <td>Soft, fruity and juicy, this is a pleasant, si...</td>
+      <td>Partager</td>
+      <td>83</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>Roger Voss</td>
+      <td>@vossroger</td>
+      <td>Barton &amp; Guestier NV Partager Red</td>
+      <td>Red Blend</td>
+      <td>Barton &amp; Guestier</td>
+    </tr>
+    <tr>
+      <th>4243</th>
+      <td>NaN</td>
+      <td>Violet-red in color, this semisweet wine has a...</td>
+      <td>Red Naturally Semi-Sweet</td>
+      <td>88</td>
+      <td>18.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>Mike DeSimone</td>
+      <td>@worldwineguys</td>
+      <td>Kakhetia Traditional Winemaking 2012 Red Natur...</td>
+      <td>Ojaleshi</td>
+      <td>Kakhetia Traditional Winemaking</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>129408</th>
+      <td>NaN</td>
+      <td>El Capricho is one of Uruguay's more consisten...</td>
+      <td>Reserve</td>
+      <td>89</td>
+      <td>22.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>Michael Schachner</td>
+      <td>@wineschach</td>
+      <td>El Capricho 2015 Reserve Tempranillo</td>
+      <td>Tempranillo</td>
+      <td>El Capricho</td>
+    </tr>
+    <tr>
+      <th>129590</th>
+      <td>NaN</td>
+      <td>A blend of 60% Syrah, 30% Cabernet Sauvignon a...</td>
+      <td>Shah</td>
+      <td>90</td>
+      <td>30.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>Mike DeSimone</td>
+      <td>@worldwineguys</td>
+      <td>Büyülübağ 2012 Shah Red</td>
+      <td>Red Blend</td>
+      <td>Büyülübağ</td>
+    </tr>
+    <tr>
+      <th>129900</th>
+      <td>NaN</td>
+      <td>This wine offers a delightful bouquet of black...</td>
+      <td>NaN</td>
+      <td>91</td>
+      <td>32.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>Mike DeSimone</td>
+      <td>@worldwineguys</td>
+      <td>Psagot 2014 Merlot</td>
+      <td>Merlot</td>
+      <td>Psagot</td>
+    </tr>
+  </tbody>
+</table>
+<p>63 rows × 13 columns</p>
+</div>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">countryWines</span> <span class="o">=</span> <span class="n">wines</span><span class="o">.</span><span class="n">country</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">countryWines</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>0            Italy
+1         Portugal
+2               US
+            ...   
+129968      France
+129969      France
+129970      France
+Name: country, Length: 129971, dtype: object</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">countryWines</span><span class="p">[</span><span class="n">pd</span><span class="o">.</span><span class="n">isnull</span><span class="p">]</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>913       NaN
+3131      NaN
+4243      NaN
+         ... 
+129408    NaN
+129590    NaN
+129900    NaN
+Name: country, Length: 63, dtype: object</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">countryWines</span> <span class="o">=</span> <span class="n">countryWines</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="s2">"Unknown"</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">countryWines</span><span class="p">[</span><span class="n">pd</span><span class="o">.</span><span class="n">isnull</span><span class="p">]</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>Series([], Name: country, dtype: object)</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">countryWines</span><span class="p">[</span><span class="mi">913</span><span class="p">]</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>'Unknown'</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
 </div>
 
 
