@@ -3,7 +3,7 @@
     
         "post0": {
             "title": "A little on PyTorch",
-            "content": "import torch . data = [[1,2,3],[4,5,6]] tns = tensor(data) tns . tensor([[1, 2, 3], [4, 5, 6]]) . tns[1] . tensor([4, 5, 6]) . tns[:,1] . tensor([2, 5]) . tns[1,1:3] . tensor([5, 6]) . tns+1 . tensor([[2, 3, 4], [5, 6, 7]]) . tns.type() . &#39;torch.LongTensor&#39; . tns*1.5 . tensor([[1.5000, 3.0000, 4.5000], [6.0000, 7.5000, 9.0000]]) .",
+            "content": "PyTorch is an optimized tensor library for deep learning using GPUs and CPUs. . She is much faster than NumPy with similar functionality. NumPy array and PyTorch tensor are both multidimensional table of data, with all items of the same type. . import torch . data = [[1,2,3],[4,5,6]] tns = tensor(data) tns . tensor([[1, 2, 3], [4, 5, 6]]) . tns[1] . tensor([4, 5, 6]) . tns[:,1] . tensor([2, 5]) . tns[1,1:3] . tensor([5, 6]) . tns+1 . tensor([[2, 3, 4], [5, 6, 7]]) . tns.type() . &#39;torch.LongTensor&#39; . tns*1.5 . tensor([[1.5000, 3.0000, 4.5000], [6.0000, 7.5000, 9.0000]]) .",
             "url": "https://cecilegallioz.github.io/blog/pytorch/2021/05/30/ALittleofPyTorche.html",
             "relUrl": "/pytorch/2021/05/30/ALittleofPyTorche.html",
             "date": " • May 30, 2021"
