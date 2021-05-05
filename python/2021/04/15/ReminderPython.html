@@ -111,7 +111,7 @@ window.onload = wrap_img;
        • <span class="read-time" title="Estimated read time">
     
     
-      13 min read
+      14 min read
     
 </span></p>
 
@@ -1992,13 +1992,26 @@ while True:       # infinite loop
 <a class="anchor" href="#Class" aria-hidden="true"><span class="octicon octicon-link"></span></a>Class<a class="anchor-link" href="#Class"> </a>
 </h2>
 <pre><code>class ClassName():
+    """
+    documentation on several lines
+    """
     def __init__(self, p_argument1):
         self.argument1 = p_argument1
 
     (...)
 
     def __str__(self):
-        return "argument1 = " + str(self.argument1)</code></pre>
+        return "argument1 = " + str(self.argument1)
+</code></pre>
+<p></p>
+<div class="flash flash-warn">
+    <svg class="octicon octicon-zap" viewbox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M10.561 1.5a.016.016 0 00-.01.004L3.286 8.571A.25.25 0 003.462 9H6.75a.75.75 0 01.694 1.034l-1.713 4.188 6.982-6.793A.25.25 0 0012.538 7H9.25a.75.75 0 01-.683-1.06l2.008-4.418.003-.006a.02.02 0 00-.004-.009.02.02 0 00-.006-.006L10.56 1.5zM9.504.43a1.516 1.516 0 012.437 1.713L10.415 5.5h2.123c1.57 0 2.346 1.909 1.22 3.004l-7.34 7.142a1.25 1.25 0 01-.871.354h-.302a1.25 1.25 0 01-1.157-1.723L5.633 10.5H3.462c-1.57 0-2.346-1.909-1.22-3.004L9.503.429z"></path></svg>
+    <strong>Important: </strong>a class is the mold of an object, it represents the <strong>essence</strong> of a concept or a physical object. It defines both the data characterizing this object and the actions (functions) that this object performs.
+</div>
+<div class="flash">
+    <svg class="octicon octicon-info octicon octicon-info" viewbox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M8 1.5a6.5 6.5 0 100 13 6.5 6.5 0 000-13zM0 8a8 8 0 1116 0A8 8 0 010 8zm6.5-.25A.75.75 0 017.25 7h1a.75.75 0 01.75.75v2.75h.25a.75.75 0 010 1.5h-2a.75.75 0 010-1.5h.25v-2h-.25a.75.75 0 01-.75-.75zM8 6a1 1 0 100-2 1 1 0 000 2z"></path></svg>
+    <strong>Note: </strong>a class (the mold) is instancied = an object is created according to the mold
+</div>
 
 </div>
 </div>
@@ -2022,10 +2035,16 @@ while True:       # infinite loop
             <span class="bp">self</span><span class="o">.</span><span class="n">armor</span><span class="p">)</span> <span class="o">+</span> <span class="s2">", damage:"</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">damage</span><span class="p">)</span>
     
 <span class="c1"># Creation of an instance of this class</span>
-<span class="n">ship1</span> <span class="o">=</span> <span class="n">Ship</span><span class="p">(</span><span class="s2">"FIGHTER"</span><span class="p">,</span> <span class="mi">1200</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+<span class="n">ship1</span> <span class="o">=</span> <span class="n">Ship</span><span class="p">(</span><span class="s2">"CRUISER"</span><span class="p">,</span> <span class="mi">1200</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
 
 <span class="c1"># Print out this instance</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">ship1</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"ship1: "</span><span class="p">,</span> <span class="n">ship1</span><span class="p">)</span>
+
+<span class="c1"># Creation of an instance of this class</span>
+<span class="n">ship2</span> <span class="o">=</span> <span class="n">Ship</span><span class="p">(</span><span class="s2">"FIGHTER"</span><span class="p">,</span> <span class="mi">300</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">1000</span><span class="p">)</span>
+
+<span class="c1"># Print out this instance</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"ship2: "</span><span class="p">,</span> <span class="n">ship2</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -2038,7 +2057,8 @@ while True:       # infinite loop
 <div class="output_area">
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>FIGHTER, hp:1200, armor:100, damage:100
+<pre>ship1:  CRUISER, hp:1200, armor:100, damage:100
+ship2:  FIGHTER, hp:300, armor:10, damage:1000
 </pre>
 </div>
 </div>
