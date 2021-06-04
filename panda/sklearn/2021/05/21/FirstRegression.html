@@ -1130,6 +1130,14 @@ dtype: object</pre>
 </div>
 </div>
 </div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>by hand</p>
+
+</div>
+</div>
+</div>
     
     
 <div class="cell border-box-sizing code_cell rendered">
@@ -1140,8 +1148,123 @@ dtype: object</pre>
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">numerical_columns</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"age"</span><span class="p">,</span> <span class="s2">"capital-gain"</span><span class="p">,</span> <span class="s2">"capital-loss"</span><span class="p">,</span> <span class="s2">"hours-per-week"</span><span class="p">]</span>
 <span class="n">categorical_columns</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'workclass'</span><span class="p">,</span> <span class="s1">'education'</span><span class="p">,</span> <span class="s1">'marital-status'</span><span class="p">,</span> <span class="s1">'occupation'</span><span class="p">,</span> <span class="s1">'relationship'</span><span class="p">,</span> 
                        <span class="s1">'race'</span><span class="p">,</span> <span class="s1">'sex'</span><span class="p">,</span> <span class="s1">'native-country'</span><span class="p">]</span>
+</pre></div>
 
-<span class="n">all_columns</span> <span class="o">=</span> <span class="n">numerical_columns</span> <span class="o">+</span> <span class="n">categorical_columns</span>
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>select columns based on their data type</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.compose</span> <span class="kn">import</span> <span class="n">make_column_selector</span> <span class="k">as</span> <span class="n">selector</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">categorical_columns</span> <span class="o">=</span> <span class="n">selector</span><span class="p">(</span><span class="n">dtype_include</span><span class="o">=</span><span class="s2">"object"</span><span class="p">)(</span><span class="n">data_X</span><span class="p">)</span>
+<span class="n">categorical_columns</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>['workclass',
+ 'education',
+ 'marital-status',
+ 'occupation',
+ 'relationship',
+ 'race',
+ 'sex',
+ 'native-country']</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">numerical_columns</span> <span class="o">=</span> <span class="n">selector</span><span class="p">(</span><span class="n">dtype_include</span><span class="o">=</span><span class="s2">"int64"</span><span class="p">)(</span><span class="n">data_X</span><span class="p">)</span>
+<span class="n">numerical_columns</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>['age', 'capital-gain', 'capital-loss', 'hours-per-week']</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">all_columns</span> <span class="o">=</span> <span class="n">numerical_columns</span> <span class="o">+</span> <span class="n">categorical_columns</span>
 
 <span class="n">data_X</span> <span class="o">=</span> <span class="n">data_X</span><span class="p">[</span><span class="n">all_columns</span><span class="p">]</span>
 </pre></div>
@@ -1509,8 +1632,8 @@ dtype: object</pre>
 
 
 <div class="output_html rendered_html output_subarea output_execute_result">
-<style>#sk-2379e476-fc5c-49f7-9874-c452faabcda1 {color: black;background-color: white;}#sk-2379e476-fc5c-49f7-9874-c452faabcda1 pre{padding: 0;}#sk-2379e476-fc5c-49f7-9874-c452faabcda1 div.sk-toggleable {background-color: white;}#sk-2379e476-fc5c-49f7-9874-c452faabcda1 label.sk-toggleable__label {cursor: pointer;display: block;width: 100%;margin-bottom: 0;padding: 0.2em 0.3em;box-sizing: border-box;text-align: center;}#sk-2379e476-fc5c-49f7-9874-c452faabcda1 div.sk-toggleable__content {max-height: 0;max-width: 0;overflow: hidden;text-align: left;background-color: #f0f8ff;}#sk-2379e476-fc5c-49f7-9874-c452faabcda1 div.sk-toggleable__content pre {margin: 0.2em;color: black;border-radius: 0.25em;background-color: #f0f8ff;}#sk-2379e476-fc5c-49f7-9874-c452faabcda1 input.sk-toggleable__control:checked~div.sk-toggleable__content {max-height: 200px;max-width: 100%;overflow: auto;}#sk-2379e476-fc5c-49f7-9874-c452faabcda1 div.sk-estimator input.sk-toggleable__control:checked~label.sk-toggleable__label {background-color: #d4ebff;}#sk-2379e476-fc5c-49f7-9874-c452faabcda1 div.sk-label input.sk-toggleable__control:checked~label.sk-toggleable__label {background-color: #d4ebff;}#sk-2379e476-fc5c-49f7-9874-c452faabcda1 input.sk-hidden--visually {border: 0;clip: rect(1px 1px 1px 1px);clip: rect(1px, 1px, 1px, 1px);height: 1px;margin: -1px;overflow: hidden;padding: 0;position: absolute;width: 1px;}#sk-2379e476-fc5c-49f7-9874-c452faabcda1 div.sk-estimator {font-family: monospace;background-color: #f0f8ff;margin: 0.25em 0.25em;border: 1px dotted black;border-radius: 0.25em;box-sizing: border-box;}#sk-2379e476-fc5c-49f7-9874-c452faabcda1 div.sk-estimator:hover {background-color: #d4ebff;}#sk-2379e476-fc5c-49f7-9874-c452faabcda1 div.sk-parallel-item::after {content: "";width: 100%;border-bottom: 1px solid gray;flex-grow: 1;}#sk-2379e476-fc5c-49f7-9874-c452faabcda1 div.sk-label:hover label.sk-toggleable__label {background-color: #d4ebff;}#sk-2379e476-fc5c-49f7-9874-c452faabcda1 div.sk-serial::before {content: "";position: absolute;border-left: 1px solid gray;box-sizing: border-box;top: 2em;bottom: 0;left: 50%;}#sk-2379e476-fc5c-49f7-9874-c452faabcda1 div.sk-serial {display: flex;flex-direction: column;align-items: center;background-color: white;}#sk-2379e476-fc5c-49f7-9874-c452faabcda1 div.sk-item {z-index: 1;}#sk-2379e476-fc5c-49f7-9874-c452faabcda1 div.sk-parallel {display: flex;align-items: stretch;justify-content: center;background-color: white;}#sk-2379e476-fc5c-49f7-9874-c452faabcda1 div.sk-parallel-item {display: flex;flex-direction: column;position: relative;background-color: white;}#sk-2379e476-fc5c-49f7-9874-c452faabcda1 div.sk-parallel-item:first-child::after {align-self: flex-end;width: 50%;}#sk-2379e476-fc5c-49f7-9874-c452faabcda1 div.sk-parallel-item:last-child::after {align-self: flex-start;width: 50%;}#sk-2379e476-fc5c-49f7-9874-c452faabcda1 div.sk-parallel-item:only-child::after {width: 0;}#sk-2379e476-fc5c-49f7-9874-c452faabcda1 div.sk-dashed-wrapped {border: 1px dashed gray;margin: 0.2em;box-sizing: border-box;padding-bottom: 0.1em;background-color: white;position: relative;}#sk-2379e476-fc5c-49f7-9874-c452faabcda1 div.sk-label label {font-family: monospace;font-weight: bold;background-color: white;display: inline-block;line-height: 1.2em;}#sk-2379e476-fc5c-49f7-9874-c452faabcda1 div.sk-label-container {position: relative;z-index: 2;text-align: center;}#sk-2379e476-fc5c-49f7-9874-c452faabcda1 div.sk-container {display: inline-block;position: relative;}</style>&lt;div id="sk-2379e476-fc5c-49f7-9874-c452faabcda1" class"sk-top-container"&gt;<div class="sk-container"><div class="sk-item"><div class="sk-estimator sk-toggleable">
-<input class="sk-toggleable__control sk-hidden--visually" id="5d5f7ef0-fc4c-4126-8f03-8e86eb356929" type="checkbox" checked><label class="sk-toggleable__label" for="5d5f7ef0-fc4c-4126-8f03-8e86eb356929">LogisticRegression</label><div class="sk-toggleable__content"><pre>LogisticRegression()</pre></div>
+<style>#sk-4dfe6aa9-3b21-43ce-be40-f06bda924eb9 {color: black;background-color: white;}#sk-4dfe6aa9-3b21-43ce-be40-f06bda924eb9 pre{padding: 0;}#sk-4dfe6aa9-3b21-43ce-be40-f06bda924eb9 div.sk-toggleable {background-color: white;}#sk-4dfe6aa9-3b21-43ce-be40-f06bda924eb9 label.sk-toggleable__label {cursor: pointer;display: block;width: 100%;margin-bottom: 0;padding: 0.2em 0.3em;box-sizing: border-box;text-align: center;}#sk-4dfe6aa9-3b21-43ce-be40-f06bda924eb9 div.sk-toggleable__content {max-height: 0;max-width: 0;overflow: hidden;text-align: left;background-color: #f0f8ff;}#sk-4dfe6aa9-3b21-43ce-be40-f06bda924eb9 div.sk-toggleable__content pre {margin: 0.2em;color: black;border-radius: 0.25em;background-color: #f0f8ff;}#sk-4dfe6aa9-3b21-43ce-be40-f06bda924eb9 input.sk-toggleable__control:checked~div.sk-toggleable__content {max-height: 200px;max-width: 100%;overflow: auto;}#sk-4dfe6aa9-3b21-43ce-be40-f06bda924eb9 div.sk-estimator input.sk-toggleable__control:checked~label.sk-toggleable__label {background-color: #d4ebff;}#sk-4dfe6aa9-3b21-43ce-be40-f06bda924eb9 div.sk-label input.sk-toggleable__control:checked~label.sk-toggleable__label {background-color: #d4ebff;}#sk-4dfe6aa9-3b21-43ce-be40-f06bda924eb9 input.sk-hidden--visually {border: 0;clip: rect(1px 1px 1px 1px);clip: rect(1px, 1px, 1px, 1px);height: 1px;margin: -1px;overflow: hidden;padding: 0;position: absolute;width: 1px;}#sk-4dfe6aa9-3b21-43ce-be40-f06bda924eb9 div.sk-estimator {font-family: monospace;background-color: #f0f8ff;margin: 0.25em 0.25em;border: 1px dotted black;border-radius: 0.25em;box-sizing: border-box;}#sk-4dfe6aa9-3b21-43ce-be40-f06bda924eb9 div.sk-estimator:hover {background-color: #d4ebff;}#sk-4dfe6aa9-3b21-43ce-be40-f06bda924eb9 div.sk-parallel-item::after {content: "";width: 100%;border-bottom: 1px solid gray;flex-grow: 1;}#sk-4dfe6aa9-3b21-43ce-be40-f06bda924eb9 div.sk-label:hover label.sk-toggleable__label {background-color: #d4ebff;}#sk-4dfe6aa9-3b21-43ce-be40-f06bda924eb9 div.sk-serial::before {content: "";position: absolute;border-left: 1px solid gray;box-sizing: border-box;top: 2em;bottom: 0;left: 50%;}#sk-4dfe6aa9-3b21-43ce-be40-f06bda924eb9 div.sk-serial {display: flex;flex-direction: column;align-items: center;background-color: white;}#sk-4dfe6aa9-3b21-43ce-be40-f06bda924eb9 div.sk-item {z-index: 1;}#sk-4dfe6aa9-3b21-43ce-be40-f06bda924eb9 div.sk-parallel {display: flex;align-items: stretch;justify-content: center;background-color: white;}#sk-4dfe6aa9-3b21-43ce-be40-f06bda924eb9 div.sk-parallel-item {display: flex;flex-direction: column;position: relative;background-color: white;}#sk-4dfe6aa9-3b21-43ce-be40-f06bda924eb9 div.sk-parallel-item:first-child::after {align-self: flex-end;width: 50%;}#sk-4dfe6aa9-3b21-43ce-be40-f06bda924eb9 div.sk-parallel-item:last-child::after {align-self: flex-start;width: 50%;}#sk-4dfe6aa9-3b21-43ce-be40-f06bda924eb9 div.sk-parallel-item:only-child::after {width: 0;}#sk-4dfe6aa9-3b21-43ce-be40-f06bda924eb9 div.sk-dashed-wrapped {border: 1px dashed gray;margin: 0.2em;box-sizing: border-box;padding-bottom: 0.1em;background-color: white;position: relative;}#sk-4dfe6aa9-3b21-43ce-be40-f06bda924eb9 div.sk-label label {font-family: monospace;font-weight: bold;background-color: white;display: inline-block;line-height: 1.2em;}#sk-4dfe6aa9-3b21-43ce-be40-f06bda924eb9 div.sk-label-container {position: relative;z-index: 2;text-align: center;}#sk-4dfe6aa9-3b21-43ce-be40-f06bda924eb9 div.sk-container {display: inline-block;position: relative;}</style>&lt;div id="sk-4dfe6aa9-3b21-43ce-be40-f06bda924eb9" class"sk-top-container"&gt;<div class="sk-container"><div class="sk-item"><div class="sk-estimator sk-toggleable">
+<input class="sk-toggleable__control sk-hidden--visually" id="d50f3c8e-edb6-4a4a-aef2-661f99f9c4cc" type="checkbox" checked><label class="sk-toggleable__label" for="d50f3c8e-edb6-4a4a-aef2-661f99f9c4cc">LogisticRegression</label><div class="sk-toggleable__content"><pre>LogisticRegression()</pre></div>
 </div></div></div>
 </div>
 </div>
