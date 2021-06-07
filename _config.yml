@@ -6,8 +6,8 @@
 # https://learn-the-web.algonquindesign.ca/topics/markdown-yaml-cheat-sheet/#yaml
 # https://learnxinyminutes.com/docs/yaml/
 
-title: Cécile Gallioz's blog on Deep Learning, fastai and Python
-description: Let's play with data science!
+title: Cécile Gallioz's blog on data science
+description: Let's play with data science! Deep Learning, scikit-learn, fastai and Python, we have plenty to do!
 github_username: CecileGallioz
 # you can comment the below line out if your repo name is not different than your baseurl
 github_repo: "blog"
