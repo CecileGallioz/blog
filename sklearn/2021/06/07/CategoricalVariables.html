@@ -111,7 +111,7 @@ window.onload = wrap_img;
        • <span class="read-time" title="Estimated read time">
     
     
-      6 min read
+      5 min read
     
 </span></p>
 
@@ -638,10 +638,6 @@ dtype: object</pre>
 <h2 id="Encoding-ordinal-categories">
 <a class="anchor" href="#Encoding-ordinal-categories" aria-hidden="true"><span class="octicon octicon-link"></span></a>Encoding ordinal categories<a class="anchor-link" href="#Encoding-ordinal-categories"> </a>
 </h2>
-<p>Using this integer representation leads downstream predictive models to assume that the values are ordered (0 &lt; 1 &lt; 2 &lt; 3... for instance).
-By default, OrdinalEncoder uses a lexicographical strategy to map string category labels to integers. This strategy is arbitrary and often meaningless.
-The OrdinalEncoder class accepts a categories constructor argument to pass categories in the expected ordering explicitly. You can find more information in the scikit-learn documentation if needed.</p>
-
 </div>
 </div>
 </div>
@@ -1167,29 +1163,6 @@ The OrdinalEncoder class accepts a categories constructor argument to pass categ
 <h1 id="Choosing-an-encoding-strategy">
 <a class="anchor" href="#Choosing-an-encoding-strategy" aria-hidden="true"><span class="octicon octicon-link"></span></a>Choosing an encoding strategy<a class="anchor-link" href="#Choosing-an-encoding-strategy"> </a>
 </h1>
-<p>Choosing an encoding strategy will depend on the underlying models and the
-type of categories (i.e. ordinal vs. nominal).</p>
-<p>Indeed, using an <code>OrdinaleEncoder</code> will output ordinal categories. It means
-that there is an order in the resulting categories (e.g. <code>0 &gt; 1 &gt; 2</code>). The
-impact of violating this ordering assumption is really dependent on the
-downstream models. Linear models will be impacted by misordered categories
-while tree-based models will not be.</p>
-<p>Thus, in general <code>OneHotEncoder</code> is the encoding strategy used when the
-downstream models are <strong>linear models</strong> while <code>OrdinalEncoder</code> is used with
-<strong>tree-based models</strong>.</p>
-<p>You still can use an <code>OrdinalEncoder</code> with linear models but you need to be
-sure that:</p>
-<ul>
-<li>the original categories (before encoding) have an ordering;</li>
-<li>the encoded categories follow the same ordering than the original
-categories.
-The next exercise highlight the issue of misusing <code>OrdinalEncoder</code> with a
-linear model.</li>
-</ul>
-<p>Also, there is no need to use an <code>OneHotEncoder</code> even if the original
-categories do not have an given order with tree-based model. It will be
-the purpose of the final exercise of this sequence.</p>
-
 </div>
 </div>
 </div>
