@@ -173,6 +173,7 @@ window.onload = wrap_img;
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 <span class="kn">import</span> <span class="nn">time</span>
 <span class="kn">from</span> <span class="nn">sklearn.compose</span> <span class="kn">import</span> <span class="n">make_column_selector</span> <span class="k">as</span> <span class="n">selector</span>
 <span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">train_test_split</span>
@@ -253,7 +254,8 @@ window.onload = wrap_img;
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">target</span><span class="o">.</span><span class="n">value_counts</span><span class="p">(</span><span class="n">normalize</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">pie</span> <span class="o">=</span> <span class="n">target</span><span class="o">.</span><span class="n">value_counts</span><span class="p">(</span><span class="n">normalize</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">pie</span>
 </pre></div>
 
     </div>
@@ -271,6 +273,39 @@ window.onload = wrap_img;
 <pre> &lt;=50K    0.760718
  &gt;50K     0.239282
 Name: class, dtype: float64</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">pie</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">kind</span><span class="o">=</span><span class="s2">"pie"</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">"target"</span><span class="p">);</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_png output_subarea ">
+<img src="data:image/png;base64,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%0A">
 </div>
 
 </div>
@@ -494,7 +529,7 @@ dtype: object</pre>
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">model_normLin</span> <span class="o">=</span> <span class="n">make_pipeline</span><span class="p">(</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">model</span> <span class="o">=</span> <span class="n">make_pipeline</span><span class="p">(</span>
     <span class="n">StandardScaler</span><span class="p">(),</span> 
     <span class="n">LogisticRegression</span><span class="p">())</span>
 </pre></div>
@@ -513,7 +548,7 @@ dtype: object</pre>
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">cv_results_normLin</span> <span class="o">=</span> <span class="n">cross_validate</span><span class="p">(</span><span class="n">model_normLin</span><span class="p">,</span> <span class="n">data_numerical</span><span class="p">,</span> <span class="n">target</span><span class="p">,</span> <span class="n">cv</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">cv_results</span> <span class="o">=</span> <span class="n">cross_validate</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">data_numerical</span><span class="p">,</span> <span class="n">target</span><span class="p">,</span> <span class="n">cv</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -530,8 +565,8 @@ dtype: object</pre>
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">scores</span> <span class="o">=</span> <span class="n">cv_results_normLin</span><span class="p">[</span><span class="s2">"test_score"</span><span class="p">]</span>
-<span class="n">fit_time</span> <span class="o">=</span> <span class="n">cv_results_normLin</span><span class="p">[</span><span class="s2">"fit_time"</span><span class="p">]</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">scores</span> <span class="o">=</span> <span class="n">cv_results</span><span class="p">[</span><span class="s2">"test_score"</span><span class="p">]</span>
+<span class="n">fit_time</span> <span class="o">=</span> <span class="n">cv_results</span><span class="p">[</span><span class="s2">"fit_time"</span><span class="p">]</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">"The accuracy is "</span>
       <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">scores</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2"> +/- </span><span class="si">{</span><span class="n">scores</span><span class="o">.</span><span class="n">std</span><span class="p">()</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">, for </span><span class="si">{</span><span class="n">fit_time</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2"> seconds"</span><span class="p">)</span>
 </pre></div>
@@ -576,7 +611,7 @@ dtype: object</pre>
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">model_oneHotLin</span> <span class="o">=</span> <span class="n">make_pipeline</span><span class="p">(</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">model</span> <span class="o">=</span> <span class="n">make_pipeline</span><span class="p">(</span>
     <span class="n">OneHotEncoder</span><span class="p">(</span><span class="n">handle_unknown</span><span class="o">=</span><span class="s2">"ignore"</span><span class="p">),</span> 
     <span class="n">LogisticRegression</span><span class="p">(</span><span class="n">max_iter</span><span class="o">=</span><span class="mi">500</span><span class="p">)</span>
 <span class="p">)</span>
@@ -596,7 +631,7 @@ dtype: object</pre>
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">cv_results_oneHotLin</span> <span class="o">=</span> <span class="n">cross_validate</span><span class="p">(</span><span class="n">model_oneHotLin</span><span class="p">,</span> <span class="n">data_categorical</span><span class="p">,</span> <span class="n">target</span><span class="p">,</span> <span class="n">cv</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">cv_results</span> <span class="o">=</span> <span class="n">cross_validate</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">data_categorical</span><span class="p">,</span> <span class="n">target</span><span class="p">,</span> <span class="n">cv</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -613,8 +648,8 @@ dtype: object</pre>
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">scores</span> <span class="o">=</span> <span class="n">cv_results_oneHotLin</span><span class="p">[</span><span class="s2">"test_score"</span><span class="p">]</span>
-<span class="n">fit_time</span> <span class="o">=</span> <span class="n">cv_results_oneHotLin</span><span class="p">[</span><span class="s2">"fit_time"</span><span class="p">]</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">scores</span> <span class="o">=</span> <span class="n">cv_results</span><span class="p">[</span><span class="s2">"test_score"</span><span class="p">]</span>
+<span class="n">fit_time</span> <span class="o">=</span> <span class="n">cv_results</span><span class="p">[</span><span class="s2">"fit_time"</span><span class="p">]</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">"The accuracy is "</span>
       <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">scores</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2"> +/- </span><span class="si">{</span><span class="n">scores</span><span class="o">.</span><span class="n">std</span><span class="p">()</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">, for </span><span class="si">{</span><span class="n">fit_time</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2"> seconds"</span><span class="p">)</span>
 </pre></div>
@@ -629,7 +664,7 @@ dtype: object</pre>
 <div class="output_area">
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>The accuracy is 0.833 +/- 0.003, for 0.726 seconds
+<pre>The accuracy is 0.833 +/- 0.003, for 0.718 seconds
 </pre>
 </div>
 </div>
@@ -656,7 +691,7 @@ dtype: object</pre>
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">model_ordLin</span> <span class="o">=</span> <span class="n">make_pipeline</span><span class="p">(</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">model</span> <span class="o">=</span> <span class="n">make_pipeline</span><span class="p">(</span>
     <span class="n">OrdinalEncoder</span><span class="p">(</span><span class="n">handle_unknown</span><span class="o">=</span><span class="s2">"use_encoded_value"</span><span class="p">,</span> <span class="n">unknown_value</span><span class="o">=-</span><span class="mi">1</span><span class="p">),</span> 
     <span class="n">LogisticRegression</span><span class="p">(</span><span class="n">max_iter</span><span class="o">=</span><span class="mi">500</span><span class="p">)</span>
 <span class="p">)</span>
@@ -676,7 +711,7 @@ dtype: object</pre>
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">cv_results_ordLin</span> <span class="o">=</span> <span class="n">cross_validate</span><span class="p">(</span><span class="n">model_ordLin</span><span class="p">,</span> <span class="n">data_categorical</span><span class="p">,</span> <span class="n">target</span><span class="p">,</span> <span class="n">cv</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">cv_results</span> <span class="o">=</span> <span class="n">cross_validate</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">data_categorical</span><span class="p">,</span> <span class="n">target</span><span class="p">,</span> <span class="n">cv</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -693,8 +728,8 @@ dtype: object</pre>
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">scores</span> <span class="o">=</span> <span class="n">cv_results_ordLin</span><span class="p">[</span><span class="s2">"test_score"</span><span class="p">]</span>
-<span class="n">fit_time</span> <span class="o">=</span> <span class="n">cv_results_ordLin</span><span class="p">[</span><span class="s2">"fit_time"</span><span class="p">]</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">scores</span> <span class="o">=</span> <span class="n">cv_results</span><span class="p">[</span><span class="s2">"test_score"</span><span class="p">]</span>
+<span class="n">fit_time</span> <span class="o">=</span> <span class="n">cv_results</span><span class="p">[</span><span class="s2">"fit_time"</span><span class="p">]</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">"The accuracy is "</span>
       <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">scores</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2"> +/- </span><span class="si">{</span><span class="n">scores</span><span class="o">.</span><span class="n">std</span><span class="p">()</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">, for </span><span class="si">{</span><span class="n">fit_time</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2"> seconds"</span><span class="p">)</span>
 </pre></div>
@@ -709,7 +744,7 @@ dtype: object</pre>
 <div class="output_area">
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>The accuracy is 0.755 +/- 0.002, for 0.366 seconds
+<pre>The accuracy is 0.755 +/- 0.002, for 0.355 seconds
 </pre>
 </div>
 </div>
@@ -776,7 +811,7 @@ dtype: object</pre>
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">model_both</span> <span class="o">=</span> <span class="n">make_pipeline</span><span class="p">(</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">model</span> <span class="o">=</span> <span class="n">make_pipeline</span><span class="p">(</span>
     <span class="n">preprocessor</span><span class="p">,</span> 
     <span class="n">LogisticRegression</span><span class="p">(</span><span class="n">max_iter</span><span class="o">=</span><span class="mi">1500</span><span class="p">))</span>
 </pre></div>
@@ -795,7 +830,7 @@ dtype: object</pre>
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">cv_results_both</span> <span class="o">=</span> <span class="n">cross_validate</span><span class="p">(</span><span class="n">model_both</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">target</span><span class="p">,</span> <span class="n">cv</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">cv_results</span> <span class="o">=</span> <span class="n">cross_validate</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">target</span><span class="p">,</span> <span class="n">cv</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -812,8 +847,8 @@ dtype: object</pre>
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">scores</span> <span class="o">=</span> <span class="n">cv_results_both</span><span class="p">[</span><span class="s2">"test_score"</span><span class="p">]</span>
-<span class="n">fit_time</span> <span class="o">=</span> <span class="n">cv_results_both</span><span class="p">[</span><span class="s2">"fit_time"</span><span class="p">]</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">scores</span> <span class="o">=</span> <span class="n">cv_results</span><span class="p">[</span><span class="s2">"test_score"</span><span class="p">]</span>
+<span class="n">fit_time</span> <span class="o">=</span> <span class="n">cv_results</span><span class="p">[</span><span class="s2">"fit_time"</span><span class="p">]</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">"The accuracy is "</span>
       <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">scores</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2"> +/- </span><span class="si">{</span><span class="n">scores</span><span class="o">.</span><span class="n">std</span><span class="p">()</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">, for </span><span class="si">{</span><span class="n">fit_time</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2"> seconds"</span><span class="p">)</span>
 </pre></div>
@@ -828,7 +863,7 @@ dtype: object</pre>
 <div class="output_area">
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>The accuracy is 0.851 +/- 0.003, for 1.094 seconds
+<pre>The accuracy is 0.851 +/- 0.003, for 1.127 seconds
 </pre>
 </div>
 </div>
@@ -891,7 +926,7 @@ dtype: object</pre>
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">model_tree</span> <span class="o">=</span> <span class="n">make_pipeline</span><span class="p">(</span><span class="n">preprocessor_tree</span><span class="p">,</span> <span class="n">HistGradientBoostingClassifier</span><span class="p">())</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">model</span> <span class="o">=</span> <span class="n">make_pipeline</span><span class="p">(</span><span class="n">preprocessor_tree</span><span class="p">,</span> <span class="n">HistGradientBoostingClassifier</span><span class="p">())</span>
 </pre></div>
 
     </div>
@@ -908,7 +943,7 @@ dtype: object</pre>
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">cv_results_tree</span> <span class="o">=</span> <span class="n">cross_validate</span><span class="p">(</span><span class="n">model_tree</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">target</span><span class="p">,</span> <span class="n">cv</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">cv_results</span> <span class="o">=</span> <span class="n">cross_validate</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">target</span><span class="p">,</span> <span class="n">cv</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">return_estimator</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -925,8 +960,8 @@ dtype: object</pre>
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">scores</span> <span class="o">=</span> <span class="n">cv_results_tree</span><span class="p">[</span><span class="s2">"test_score"</span><span class="p">]</span>
-<span class="n">fit_time</span> <span class="o">=</span> <span class="n">cv_results_tree</span><span class="p">[</span><span class="s2">"fit_time"</span><span class="p">]</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">scores</span> <span class="o">=</span> <span class="n">cv_results</span><span class="p">[</span><span class="s2">"test_score"</span><span class="p">]</span>
+<span class="n">fit_time</span> <span class="o">=</span> <span class="n">cv_results</span><span class="p">[</span><span class="s2">"fit_time"</span><span class="p">]</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">"The accuracy is "</span>
       <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">scores</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2"> +/- </span><span class="si">{</span><span class="n">scores</span><span class="o">.</span><span class="n">std</span><span class="p">()</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">, for </span><span class="si">{</span><span class="n">fit_time</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2"> seconds"</span><span class="p">)</span>
 </pre></div>
@@ -941,42 +976,9 @@ dtype: object</pre>
 <div class="output_area">
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>The accuracy is 0.874 +/- 0.003, for 1.664 seconds
+<pre>The accuracy is 0.874 +/- 0.003, for 1.768 seconds
 </pre>
 </div>
-</div>
-
-</div>
-</div>
-
-</div>
-    
-
-    
-    
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">len</span><span class="p">(</span><span class="n">scores</span><span class="p">)</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-<div class="output_area">
-
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>10</pre>
-</div>
-
 </div>
 
 </div>
