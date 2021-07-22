@@ -581,7 +581,7 @@ dtype: object</pre>
 <div class="output_area">
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>The accuracy is 0.800 +/- 0.004, for 0.104 seconds
+<pre>The accuracy is 0.800 +/- 0.004, for 0.077 seconds
 </pre>
 </div>
 </div>
@@ -664,7 +664,7 @@ dtype: object</pre>
 <div class="output_area">
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>The accuracy is 0.833 +/- 0.003, for 1.136 seconds
+<pre>The accuracy is 0.833 +/- 0.003, for 0.706 seconds
 </pre>
 </div>
 </div>
@@ -744,7 +744,7 @@ dtype: object</pre>
 <div class="output_area">
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>The accuracy is 0.755 +/- 0.002, for 0.513 seconds
+<pre>The accuracy is 0.755 +/- 0.002, for 0.354 seconds
 </pre>
 </div>
 </div>
@@ -764,6 +764,8 @@ dtype: object</pre>
 <h2 id="Normalize-+-Hot-encoding-+-Linear-Regression-=-good">
 <a class="anchor" href="#Normalize-+-Hot-encoding-+-Linear-Regression-=-good" aria-hidden="true"><span class="octicon octicon-link"></span></a>Normalize + Hot encoding + Linear Regression = good<a class="anchor-link" href="#Normalize-+-Hot-encoding-+-Linear-Regression-=-good"> </a>
 </h2>
+<p>Linear models are nice because they are usually cheap to train, small to deploy, fast to predict and give a good baseline.</p>
+
 </div>
 </div>
 </div>
@@ -863,7 +865,7 @@ dtype: object</pre>
 <div class="output_area">
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>The accuracy is 0.851 +/- 0.003, for 1.794 seconds
+<pre>The accuracy is 0.851 +/- 0.003, for 1.062 seconds
 </pre>
 </div>
 </div>
@@ -880,6 +882,14 @@ dtype: object</pre>
 <h2 id="Ordinal-encoding-+-Gradient-boosting-trees-=-best">
 <a class="anchor" href="#Ordinal-encoding-+-Gradient-boosting-trees-=-best" aria-hidden="true"><span class="octicon octicon-link"></span></a>Ordinal encoding + Gradient-boosting trees = best<a class="anchor-link" href="#Ordinal-encoding-+-Gradient-boosting-trees-=-best"> </a>
 </h2>
+<p>For tree-based models, the handling of numerical and categorical variables is
+simpler than for linear models:</p>
+<ul>
+<li>we do not need to scale the numerical features</li>
+<li>using an ordinal encoding for the categorical variables is fine even if
+the encoding results in an arbitrary ordering</li>
+</ul>
+
 </div>
 </div>
 </div>
@@ -890,8 +900,9 @@ dtype: object</pre>
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">categorical_preprocessor_tree</span> <span class="o">=</span> <span class="n">OrdinalEncoder</span><span class="p">(</span><span class="n">handle_unknown</span><span class="o">=</span><span class="s2">"use_encoded_value"</span><span class="p">,</span>
-                                          <span class="n">unknown_value</span><span class="o">=-</span><span class="mi">1</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">categorical_preprocessor_tree</span> <span class="o">=</span> <span class="n">OrdinalEncoder</span><span class="p">(</span>
+                                            <span class="n">handle_unknown</span><span class="o">=</span><span class="s2">"use_encoded_value"</span><span class="p">,</span>
+                                            <span class="n">unknown_value</span><span class="o">=-</span><span class="mi">1</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -978,7 +989,7 @@ dtype: object</pre>
 <div class="output_area">
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>The accuracy is 0.873 +/- 0.003, for 2.068 seconds
+<pre>The accuracy is 0.874 +/- 0.003, for 1.791 seconds
 </pre>
 </div>
 </div>
