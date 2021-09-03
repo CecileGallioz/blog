@@ -4,20 +4,20 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="twitter:card" content="summary_large_image" /><!-- Begin Jekyll SEO tag v2.6.1 -->
-<title>Hyperparameter tuning by grid-search and cross-validation | Cécile Gallioz’s blog on data science</title>
+<title>Hyperparameter tuning | Cécile Gallioz’s blog on data science</title>
 <meta name="generator" content="Jekyll v4.1.1" />
-<meta property="og:title" content="Hyperparameter tuning by grid-search and cross-validation" />
+<meta property="og:title" content="Hyperparameter tuning" />
 <meta name="author" content="Cécile Gallioz" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="How to optimize hyperparameters using a grid-search approach" />
-<meta property="og:description" content="How to optimize hyperparameters using a grid-search approach" />
+<meta name="description" content="How to optimize hyperparameters using a grid-search or random approach" />
+<meta property="og:description" content="How to optimize hyperparameters using a grid-search or random approach" />
 <link rel="canonical" href="https://cecilegallioz.github.io/blog/sklearn/2021/09/03/BestHyperparameters.html" />
 <meta property="og:url" content="https://cecilegallioz.github.io/blog/sklearn/2021/09/03/BestHyperparameters.html" />
 <meta property="og:site_name" content="Cécile Gallioz’s blog on data science" />
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2021-09-03T00:00:00-05:00" />
 <script type="application/ld+json">
-{"url":"https://cecilegallioz.github.io/blog/sklearn/2021/09/03/BestHyperparameters.html","@type":"BlogPosting","headline":"Hyperparameter tuning by grid-search and cross-validation","dateModified":"2021-09-03T00:00:00-05:00","datePublished":"2021-09-03T00:00:00-05:00","author":{"@type":"Person","name":"Cécile Gallioz"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://cecilegallioz.github.io/blog/sklearn/2021/09/03/BestHyperparameters.html"},"description":"How to optimize hyperparameters using a grid-search approach","@context":"https://schema.org"}</script>
+{"url":"https://cecilegallioz.github.io/blog/sklearn/2021/09/03/BestHyperparameters.html","@type":"BlogPosting","headline":"Hyperparameter tuning","dateModified":"2021-09-03T00:00:00-05:00","datePublished":"2021-09-03T00:00:00-05:00","author":{"@type":"Person","name":"Cécile Gallioz"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://cecilegallioz.github.io/blog/sklearn/2021/09/03/BestHyperparameters.html"},"description":"How to optimize hyperparameters using a grid-search or random approach","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/blog/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://cecilegallioz.github.io/blog/feed.xml" title="Cécile Gallioz's blog on data science" /><!-- the google_analytics_id gets auto inserted from the config file -->
 
@@ -103,7 +103,7 @@ window.onload = wrap_img;
         <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
 
   <header class="post-header">
-    <h1 class="post-title p-name" itemprop="name headline">Hyperparameter tuning by grid-search and cross-validation</h1><p class="page-description">How to optimize hyperparameters using a grid-search approach</p><p class="post-meta post-meta-title"><time class="dt-published" datetime="2021-09-03T00:00:00-05:00" itemprop="datePublished">
+    <h1 class="post-title p-name" itemprop="name headline">Hyperparameter tuning</h1><p class="page-description">How to optimize hyperparameters using a grid-search or random approach</p><p class="post-meta post-meta-title"><time class="dt-published" datetime="2021-09-03T00:00:00-05:00" itemprop="datePublished">
         Sep 3, 2021
       </time>• 
           <span itemprop="author" itemscope itemtype="http://schema.org/Person">
