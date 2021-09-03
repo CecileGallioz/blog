@@ -331,7 +331,7 @@ optimize hyperparameters using a grid-search approach.</p>
 <div class="output_area">
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>The accuracy is 0.863 +/- 0.002, for 0.604 seconds
+<pre>The accuracy is 0.863 +/- 0.002, for 0.829 seconds
 </pre>
 </div>
 </div>
@@ -427,11 +427,10 @@ classifier__warm_start
 <span class="kn">from</span> <span class="nn">scipy.stats</span> <span class="kn">import</span> <span class="n">loguniform</span>
 
 <span class="n">param_distributions</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="s1">'classifier__learning_rate'</span><span class="p">:</span> <span class="n">loguniform</span><span class="p">(</span><span class="mf">0.0001</span><span class="p">,</span> <span class="mi">10</span><span class="p">),</span>
+    <span class="s1">'classifier__learning_rate'</span><span class="p">:</span> <span class="n">loguniform</span><span class="p">(</span><span class="mf">0.0001</span><span class="p">,</span> <span class="mi">5</span><span class="p">),</span>
     <span class="s1">'classifier__max_leaf_nodes'</span><span class="p">:</span> <span class="n">uniform</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">100</span><span class="p">)}</span>
 
-<span class="n">model_random_search</span> <span class="o">=</span> <span class="n">RandomizedSearchCV</span><span class="p">(</span>
-    <span class="n">model</span><span class="p">,</span> <span class="n">param_distributions</span><span class="p">,</span> <span class="n">n_jobs</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">cv</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">model_random_search</span> <span class="o">=</span> <span class="n">RandomizedSearchCV</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">param_distributions</span><span class="p">,</span> <span class="n">n_jobs</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">cv</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -466,7 +465,7 @@ classifier__warm_start
 <div class="output_area">
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>The accuracy via cross-validation is 0.863 +/- 0.003, for 101.178 seconds
+<pre>The accuracy via cross-validation is 0.864 +/- 0.004, for 103.672 seconds
 </pre>
 </div>
 </div>
@@ -500,11 +499,11 @@ classifier__warm_start
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>Best parameter found
- on fold #1 : {'classifier__learning_rate': 0.02767862029956081, 'classifier__max_leaf_nodes': 68.31212124050313}
- on fold #2 : {'classifier__learning_rate': 0.018857200981484017, 'classifier__max_leaf_nodes': 34.62258954364091}
- on fold #3 : {'classifier__learning_rate': 0.039236172019503385, 'classifier__max_leaf_nodes': 71.22980780848856}
- on fold #4 : {'classifier__learning_rate': 0.015729725927802578, 'classifier__max_leaf_nodes': 32.92315013284672}
- on fold #5 : {'classifier__learning_rate': 0.0324398208909175, 'classifier__max_leaf_nodes': 6.377231201802523}
+ on fold #1 : {'classifier__learning_rate': 0.16309862397316285, 'classifier__max_leaf_nodes': 45.12999922572979}
+ on fold #2 : {'classifier__learning_rate': 0.045232362575395146, 'classifier__max_leaf_nodes': 69.02541921038254}
+ on fold #3 : {'classifier__learning_rate': 0.023585278516485758, 'classifier__max_leaf_nodes': 30.014816646691422}
+ on fold #4 : {'classifier__learning_rate': 0.030455497715999508, 'classifier__max_leaf_nodes': 83.92313635555773}
+ on fold #5 : {'classifier__learning_rate': 0.035781951571963115, 'classifier__max_leaf_nodes': 85.52313915125612}
 </pre>
 </div>
 </div>
@@ -535,8 +534,7 @@ classifier__warm_start
     <span class="s1">'classifier__learning_rate'</span><span class="p">:</span> <span class="p">(</span><span class="mf">0.05</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">),</span>
     <span class="s1">'classifier__max_leaf_nodes'</span><span class="p">:</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">100</span><span class="p">)}</span>
 
-<span class="n">model_grid_search</span> <span class="o">=</span> <span class="n">GridSearchCV</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">param_grid</span><span class="p">,</span>
-                                 <span class="n">n_jobs</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">cv</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">model_grid_search</span> <span class="o">=</span> <span class="n">GridSearchCV</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">param_grid</span><span class="p">,</span> <span class="n">n_jobs</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">cv</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -571,7 +569,7 @@ classifier__warm_start
 <div class="output_area">
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>The accuracy via cross-validation is 0.874 +/- 0.002, for 13.058 seconds
+<pre>The accuracy via cross-validation is 0.874 +/- 0.002, for 14.921 seconds
 </pre>
 </div>
 </div>
