@@ -399,7 +399,7 @@ they are spelled with a final underscore <code>_</code>, for instance <code>mode
 <div class="output_area">
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>The accuracy is 0.800 +/- 0.003, for 0.068 seconds
+<pre>The accuracy is 0.800 +/- 0.003, for 0.072 seconds
 </pre>
 </div>
 </div>
@@ -544,7 +544,7 @@ classifier__warm_start
 <div class="output_area">
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>The accuracy is 0.787 +/- 0.002, for 0.063 seconds
+<pre>The accuracy is 0.787 +/- 0.002, for 0.066 seconds
 </pre>
 </div>
 </div>
@@ -604,7 +604,7 @@ classifier__warm_start
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">for</span> <span class="n">C</span> <span class="ow">in</span> <span class="p">[</span><span class="mf">1e-3</span><span class="p">,</span> <span class="mf">1e-2</span><span class="p">,</span> <span class="mf">1e-1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">]:</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">for</span> <span class="n">C</span> <span class="ow">in</span> <span class="p">[</span><span class="mf">1e-4</span><span class="p">,</span> <span class="mf">1e-3</span><span class="p">,</span> <span class="mf">1e-2</span><span class="p">,</span> <span class="mf">1e-1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">100</span><span class="p">]:</span>
     <span class="n">model</span><span class="o">.</span><span class="n">set_params</span><span class="p">(</span><span class="n">classifier__C</span><span class="o">=</span><span class="n">C</span><span class="p">)</span>
     <span class="n">cv_results</span> <span class="o">=</span> <span class="n">cross_validate</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">data_numerical</span><span class="p">,</span> <span class="n">target</span><span class="p">)</span>
     <span class="n">scores</span> <span class="o">=</span> <span class="n">cv_results</span><span class="p">[</span><span class="s2">"test_score"</span><span class="p">]</span>
@@ -623,11 +623,13 @@ classifier__warm_start
 <div class="output_area">
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>The accuracy via cross-validation with C=0.001 is 0.787 +/- 0.002, for 0.061 seconds
-The accuracy via cross-validation with C=0.01 is 0.799 +/- 0.003, for 0.066 seconds
+<pre>The accuracy via cross-validation with C=0.0001 is 0.766 +/- 0.001, for 0.057 seconds
+The accuracy via cross-validation with C=0.001 is 0.787 +/- 0.002, for 0.061 seconds
+The accuracy via cross-validation with C=0.01 is 0.799 +/- 0.003, for 0.068 seconds
 The accuracy via cross-validation with C=0.1 is 0.800 +/- 0.003, for 0.072 seconds
-The accuracy via cross-validation with C=1 is 0.800 +/- 0.003, for 0.069 seconds
+The accuracy via cross-validation with C=1 is 0.800 +/- 0.003, for 0.068 seconds
 The accuracy via cross-validation with C=10 is 0.800 +/- 0.003, for 0.069 seconds
+The accuracy via cross-validation with C=100 is 0.800 +/- 0.003, for 0.067 seconds
 </pre>
 </div>
 </div>
