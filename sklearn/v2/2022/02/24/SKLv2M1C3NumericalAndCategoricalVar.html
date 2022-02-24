@@ -133,11 +133,10 @@ window.onload = wrap_img;
   <div class="post-content e-content" itemprop="articleBody">
     <ul class="section-nav">
 <li class="toc-entry toc-h1"><a href="#Loading">Loading </a></li>
-<li class="toc-entry toc-h1"><a href="#Categorical-and-numerical-in-the-same-traitment">Categorical and numerical in the same traitment </a>
+<li class="toc-entry toc-h1"><a href="#Categoricals-ands-numericals-in-the-same-treatment">Categoricals ands numericals in the same treatment </a>
 <ul>
-<li class="toc-entry toc-h2"><a href="#Dispatch-columns-to-a-specific-processor">Dispatch columns to a specific processor </a></li>
-<li class="toc-entry toc-h2"><a href="#LogisticRegression-on-all-data">LogisticRegression on all data </a></li>
-<li class="toc-entry toc-h2"><a href="#OrdinalEncoder-+-LogisticRegression-=-not-so-good">OrdinalEncoder + LogisticRegression = not so good </a></li>
+<li class="toc-entry toc-h2"><a href="#LogisticRegression-+-OneHotEncoder-(categoricals)">LogisticRegression + OneHotEncoder (categoricals) </a></li>
+<li class="toc-entry toc-h2"><a href="#LogisticRegression-+-OrdinalEncoder-(categoricals)">LogisticRegression + OrdinalEncoder (categoricals) </a></li>
 </ul>
 </li>
 </ul><!--
@@ -316,8 +315,8 @@ window.onload = wrap_img;
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Categorical-and-numerical-in-the-same-traitment">
-<a class="anchor" href="#Categorical-and-numerical-in-the-same-traitment" aria-hidden="true"><span class="octicon octicon-link"></span></a>Categorical and numerical in the same traitment<a class="anchor-link" href="#Categorical-and-numerical-in-the-same-traitment"> </a>
+<h1 id="Categoricals-ands-numericals-in-the-same-treatment">
+<a class="anchor" href="#Categoricals-ands-numericals-in-the-same-treatment" aria-hidden="true"><span class="octicon octicon-link"></span></a>Categoricals ands numericals in the same treatment<a class="anchor-link" href="#Categoricals-ands-numericals-in-the-same-treatment"> </a>
 </h1>
 </div>
 </div>
@@ -325,8 +324,8 @@ window.onload = wrap_img;
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Dispatch-columns-to-a-specific-processor">
-<a class="anchor" href="#Dispatch-columns-to-a-specific-processor" aria-hidden="true"><span class="octicon octicon-link"></span></a>Dispatch columns to a specific processor<a class="anchor-link" href="#Dispatch-columns-to-a-specific-processor"> </a>
+<h2 id="LogisticRegression-+-OneHotEncoder-(categoricals)">
+<a class="anchor" href="#LogisticRegression-+-OneHotEncoder-(categoricals)" aria-hidden="true"><span class="octicon octicon-link"></span></a>LogisticRegression + OneHotEncoder (categoricals)<a class="anchor-link" href="#LogisticRegression-+-OneHotEncoder-(categoricals)"> </a>
 </h2>
 </div>
 </div>
@@ -339,27 +338,11 @@ window.onload = wrap_img;
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.preprocessing</span> <span class="kn">import</span> <span class="n">OneHotEncoder</span><span class="p">,</span> <span class="n">StandardScaler</span>
+<span class="kn">from</span> <span class="nn">sklearn.compose</span> <span class="kn">import</span> <span class="n">ColumnTransformer</span>
 <span class="c1"># </span>
 <span class="n">categorical_preprocessor</span> <span class="o">=</span> <span class="n">OneHotEncoder</span><span class="p">(</span><span class="n">handle_unknown</span><span class="o">=</span><span class="s2">"ignore"</span><span class="p">)</span>
 <span class="n">numerical_preprocessor</span> <span class="o">=</span> <span class="n">StandardScaler</span><span class="p">()</span>
-</pre></div>
 
-    </div>
-</div>
-</div>
-
-</div>
-    
-
-    
-    
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.compose</span> <span class="kn">import</span> <span class="n">ColumnTransformer</span>
-<span class="c1"># </span>
 <span class="n">preprocessor</span> <span class="o">=</span> <span class="n">ColumnTransformer</span><span class="p">([</span>
     <span class="p">(</span><span class="s1">'categorical'</span><span class="p">,</span> <span class="n">categorical_preprocessor</span><span class="p">,</span> <span class="n">categorical_columns</span><span class="p">),</span>
     <span class="p">(</span><span class="s1">'numerical'</span><span class="p">,</span> <span class="n">numerical_preprocessor</span><span class="p">,</span> <span class="n">numerical_columns</span><span class="p">)])</span>
@@ -372,15 +355,6 @@ window.onload = wrap_img;
 </div>
     
 
-<div class="cell border-box-sizing text_cell rendered">
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="LogisticRegression-on-all-data">
-<a class="anchor" href="#LogisticRegression-on-all-data" aria-hidden="true"><span class="octicon octicon-link"></span></a>LogisticRegression on all data<a class="anchor-link" href="#LogisticRegression-on-all-data"> </a>
-</h2>
-</div>
-</div>
-</div>
     
     
 <div class="cell border-box-sizing code_cell rendered">
@@ -411,7 +385,7 @@ window.onload = wrap_img;
 <div class="output_area">
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>The accuracy is 0.851 +/- 0.003, for 0.972 seconds
+<pre>The accuracy is 0.851 +/- 0.003, for 0.969 seconds
 </pre>
 </div>
 </div>
@@ -425,8 +399,8 @@ window.onload = wrap_img;
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="OrdinalEncoder-+-LogisticRegression-=-not-so-good">
-<a class="anchor" href="#OrdinalEncoder-+-LogisticRegression-=-not-so-good" aria-hidden="true"><span class="octicon octicon-link"></span></a>OrdinalEncoder + LogisticRegression = not so good<a class="anchor-link" href="#OrdinalEncoder-+-LogisticRegression-=-not-so-good"> </a>
+<h2 id="LogisticRegression-+-OrdinalEncoder-(categoricals)">
+<a class="anchor" href="#LogisticRegression-+-OrdinalEncoder-(categoricals)" aria-hidden="true"><span class="octicon octicon-link"></span></a>LogisticRegression + OrdinalEncoder (categoricals)<a class="anchor-link" href="#LogisticRegression-+-OrdinalEncoder-(categoricals)"> </a>
 </h2>
 </div>
 </div>
@@ -440,10 +414,17 @@ window.onload = wrap_img;
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.preprocessing</span> <span class="kn">import</span> <span class="n">OrdinalEncoder</span>
 <span class="c1"># </span>
-<span class="n">model</span> <span class="o">=</span> <span class="n">make_pipeline</span><span class="p">(</span><span class="n">OrdinalEncoder</span><span class="p">(</span><span class="n">handle_unknown</span><span class="o">=</span><span class="s2">"use_encoded_value"</span><span class="p">,</span> <span class="n">unknown_value</span><span class="o">=</span><span class="mi">100</span><span class="p">),</span> 
+<span class="n">categorical_preprocessor</span> <span class="o">=</span> <span class="n">OrdinalEncoder</span><span class="p">(</span><span class="n">handle_unknown</span><span class="o">=</span><span class="s2">"use_encoded_value"</span><span class="p">,</span> <span class="n">unknown_value</span><span class="o">=</span><span class="mi">100</span><span class="p">)</span>
+<span class="n">numerical_preprocessor</span> <span class="o">=</span> <span class="n">StandardScaler</span><span class="p">()</span>
+
+<span class="n">preprocessor</span> <span class="o">=</span> <span class="n">ColumnTransformer</span><span class="p">([</span>
+    <span class="p">(</span><span class="s1">'categorical'</span><span class="p">,</span> <span class="n">categorical_preprocessor</span><span class="p">,</span> <span class="n">categorical_columns</span><span class="p">),</span>
+    <span class="p">(</span><span class="s1">'numerical'</span><span class="p">,</span> <span class="n">numerical_preprocessor</span><span class="p">,</span> <span class="n">numerical_columns</span><span class="p">)])</span>
+
+<span class="n">model</span> <span class="o">=</span> <span class="n">make_pipeline</span><span class="p">(</span><span class="n">preprocessor</span><span class="p">,</span> 
                       <span class="n">LogisticRegression</span><span class="p">(</span><span class="n">max_iter</span><span class="o">=</span><span class="mi">500</span><span class="p">))</span>
 
-<span class="n">cv_results</span> <span class="o">=</span> <span class="n">cross_validate</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">data_categorical</span><span class="p">,</span> <span class="n">target</span><span class="p">,</span> <span class="n">cv</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+<span class="n">cv_results</span> <span class="o">=</span> <span class="n">cross_validate</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">target</span><span class="p">,</span> <span class="n">cv</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
 <span class="n">scores</span> <span class="o">=</span> <span class="n">cv_results</span><span class="p">[</span><span class="s2">"test_score"</span><span class="p">]</span>
 <span class="n">fit_time</span> <span class="o">=</span> <span class="n">cv_results</span><span class="p">[</span><span class="s2">"fit_time"</span><span class="p">]</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">"The accuracy is "</span>
@@ -460,7 +441,7 @@ window.onload = wrap_img;
 <div class="output_area">
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>The accuracy is 0.755 +/- 0.002, for 0.336 seconds
+<pre>The accuracy is 0.802 +/- 0.004, for 0.528 seconds
 </pre>
 </div>
 </div>
