@@ -4,20 +4,20 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="twitter:card" content="summary_large_image" /><!-- Begin Jekyll SEO tag v2.6.1 -->
-<title>Set and get hyperparameters (v2) | Cécile Gallioz’s blog on data science</title>
+<title>Hyperparameters tuning (v2) | Cécile Gallioz’s blog on data science</title>
 <meta name="generator" content="Jekyll v4.1.1" />
-<meta property="og:title" content="Set and get hyperparameters (v2)" />
+<meta property="og:title" content="Hyperparameters tuning (v2)" />
 <meta name="author" content="Cécile Gallioz" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="The process of learning a predictive model is driven by a set of internal parameters and a set of training data. These internal parameters are called hyperparameters and are specific for each family of models. In addition, a specific set of hyperparameters are optimal for a specific dataset and thus they need to be optimized." />
-<meta property="og:description" content="The process of learning a predictive model is driven by a set of internal parameters and a set of training data. These internal parameters are called hyperparameters and are specific for each family of models. In addition, a specific set of hyperparameters are optimal for a specific dataset and thus they need to be optimized." />
+<meta name="description" content="Grid and randomized search" />
+<meta property="og:description" content="Grid and randomized search" />
 <link rel="canonical" href="https://cecilegallioz.github.io/blog/sklearn/v2/2022/04/04/SKLv2M3HyperparametersTuning.html" />
 <meta property="og:url" content="https://cecilegallioz.github.io/blog/sklearn/v2/2022/04/04/SKLv2M3HyperparametersTuning.html" />
 <meta property="og:site_name" content="Cécile Gallioz’s blog on data science" />
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2022-04-04T00:00:00-05:00" />
 <script type="application/ld+json">
-{"url":"https://cecilegallioz.github.io/blog/sklearn/v2/2022/04/04/SKLv2M3HyperparametersTuning.html","@type":"BlogPosting","headline":"Set and get hyperparameters (v2)","dateModified":"2022-04-04T00:00:00-05:00","datePublished":"2022-04-04T00:00:00-05:00","author":{"@type":"Person","name":"Cécile Gallioz"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://cecilegallioz.github.io/blog/sklearn/v2/2022/04/04/SKLv2M3HyperparametersTuning.html"},"description":"The process of learning a predictive model is driven by a set of internal parameters and a set of training data. These internal parameters are called hyperparameters and are specific for each family of models. In addition, a specific set of hyperparameters are optimal for a specific dataset and thus they need to be optimized.","@context":"https://schema.org"}</script>
+{"url":"https://cecilegallioz.github.io/blog/sklearn/v2/2022/04/04/SKLv2M3HyperparametersTuning.html","@type":"BlogPosting","headline":"Hyperparameters tuning (v2)","dateModified":"2022-04-04T00:00:00-05:00","datePublished":"2022-04-04T00:00:00-05:00","author":{"@type":"Person","name":"Cécile Gallioz"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://cecilegallioz.github.io/blog/sklearn/v2/2022/04/04/SKLv2M3HyperparametersTuning.html"},"description":"Grid and randomized search","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/blog/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://cecilegallioz.github.io/blog/feed.xml" title="Cécile Gallioz's blog on data science" /><!-- the google_analytics_id gets auto inserted from the config file -->
 
@@ -103,7 +103,7 @@ window.onload = wrap_img;
         <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
 
   <header class="post-header">
-    <h1 class="post-title p-name" itemprop="name headline">Set and get hyperparameters (v2)</h1><p class="page-description">The process of learning a predictive model is driven by a set of internal parameters and a set of training data. These internal parameters are called hyperparameters and are specific for each family of models. In addition, a specific set of hyperparameters are optimal for a specific dataset and thus they need to be optimized.</p><p class="post-meta post-meta-title"><time class="dt-published" datetime="2022-04-04T00:00:00-05:00" itemprop="datePublished">
+    <h1 class="post-title p-name" itemprop="name headline">Hyperparameters tuning (v2)</h1><p class="page-description">Grid and randomized search</p><p class="post-meta post-meta-title"><time class="dt-published" datetime="2022-04-04T00:00:00-05:00" itemprop="datePublished">
         Apr 4, 2022
       </time>• 
           <span itemprop="author" itemscope itemtype="http://schema.org/Person">
