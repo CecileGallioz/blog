@@ -518,10 +518,10 @@ Name: MedHouseVal, dtype: float64</pre>
 <span class="n">train_scores</span> <span class="o">=</span> <span class="n">cv_results</span><span class="p">[</span><span class="s2">"train_score"</span><span class="p">]</span>
 <span class="n">fit_time</span> <span class="o">=</span> <span class="n">cv_results</span><span class="p">[</span><span class="s2">"fit_time"</span><span class="p">]</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="s2">"The accuracy in TEST  is "</span>
-      <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">scores</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2"> +/- </span><span class="si">{</span><span class="n">scores</span><span class="o">.</span><span class="n">std</span><span class="p">()</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">, for </span><span class="si">{</span><span class="n">fit_time</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2"> seconds"</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">"The accuracy in TRAIN is "</span>
       <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">train_scores</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2"> +/- </span><span class="si">{</span><span class="n">train_scores</span><span class="o">.</span><span class="n">std</span><span class="p">()</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"The accuracy in TEST  is "</span>
+      <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">scores</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2"> +/- </span><span class="si">{</span><span class="n">scores</span><span class="o">.</span><span class="n">std</span><span class="p">()</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">, for </span><span class="si">{</span><span class="n">fit_time</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2"> seconds"</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -534,8 +534,8 @@ Name: MedHouseVal, dtype: float64</pre>
 <div class="output_area">
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>The accuracy in TEST  is 0.605 +/- 0.014, for 0.107 seconds
-The accuracy in TRAIN is 1.000 +/- 0.000
+<pre>The accuracy in TRAIN is 1.000 +/- 0.000
+The accuracy in TEST  is 0.605 +/- 0.014, for 0.112 seconds
 </pre>
 </div>
 </div>
@@ -559,10 +559,10 @@ The accuracy in TRAIN is 1.000 +/- 0.000
 <span class="n">train_scores</span> <span class="o">=</span> <span class="n">cv_results</span><span class="p">[</span><span class="s2">"train_score"</span><span class="p">]</span>
 <span class="n">fit_time</span> <span class="o">=</span> <span class="n">cv_results</span><span class="p">[</span><span class="s2">"fit_time"</span><span class="p">]</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="s2">"The accuracy in TEST  is "</span>
-      <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">scores</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2"> +/- </span><span class="si">{</span><span class="n">scores</span><span class="o">.</span><span class="n">std</span><span class="p">()</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">, for </span><span class="si">{</span><span class="n">fit_time</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2"> seconds"</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">"The accuracy in TRAIN is "</span>
       <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">train_scores</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2"> +/- </span><span class="si">{</span><span class="n">train_scores</span><span class="o">.</span><span class="n">std</span><span class="p">()</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"The accuracy in TEST  is "</span>
+      <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">scores</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2"> +/- </span><span class="si">{</span><span class="n">scores</span><span class="o">.</span><span class="n">std</span><span class="p">()</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">, for </span><span class="si">{</span><span class="n">fit_time</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2"> seconds"</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -575,8 +575,8 @@ The accuracy in TRAIN is 1.000 +/- 0.000
 <div class="output_area">
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>The accuracy in TEST  is 0.605 +/- 0.014, for 0.111 seconds
-The accuracy in TRAIN is 1.000 +/- 0.000
+<pre>The accuracy in TRAIN is 1.000 +/- 0.000
+The accuracy in TEST  is 0.605 +/- 0.014, for 0.112 seconds
 </pre>
 </div>
 </div>
@@ -620,10 +620,10 @@ The accuracy in TRAIN is 1.000 +/- 0.000
 <span class="n">train_scores</span> <span class="o">=</span> <span class="o">-</span><span class="n">cv_results</span><span class="p">[</span><span class="s2">"train_score"</span><span class="p">]</span>
 <span class="n">fit_time</span> <span class="o">=</span> <span class="n">cv_results</span><span class="p">[</span><span class="s2">"fit_time"</span><span class="p">]</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="s2">"The mean absolute error (k$) in TEST  is "</span>
-      <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">scores</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2"> +/- </span><span class="si">{</span><span class="n">scores</span><span class="o">.</span><span class="n">std</span><span class="p">()</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">, for </span><span class="si">{</span><span class="n">fit_time</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2"> seconds"</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">"The mean absolute error (k$) in TRAIN is "</span>
       <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">train_scores</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2"> +/- </span><span class="si">{</span><span class="n">train_scores</span><span class="o">.</span><span class="n">std</span><span class="p">()</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"The mean absolute error (k$) in TEST  is "</span>
+      <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">scores</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2"> +/- </span><span class="si">{</span><span class="n">scores</span><span class="o">.</span><span class="n">std</span><span class="p">()</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">, for </span><span class="si">{</span><span class="n">fit_time</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2"> seconds"</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -636,8 +636,8 @@ The accuracy in TRAIN is 1.000 +/- 0.000
 <div class="output_area">
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>The mean absolute error (k$) in TEST  is 46.266 +/- 0.961, for 0.110 seconds
-The mean absolute error (k$) in TRAIN is 0.000 +/- 0.000
+<pre>The mean absolute error (k$) in TRAIN is 0.000 +/- 0.000
+The mean absolute error (k$) in TEST  is 46.266 +/- 0.961, for 0.114 seconds
 </pre>
 </div>
 </div>
@@ -749,10 +749,10 @@ The mean absolute error (k$) in TRAIN is 0.000 +/- 0.000
 <span class="n">train_scores</span> <span class="o">=</span> <span class="n">cv_results</span><span class="p">[</span><span class="s2">"train_score"</span><span class="p">]</span>
 <span class="n">fit_time</span> <span class="o">=</span> <span class="n">cv_results</span><span class="p">[</span><span class="s2">"fit_time"</span><span class="p">]</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="s2">"The accuracy in TEST  is "</span>
-      <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">scores</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2"> +/- </span><span class="si">{</span><span class="n">scores</span><span class="o">.</span><span class="n">std</span><span class="p">()</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">, for </span><span class="si">{</span><span class="n">fit_time</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2"> seconds"</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">"The accuracy in TRAIN is "</span>
       <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">train_scores</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2"> +/- </span><span class="si">{</span><span class="n">train_scores</span><span class="o">.</span><span class="n">std</span><span class="p">()</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"The accuracy in TEST  is "</span>
+      <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">scores</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2"> +/- </span><span class="si">{</span><span class="n">scores</span><span class="o">.</span><span class="n">std</span><span class="p">()</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">, for </span><span class="si">{</span><span class="n">fit_time</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2"> seconds"</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -765,8 +765,8 @@ The mean absolute error (k$) in TRAIN is 0.000 +/- 0.000
 <div class="output_area">
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>The accuracy in TEST  is 0.688 +/- 0.016, for 0.060 seconds
-The accuracy in TRAIN is 0.800 +/- 0.008
+<pre>The accuracy in TRAIN is 0.800 +/- 0.008
+The accuracy in TEST  is 0.688 +/- 0.016, for 0.083 seconds
 </pre>
 </div>
 </div>
