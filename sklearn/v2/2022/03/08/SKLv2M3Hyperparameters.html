@@ -317,13 +317,14 @@ window.onload = wrap_img;
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.preprocessing</span> <span class="kn">import</span> <span class="n">StandardScaler</span>
 <span class="kn">from</span> <span class="nn">sklearn.linear_model</span> <span class="kn">import</span> <span class="n">LogisticRegression</span>
-<span class="kn">from</span> <span class="nn">sklearn.pipeline</span> <span class="kn">import</span> <span class="n">make_pipeline</span>
+<span class="kn">from</span> <span class="nn">sklearn.pipeline</span> <span class="kn">import</span> <span class="n">Pipeline</span>
 <span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">cross_validate</span>
 <span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">ShuffleSplit</span>
 <span class="c1"># </span>
 
-<span class="n">model</span> <span class="o">=</span> <span class="n">make_pipeline</span><span class="p">(</span><span class="n">StandardScaler</span><span class="p">(),</span> 
-                      <span class="n">LogisticRegression</span><span class="p">(</span><span class="n">max_iter</span><span class="o">=</span><span class="mi">500</span><span class="p">))</span>
+<span class="n">model</span> <span class="o">=</span> <span class="n">Pipeline</span><span class="p">([</span>
+    <span class="p">(</span><span class="s2">"preprocessor"</span><span class="p">,</span> <span class="n">StandardScaler</span><span class="p">()),</span> 
+    <span class="p">(</span><span class="s2">"classifier"</span><span class="p">,</span> <span class="n">LogisticRegression</span><span class="p">(</span><span class="n">max_iter</span><span class="o">=</span><span class="mi">500</span><span class="p">))])</span>
 
 <span class="n">cv</span> <span class="o">=</span> <span class="n">ShuffleSplit</span><span class="p">(</span><span class="n">n_splits</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">test_size</span><span class="o">=</span><span class="mf">0.3</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
 
@@ -350,7 +351,7 @@ window.onload = wrap_img;
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>The accuracy in TRAIN is 0.800 +/- 0.001
-The accuracy in TEST  is 0.800 +/- 0.002, for 0.062 seconds
+The accuracy in TEST  is 0.800 +/- 0.002, for 0.067 seconds
 </pre>
 </div>
 </div>
@@ -406,26 +407,26 @@ the <code>LogisticRegression</code> object with something like <code>LogisticReg
 <pre>memory
 steps
 verbose
-standardscaler
-logisticregression
-standardscaler__copy
-standardscaler__with_mean
-standardscaler__with_std
-logisticregression__C
-logisticregression__class_weight
-logisticregression__dual
-logisticregression__fit_intercept
-logisticregression__intercept_scaling
-logisticregression__l1_ratio
-logisticregression__max_iter
-logisticregression__multi_class
-logisticregression__n_jobs
-logisticregression__penalty
-logisticregression__random_state
-logisticregression__solver
-logisticregression__tol
-logisticregression__verbose
-logisticregression__warm_start
+preprocessor
+classifier
+preprocessor__copy
+preprocessor__with_mean
+preprocessor__with_std
+classifier__C
+classifier__class_weight
+classifier__dual
+classifier__fit_intercept
+classifier__intercept_scaling
+classifier__l1_ratio
+classifier__max_iter
+classifier__multi_class
+classifier__n_jobs
+classifier__penalty
+classifier__random_state
+classifier__solver
+classifier__tol
+classifier__verbose
+classifier__warm_start
 </pre>
 </div>
 </div>
@@ -443,7 +444,7 @@ logisticregression__warm_start
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">model</span><span class="o">.</span><span class="n">set_params</span><span class="p">(</span><span class="n">logisticregression__C</span><span class="o">=</span><span class="mf">1e-3</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">model</span><span class="o">.</span><span class="n">set_params</span><span class="p">(</span><span class="n">classifier__C</span><span class="o">=</span><span class="mf">1e-3</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -458,9 +459,8 @@ logisticregression__warm_start
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>Pipeline(steps=[('standardscaler', StandardScaler()),
-                ('logisticregression',
-                 LogisticRegression(C=0.001, max_iter=500))])</pre>
+<pre>Pipeline(steps=[('preprocessor', StandardScaler()),
+                ('classifier', LogisticRegression(C=0.001, max_iter=500))])</pre>
 </div>
 
 </div>
@@ -501,7 +501,7 @@ logisticregression__warm_start
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>The accuracy in TRAIN is 0.786 +/- 0.001
-The accuracy in TEST  is 0.786 +/- 0.003, for 0.057 seconds
+The accuracy in TEST  is 0.786 +/- 0.003, for 0.058 seconds
 </pre>
 </div>
 </div>
@@ -519,7 +519,7 @@ The accuracy in TEST  is 0.786 +/- 0.003, for 0.057 seconds
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">model</span><span class="o">.</span><span class="n">get_params</span><span class="p">()[</span><span class="s1">'logisticregression__C'</span><span class="p">]</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">model</span><span class="o">.</span><span class="n">get_params</span><span class="p">()[</span><span class="s1">'classifier__C'</span><span class="p">]</span>
 </pre></div>
 
     </div>
@@ -562,7 +562,7 @@ The accuracy in TEST  is 0.786 +/- 0.003, for 0.057 seconds
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">for</span> <span class="n">C</span> <span class="ow">in</span> <span class="p">[</span><span class="mf">1e-4</span><span class="p">,</span> <span class="mf">1e-3</span><span class="p">,</span> <span class="mf">1e-2</span><span class="p">,</span> <span class="mf">1e-1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">]:</span>
-    <span class="n">model</span><span class="o">.</span><span class="n">set_params</span><span class="p">(</span><span class="n">logisticregression__C</span><span class="o">=</span><span class="n">C</span><span class="p">)</span>
+    <span class="n">model</span><span class="o">.</span><span class="n">set_params</span><span class="p">(</span><span class="n">classifier__C</span><span class="o">=</span><span class="n">C</span><span class="p">)</span>
     
     <span class="n">cv_results</span> <span class="o">=</span> <span class="n">cross_validate</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">data_numerical</span><span class="p">,</span> <span class="n">target</span><span class="p">,</span> <span class="n">cv</span><span class="o">=</span><span class="n">cv</span><span class="p">,</span> <span class="n">return_train_score</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
     
@@ -589,11 +589,11 @@ The accuracy in TEST  is 0.786 +/- 0.003, for 0.057 seconds
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>Accuracy score via cross-validation with C=0.0001:
 The accuracy in TRAIN is 0.766 +/- 0.001
-The accuracy in TEST  is 0.766 +/- 0.003, for 0.054 seconds
+The accuracy in TEST  is 0.766 +/- 0.003, for 0.057 seconds
 
 Accuracy score via cross-validation with C=0.001:
 The accuracy in TRAIN is 0.786 +/- 0.001
-The accuracy in TEST  is 0.786 +/- 0.003, for 0.056 seconds
+The accuracy in TEST  is 0.786 +/- 0.003, for 0.059 seconds
 
 Accuracy score via cross-validation with C=0.01:
 The accuracy in TRAIN is 0.799 +/- 0.001
@@ -601,11 +601,11 @@ The accuracy in TEST  is 0.799 +/- 0.002, for 0.061 seconds
 
 Accuracy score via cross-validation with C=0.1:
 The accuracy in TRAIN is 0.800 +/- 0.001
-The accuracy in TEST  is 0.800 +/- 0.002, for 0.062 seconds
+The accuracy in TEST  is 0.800 +/- 0.002, for 0.063 seconds
 
 Accuracy score via cross-validation with C=1:
 The accuracy in TRAIN is 0.800 +/- 0.001
-The accuracy in TEST  is 0.800 +/- 0.002, for 0.064 seconds
+The accuracy in TEST  is 0.800 +/- 0.002, for 0.063 seconds
 
 Accuracy score via cross-validation with C=10:
 The accuracy in TRAIN is 0.800 +/- 0.001
